@@ -1,9 +1,14 @@
 import React from "react";
-// import {Box} from '@mui/material'
+import Banner from "./home/banner";
+ 
 
 export default function Home () {
     return(
-        // <Box>hy</Box>
-        <div>hy</div>
+       <>  
+       <Banner></Banner>
+       </>
+
+     
+      
     )
 }
