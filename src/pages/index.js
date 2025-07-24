@@ -1,7 +1,7 @@
 import dynamic from "next/dynamic";
 // const Dashboard = dynamic(() => import('../component/dashboard/index'));
 
-import Home from "@/component/Home";
+import Home from "@/component/home/Home";
 
 
 // ✅ Always name the default export function
