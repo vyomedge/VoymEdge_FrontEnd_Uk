@@ -22,6 +22,7 @@ import { useTheme } from "@mui/material/styles";
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from 'next/navigation';
+import CustomButton1 from '../button/customButton1';
 
 
 const navItems = [
@@ -47,27 +48,54 @@ export default function Navbar() {
     <AppBar
       position="fixed"
       sx={{
-        backgroundColor: "transparent",
-        backdropFilter: "none",
-        WebkitBackdropFilter: "none",
+        background: {
+          xs: "white",
+          sm: "white",
+          md: "white",
+          lg: "white"//"linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%, rgba(255,255,255,1) 100%)"
+        },
+        backdropFilter: "inherit",
+        WebkitBackdropFilter: "inherit",
         boxShadow: "none",
 
       }}
     >
       <Container maxWidth="xl">
+
+
         <Toolbar disableGutters sx={{ justifyContent: "center" }}>
           {!isMobile ? (
             <Box
               display="flex"
               alignItems="center"
-              justifyContent="space-evenly"
+              justifyContent="space-between"
               sx={{
                 px: 2,
                 py: 1,
                 width: "fit-content",
               }}
-              gap={0}
+              gap={2}
             >
+              <Link href="/" passHref>
+                <Box
+                  sx={{
+                    position: "absolute",
+                    top: 18,
+                    left: { xs: 10, sm: -50, md: "10px", lg: 0 }, // Adjust based on breakpoints
+                    zIndex: 6,
+                    cursor: "pointer",
+                  }}
+                >
+                  <Image
+                    src="/VElogo.svg"
+                    alt="Logo"
+                    width={250}
+                    height={31}
+                    style={{ display: "inline-block", maxWidth: "100%", height: "auto" }}
+                  />
+                </Box>
+              </Link>
+
 
               {navItems.map((item, index) => {
                 const isActive = pathname === item.href;
@@ -84,7 +112,7 @@ export default function Navbar() {
                         py: 0.5,
                         minWidth: "auto",
                         fontSize: "14px",
-                        position: "relative", top: 10, right: -30, 
+                        position: "relative", top: 10, right: -30,
 
                       }}
                     >
@@ -94,7 +122,7 @@ export default function Navbar() {
 
                 );
               })}
-              <Button
+              <CustomButton1
                 sx={{
                   position: "absolute", top: 18, right: 200, zIndex: 6,
                   backgroundColor: "transparent",
@@ -116,8 +144,8 @@ export default function Navbar() {
                   },
                 }}
               >
-                {`Build with us`}
-              </Button>
+                {`Build With Us`}
+              </CustomButton1>
             </Box>
 
           ) : (
@@ -125,8 +153,7 @@ export default function Navbar() {
               <Link href="/" passHref>
                 <Image src="/VElogo.svg" alt="Logo" width={130} height={31} style={{ cursor: 'pointer' }} />
               </Link>
-              <Box
-              >
+              <Box >
                 <IconButton edge="end" color="inherit" onClick={() => setOpenDrawer(true)}
                   sx={{
 
@@ -142,7 +169,7 @@ export default function Navbar() {
               <Drawer anchor="right" open={openDrawer} onClose={() => setOpenDrawer(false)}
                 PaperProps={{
                   sx: {
-                    zIndex: 1300, 
+                    zIndex: 1300,
                   },
                 }}>
 

@@ -1,5 +1,5 @@
 // components/HeroSection.js
-
+import CustomButton1 from "@/common-component/button/customButton1";
 
 import { Box, Typography, Stack, Button } from "@mui/material";
 import Image from "next/image";
@@ -15,39 +15,34 @@ export default function HeroSection() {
 
   return (
     <Box
+      width="100%"
       sx={{
         background: "linear-gradient(to bottom,rgba(255, 255, 255, 1), rgba(220, 255, 250, 1))",
-        px: { xs: 2, sm: 8, md: 0 },
-        py: { xs: 8, sm: 8, md: 5 },
-        width: "100%",
-    
+        px: { xs: 0, sm: 1, md: 0, lg: 0 },
+        py: { xs: 8, sm: 8, md: 5, lg: 6 },
+
+
       }}
     >
       <Box
         sx={{
           display: "flex",
-          flexDirection: { xs: "column", sm: "column", md: "row", lg:"row" },
-        
+          flexDirection: { xs: "column", sm: "column", md: "row", lg: "row" },
+
           justifyContent: "space-between",
           padding: { xs: "10px 0px", sm: "25px 0px", md: "60px 10px" },
         }}
         gap={3}
-        
+
       >
         {/* Text Section */}
         <Box flex={1} display="flex" flexDirection="column" justifyContent="center" position="relative"
         >
-          <Box mb={2} display="flex" flexDirection={ {xs: "column", sm: "row", md: "row", lg:"row"} }
-            sx={{
-              display: { xs: "none", sm: "none", md: "none", lg:"block" },
-              position: "absolute", top: -82, left: 35, zIndex: 6
-            }
-            }>
-            <Image src="/VElogo.svg" width={245} height={80} alt="VE Logo" />
-          </Box>
+
+
           <Box sx={{
             zIndex: 5, width: { xs: '100%', sm: '100%', md: '100%' },
-            height: { xs: '100%', sm: "100%", md: '100%', lg:'50%' },
+            height: { xs: '100%', sm: "100%", md: '100%', lg: '50%' },
             position: { xs: "initial", sm: "initial", md: "absolute" },
             top: { xs: "20px", sm: "100px", md: "40px", lg: "60px" },
             left: { xs: 0, sm: 0, md: 0, }, mt: { xs: "4px", sm: "15px", md: 0, lg: 0 }
@@ -65,11 +60,21 @@ export default function HeroSection() {
                 textAlign: { xs: "left", sm: "left", md: "left" },
                 ml: 5,
                 mb: 1,
-                whiteSpace: { xs: 'nowrap',sm:'nowrap', md: 'nowrap', lg: 'nowrap' },
+                whiteSpace: { xs: 'wrap', sm: 'nowrap', md: 'nowrap', lg: 'nowrap' },
               }}
               dangerouslySetInnerHTML={{
-                __html: `Scalable Digital Solutions </br> for  Uk Businesses` }}
-            >
+                __html: `
+                          Scalable Digital Solutions <br/> for 
+                          <span style="
+                            background: linear-gradient(135deg, rgba(76, 255, 231, 1), rgba(118, 0, 196, 1), rgba(211, 0, 229, 1));
+                            -webkit-background-clip: text;
+                            -webkit-text-fill-color: transparent;
+                            display: inline-block;
+                          ">
+                            UK Businesses
+                          </span>
+                        `
+              }}>
             </Typography>
             <Typography
               variant="h5"
@@ -78,7 +83,7 @@ export default function HeroSection() {
                 color: "#443B56", mb: 2, fontWeight: 500,
                 fontSize: { xs: "14px", sm: "15px", md: "15px" },
                 frontFamily: "Manrope,Sans-serif",
-                textAlign: { xs: "left",sm:"left", md: "left" },
+                textAlign: { xs: "left", sm: "left", md: "left" },
                 ml: 5,
               }}
             >
@@ -107,40 +112,46 @@ export default function HeroSection() {
               marginLeft={5}
               alignContent={{ xs: "center", sm: "flex-start", md: "flex-start" }}
             >
-              <Button
-                sx={{
-                  backgroundColor: "transparent",
-                  border: "2px solid #4CFFE7",
-                  px: 3,
-                  py: 1,
-                  textTransform: "none",
-                  fontWeight: 500,
-
-                  // Gradient text magic:
-                  background: 'linear-gradient(135deg, rgba(76, 255, 231, 1) 0%,rgba(118, 0, 196, 1) 50%,rgba(211, 0, 229, 1) 100%)',
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-
-                  // Optional: hover effect
-                  "&:hover": {
-                    backgroundColor: "#4cffef1a",
-                  },
-                }}
+              <CustomButton1
+                onClick={() => console.log('Booked!')}
+                sx={{ borderRadius: '5px', mt: 4, fontSize: '15px', fontWeight: "500" }}
               >
-                {` Get a Free Strategy Session`}
-              </Button>
+                {`Get a Free Strategy Session`}
+              </CustomButton1>
+
             </Stack>
           </Box>
         </Box>
-        <Box >
+        <Box
+          sx={{
+            position: "relative",
+            position: "relative",
+            display: "flex",
+            justifyContent: {
+              xs: "center", // mobile
+              sm: "center", // tablet
+              md: "flex-end" // desktop
+            },
+            right: {
+              xs: 0,
+              sm: 0,
+              md: "20px", // apply offset only in desktop
+            },
+            alignItems: "center",
+            width: { xs: "100%", sm: "100%", md: "450px", lg: "550px" },  // responsive width
+            height: { xs: "200px", sm: "200px", md: "300px", lg: "400px" }, // responsive height
+            mx: "auto" // center horizontally
+          }}
+        >
           <Image
             src="/bannerimage.png"
             alt="Banner"
-            width={500}
-            height={200}
-          
+            fill  // important for full responsiveness
+            style={{ objectFit: "contain" }} // or "cover" based on your need
+            sizes="(max-width: 600px) 100vw, (max-width: 960px) 50vw, 600px"
           />
         </Box>
+
       </Box>
     </Box>
   );
