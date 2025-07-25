@@ -26,11 +26,11 @@ import CustomButton1 from '../button/customButton1';
 
 
 const navItems = [
-
-  { label: "About Us", href: "/" },
-  { label: "Contact", href: "/" },
-  { label: "Packages", href: "/" },
-  { label: "Services", href: "/" },
+  { label: "Home", href: "/" },
+  { label: "About Us", href: "/aboutus" },
+  { label: "Contact", href: "/contact" },
+  { label: "Packages", href: "/packages" },
+  { label: "Services", href: "/services" },
 
 ];
 
@@ -104,7 +104,7 @@ export default function Navbar() {
                   <Link key={index} href={item.href} style={{ textDecoration: "none" }}>
                     <Button
                       sx={{
-                        color: isActive ? "black" : "#FFFFFF",
+                        color: isActive ? "#D300E5" : "#000",
                         borderRadius: "20px",
                         textTransform: "none",
                         fontWeight: 500,
@@ -122,30 +122,22 @@ export default function Navbar() {
 
                 );
               })}
-              <CustomButton1
-                sx={{
-                  position: "absolute", top: 18, right: 200, zIndex: 6,
-                  backgroundColor: "transparent",
-                  border: "2px solid #4CFFE7",
+              <CustomButton1 sx={{
+                position: "absolute", top: 18, right: 180, zIndex: 6,
+                backgroundColor: "transparent",
+                border: "2px solid #4CFFE7",
 
-                  px: 3,
-                  py: 1,
-                  textTransform: "none",
-                  fontWeight: 500,
+                px: 3,
+                py: 1,
+                textTransform: "none",
+                fontWeight: 500
+              }}
+                onClick={() => console.log('Booked!')}
 
-                  // Gradient text magic:
-                  background: 'linear-gradient(135deg, rgba(76, 255, 231, 1) 0%,rgba(118, 0, 196, 1) 50%,rgba(211, 0, 229, 1) 90%)',
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-
-                  // Optional: hover effect
-                  "&:hover": {
-                    backgroundColor: "#4cffef1a",
-                  },
-                }}
               >
                 {`Build With Us`}
               </CustomButton1>
+
             </Box>
 
           ) : (

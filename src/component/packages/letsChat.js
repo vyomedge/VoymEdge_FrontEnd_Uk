@@ -1,9 +1,9 @@
 import { Box, Grid, Typography } from '@mui/material';
 import React from 'react'
-import CustomButton1 from '../button/customButton1';
-import CustomButton2 from '../button/customButton2';
+import CustomButton1 from '@/common-component/button/customButton1';
+import CustomButton2 from '@/common-component/button/customButton2';
 
-const FreeCall = () => {
+const LetsChat = () => {
     return (
         <Grid alignItems="center"
             textAlign="center"
@@ -17,7 +17,7 @@ const FreeCall = () => {
                 fontWeight: "500", lineHeight: "130%", color: "#08070aff",
                 fontSize: { xs: "24px", sm: "42px", md: "54px", lg: "56px" }
             }}>
-                {`Let's bring your digital vision to life`}
+                {`Not sure where to start?`}
             </Typography>
             <Typography
                 variant='h2' component='h2' sx={{
@@ -30,37 +30,28 @@ const FreeCall = () => {
                     WebkitTextFillColor: 'transparent',
                 }}
             >
-                {`affordable, reliably, and seamleesly.`}
+                {`Let's chat.`}
             </Typography>
 
-            <Typography variant="copytext2"
-                component="div"
-
-                sx={{
-                    fontFamily: 'Manrope, serif',
-                    fontWeight: 500,
-                    lineHeight: "160%",
-                    color: "#443B56",
-                    fontSize: { xs: "15px", sm: "15px", md: "15px", lg: "15px" },
-                    py: "10px"
-
-                }}>
-                {`Speak to our UK consultant or request a free proposal.`}
-            </Typography>
-            <Box   display="flex" gap={2}
-            justifyContent="center">
+           
+            <Box display="flex" gap={2}
+                justifyContent="center">
                 <CustomButton1
                     onClick={() => console.log('Booked!')}
-                    sx={{ borderRadius: '5px', mt: 1, fontSize: '15px', fontWeight: "500" }}
+                    sx={{ borderRadius: '5px', mt: 1,
+                        fontSize: { xs: "13px", sm: "14px", md: "15px", lg: "15px" },
+                         fontWeight: "500" }}
                 >
-                    {`Book a Free Call`}
+                    {`See the Packages - Pick Yours`}
                 </CustomButton1>
-                
-                 <CustomButton2
+
+                <CustomButton2
                     onClick={() => console.log('Booked!')}
-                    sx={{ borderRadius: '5px', mt: 1, fontSize: '15px', fontWeight: "500" }}
+                    sx={{ borderRadius: '5px', mt: 1,
+                         fontSize: { xs: "13px", sm: "14px", md: "15px", lg: "15px" },
+                          fontWeight: "500" }}
                 >
-                    {`Get a Quote Now`}
+                    {`Book a Call - Start Scaling`}
                 </CustomButton2>
 
             </Box>
@@ -68,4 +59,4 @@ const FreeCall = () => {
     )
 }
 
-export default FreeCall;
+export default LetsChat;
