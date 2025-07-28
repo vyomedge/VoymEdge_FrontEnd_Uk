@@ -17,7 +17,7 @@ const CustomButton1 = ({
             sx={{
                 backgroundColor: 'transparent',
                 border: '2px solid #4CFFE7',
-                px: 3,
+                px: 1,
                 py: 1,
                 borderRadius: 0,
                 textTransform: 'none',

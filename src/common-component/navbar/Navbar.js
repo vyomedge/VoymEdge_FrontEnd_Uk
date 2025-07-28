@@ -16,7 +16,6 @@ import {
   useMediaQuery,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import Image from "next/image";
 import { useTheme } from "@mui/material/styles";
 import { useState } from "react";
@@ -28,7 +27,7 @@ import CustomButton1 from '../button/customButton1';
 const navItems = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/aboutus" },
-  { label: "Contact", href: "/contact" },
+  { label: "Contact", href: "/contactus" },
   { label: "Packages", href: "/packages" },
   { label: "Services", href: "/services" },
 
