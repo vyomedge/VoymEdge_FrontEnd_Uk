@@ -34,7 +34,7 @@ const LetsChat = () => {
             </Typography>
 
            
-            <Box display="flex" gap={2}
+            <Box display="flex" gap={2} px={2}
                 justifyContent="center">
                 <CustomButton1
                     onClick={() => console.log('Booked!')}

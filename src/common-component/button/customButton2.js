@@ -15,7 +15,7 @@ const CustomButton2 = ({
       startIcon={startIcon}
       endIcon={endIcon}
       sx={{
-        px: 3,
+        px: 1,
         py: 1,
         border: 'none',
         borderRadius: 0,
