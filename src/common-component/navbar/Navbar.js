@@ -26,11 +26,10 @@ import CustomButton1 from '../button/customButton1';
 
 const navItems = [
   { label: "Home", href: "/" },
+  { label: "Services", href: "/services" },
+  { label: "Packages", href: "/packages" },
   { label: "About Us", href: "/aboutus" },
   { label: "Contact", href: "/contactus" },
-  { label: "Packages", href: "/packages" },
-  { label: "Services", href: "/services" },
-
 ];
 
 
@@ -161,6 +160,7 @@ export default function Navbar() {
                 PaperProps={{
                   sx: {
                     zIndex: 1300,
+                    color:" rgba(76, 255, 231, 1)"
                   },
                 }}>
 
@@ -170,7 +170,7 @@ export default function Navbar() {
                 <Box width={250} role="presentation" onClick={() => setOpenDrawer(false)}>
                   <List
                     sx={{
-
+                      background: 'linear-gradient(135deg, rgba(211, 0, 229, 1), rgba(118, 0, 196, 1), rgba(76, 255, 231, 1))',
                       color: "#CBEFFF",
                       height: "667px",
                       padding: "15% 25%",

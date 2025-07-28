@@ -48,7 +48,13 @@ const AddOnServices = () => {
 
 
       {/* Table */}
-      <TableContainer sx={{ maxWidth: 700, mx: 'auto' }}>
+      <TableContainer sx={{ maxWidth: 700, mx: 'auto' ,
+         background:"white",
+         boxShadow:2,
+         border:"none",
+         borderRadius:"15px",
+         padding:"20px"
+         }}>
         <Table>
           <TableHead>
             <TableRow>

@@ -14,10 +14,10 @@ export default function Footer() {
 
   const socialLinks = [
     { src: '/whatsappicon.svg', alt: 'YouTube', url: 'https://www.whatsapp.com' },
-    { src: '/instaicon.svg', alt: 'Instagram', url: 'https://www.instagram.com' },
-    { src: '/twittericon.svg', alt: 'Twitter', url: 'https://twitter.com' },
-    { src: '/facebookicon.svg', alt: 'Facebook', url: 'https://www.facebook.com' },
-    { src: '/linkedinicon.svg', alt: 'LinkedIn', url: 'https://www.linkedin.com' },
+    { src: '/instaicon.svg', alt: 'Instagram', url: 'https://www.instagram.com/vyomedge_official?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==' },
+    { src: '/twittericon.svg', alt: 'Twitter', url: 'https://x.com/vyomedge' },
+    { src: '/facebookicon.svg', alt: 'Facebook', url: 'https://www.facebook.com/vyomedge' },
+    { src: '/linkedinicon.svg', alt: 'LinkedIn', url: 'https://www.linkedin.com/company/vyom-edge/' },
   ];
 
   return (

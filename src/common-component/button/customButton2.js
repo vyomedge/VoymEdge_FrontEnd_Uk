@@ -40,3 +40,11 @@ const CustomButton2 = ({
 };
 
 export default CustomButton2;
+
+
+
+/* <CustomButton2
+                onClick={() => console.log('Booked!')}
+                sx={{ borderRadius: '5px', mt: 4, fontSize: '15px', fontWeight:"500" }}>
+              {`Get a Free Strategy Session`}
+  </CustomButton2>*/

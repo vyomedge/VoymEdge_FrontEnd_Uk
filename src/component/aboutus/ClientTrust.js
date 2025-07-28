@@ -17,7 +17,7 @@ const ClientTrust = () => {
             alignItems="center"
             justifyContent="space-evenly"
             width="100%"
-            sx={{ background: 'linear-gradient(to bottom,#ffffff, #f0fefe )' }}
+            sx={{ background: 'linear-gradient(to bottom, #ffffff, #f0fefe )' }}
             gap={{ xs: 4, sm: 5, md: 8, lg: 4 }}
             px={{ xs: 2, sm: 6, md: 2, lg: 2 }}
             py={{ xs: 4, sm: 2, md: 2, lg: 2 }}
