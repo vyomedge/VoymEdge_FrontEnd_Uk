@@ -14,19 +14,19 @@ const ContactUs = () => {
   return (
     <>
       <>
-        <SEO
-          url='http://www.poornamevents.com/about-us'
-          metaTitle='About Poornam Events | Wedding Planner in MP'
-          metaDescription='Meet Poornam Events: founders, values & vision. Creating magical weddings across Indore, Bhopal & India.'
-          keywords='wedding planner in MP, about Poornam Events'
-          canonical='http://www.poornamevents.com/about-us'
-          ogTitle='About Poornam Events | Wedding Planner in MP'
-          ogDescription='Meet Poornam Events: founders, values & vision. Creating magical weddings across Indore, Bhopal & India.'
-       //   ogImage={`${SITE_URL}/og-image.jpg`}
-          twitterTitle='About Poornam Events | Wedding Planner in MP'
-          twitterDescription='Meet Poornam Events: founders, values & vision. Creating magical weddings across Indore, Bhopal & India.'
-         //  twitterImage={`${SITE_URL}/logoo.jpg`}
-          robots="index, follow"
+       <SEO
+          url='https://www.vyomedge.uk/contact-us'
+          metaTitle='Contact VyomEdge | Discuss Your Project or Get a Quote'
+          metaDescription='Get in touch with VyomEdge to discuss your web development, design or digital marketing needs. UK support team.'
+          keywords='contact VyomEdge, UK web development contact, offshore IT team UK, digital marketing quote UK'
+          canonical='https://www.vyomedge.uk/contact-us'
+          ogTitle='Contact VyomEdge | Discuss Your Project or Get a Quote'
+          ogDescription='Get in touch with VyomEdge to discuss your web development, design or digital marketing needs. UK support team.'
+          ogImage=''
+          twitterTitle='Contact VyomEdge | Discuss Your Project or Get a Quote'
+          twitterDescription='Get in touch with VyomEdge to discuss your web development, design or digital marketing needs. UK support team.'
+          twitterImage=''
+          robots="index, follow"//  default
         />
       </>
       <CustomBanner

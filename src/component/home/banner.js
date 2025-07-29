@@ -1,6 +1,6 @@
 // components/HeroSection.js
 import CustomButton1 from "@/common-component/button/customButton1";
-
+import Link from "next/link";
 import { Box, Typography, Stack, Button } from "@mui/material";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -76,6 +76,7 @@ export default function HeroSection() {
                         `
               }}>
             </Typography>
+
             <Typography
               variant="h5"
               component={"h5"}
@@ -112,12 +113,17 @@ export default function HeroSection() {
               marginLeft={5}
               alignContent={{ xs: "center", sm: "flex-start", md: "flex-start" }}
             >
-              <CustomButton1
-                onClick={() => console.log('Booked!')}
-                sx={{ borderRadius: '5px', mt: 4, fontSize: '15px', fontWeight: "500" }}
-              >
-                {`Get a Free Strategy Session`}
-              </CustomButton1>
+              <Link href="/contactus" passHref legacyBehavior>
+                <a style={{ textDecoration: 'none' }}>
+                  <CustomButton1
+                    onClick={() => console.log('Booked!')}
+                    sx={{ borderRadius: '5px', mt: 4, fontSize: '15px', fontWeight: "500" }}
+                  >
+                    {`Get a Free Strategy Session`}
+                  </CustomButton1>
+
+                </a>
+              </Link>
 
             </Stack>
           </Box>

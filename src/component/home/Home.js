@@ -15,19 +15,19 @@ export default function Home () {
     return(
        <>  
          <>
-        <SEO
-          url='http://www.poornamevents.com/about-us'
-          metaTitle='About Poornam Events | Wedding Planner in MP'
-          metaDescription='Meet Poornam Events: founders, values & vision. Creating magical weddings across Indore, Bhopal & India.'
-          keywords='wedding planner in MP, about Poornam Events'
-          canonical='http://www.poornamevents.com/about-us'
-          ogTitle='About Poornam Events | Wedding Planner in MP'
-          ogDescription='Meet Poornam Events: founders, values & vision. Creating magical weddings across Indore, Bhopal & India.'
-         // ogImage={`${SITE_URL}/og-image.jpg`}
-          twitterTitle='About Poornam Events | Wedding Planner in MP'
-          twitterDescription='Meet Poornam Events: founders, values & vision. Creating magical weddings across Indore, Bhopal & India.'
-          // twitterImage={`${SITE_URL}/logoo.jpg`}
-          robots="index, follow"
+          <SEO
+          url='https://www.vyomedge.uk/'
+          metaTitle='Web Development & Digital Marketing Services for UK Businesses | VyomEdge'
+          metaDescription='VyomEdge offers tailored MERN Stack, Python development, UI/UX design, and digital marketing for UK enterprises.'
+          keywords='MERN stack development UK, Python development UK, UI UX design UK, digital marketing UK, web development agency UK'
+          canonical='https://www.vyomedge.uk/'
+          ogTitle='Web Development & Digital Marketing Services for UK Businesses | VyomEdge'
+          ogDescription='VyomEdge offers tailored MERN Stack, Python development, UI/UX design, and digital marketing for UK enterprises.'
+          ogImage=''
+          twitterTitle='Web Development & Digital Marketing Services for UK Businesses | VyomEdge'
+          twitterDescription='VyomEdge offers tailored MERN Stack, Python development, UI/UX design, and digital marketing for UK enterprises.'
+          twitterImage=''
+          robots="index, follow"//  default
         />
       </>
        <Banner></Banner>

@@ -2,6 +2,7 @@ import { Box, Grid, Typography } from '@mui/material';
 import React from 'react'
 import CustomButton1 from '../button/customButton1';
 import CustomButton2 from '../button/customButton2';
+import Link from 'next/link';
 
 const FreeCall = () => {
     return (
@@ -49,19 +50,30 @@ const FreeCall = () => {
             </Typography>
             <Box   display="flex" gap={2}
             justifyContent="center">
-                <CustomButton1
+                  <Link href="/contactus" passHref legacyBehavior>
+                <a style={{ textDecoration: 'none' }}>
+                  <CustomButton1
                     onClick={() => console.log('Booked!')}
                     sx={{ borderRadius: '5px', mt: 1, fontSize: '15px', fontWeight: "500" }}
                 >
                     {`Book a Free Call`}
                 </CustomButton1>
                 
-                 <CustomButton2
+                </a>
+              </Link>
+                <Link href="/packages" passHref legacyBehavior>
+                <a style={{ textDecoration: 'none' }}>
+                    <CustomButton2
                     onClick={() => console.log('Booked!')}
                     sx={{ borderRadius: '5px', mt: 1, fontSize: '15px', fontWeight: "500" }}
                 >
                     {`Get a Quote Now`}
                 </CustomButton2>
+
+                </a>
+              </Link>
+               
+              
 
             </Box>
         </Grid>
