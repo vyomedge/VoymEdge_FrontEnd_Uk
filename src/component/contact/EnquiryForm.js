@@ -70,7 +70,7 @@ const EnquiryForm = () => {
 
                 {/* Form Starts */}
                 <Grid container spacing={2} xs={12} sm={12} md={6}>
-                    <label>Full Name</label>
+                    <label>{'Full Name'}</label>
                     <TextField
                         fullWidth
                         placeholder="Full Name"
@@ -86,7 +86,7 @@ const EnquiryForm = () => {
                     {/* Full Name */}
                     <Grid container spacing={2}>
                         <Grid item xs={12} sm={12} md={12}>
-                            <label>Business Email</label>
+                            <label>{'Business Email'}</label>
                             <TextField
                                 fullWidth
                                 placeholder="Business Email"
@@ -102,7 +102,7 @@ const EnquiryForm = () => {
                         </Grid>
 
                         <Grid item xs={12} sm={12} md={6}>
-                            <label>Phone</label>
+                            <label>{'Phone'}</label>
                             <TextField
                                 fullWidth
                                 placeholder="Phone"
@@ -122,9 +122,9 @@ const EnquiryForm = () => {
 
 
 
-                    <label>Type Of  project</label>
+                    <label>{'Type Of  project'}</label>
                     <FormControl fullWidth>
-                        <InputLabel id="service-label">Service</InputLabel>
+                        <InputLabel id="service-label">{'Service'}</InputLabel>
                         <Select
                             labelId="service-label"
                             id="service-select"
@@ -136,16 +136,16 @@ const EnquiryForm = () => {
                                 borderRadius: '8px',
                             }}
                         >
-                            <MenuItem value="web">Web Development</MenuItem>
-                            <MenuItem value="seo">SEO Optimization</MenuItem>
-                            <MenuItem value="ads">Paid Ads</MenuItem>
-                            <MenuItem value="design">UI/UX Design</MenuItem>
+                            <MenuItem value="web">{'Web Development'}</MenuItem>
+                            <MenuItem value="seo">{'SEO Optimization'}</MenuItem>
+                            <MenuItem value="ads">{'Paid Ads'}</MenuItem>
+                            <MenuItem value="design">{'UI/UX Design'}</MenuItem>
                         </Select>
                     </FormControl>
 
 
 
-                    <label>Tell us about your project</label>
+                    <label>{'Tell us about your project'}</label>
                     <TextField
                         fullWidth
                         multiline
@@ -176,7 +176,7 @@ const EnquiryForm = () => {
                         fontWeight: '500',
                     }}
                 >
-                    Let's Talk
+                   {` Let's Talk`}
                 </CustomButton2>
             </Box>
         </Box>
