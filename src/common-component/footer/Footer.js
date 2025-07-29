@@ -51,7 +51,7 @@ export default function Footer() {
               component="copytext1"
               sx={{
                 fontSize: { xs: "16px", sm: "16px", md: "18px" },
-               py: { xs: 0, sm: 1, md: 1, lg: 1 },
+                py: { xs: 0, sm: 1, md: 1, lg: 1 },
                 px: { xs: 0, sm: 0, md: 1, lg: 1 },
                 fontWeight: 500,
                 color: "white",
@@ -80,10 +80,12 @@ export default function Footer() {
               lineHeight: "36px"
             }}>
             <Stack> {[
-              { label: "About Us", href: "/" },
-              { label: "Contact", href: "/" },
-              { label: "Packages", href: "/" },
-              { label: "Services", href: "/" },
+
+              { label: "Services", href: "/services" },
+              { label: "Packages", href: "/packages" },
+              { label: "About Us", href: "/aboutus" },
+              { label: "Contact", href: "/contactus" },
+
             ].map((item) => (
               <Link key={item.href} href={item.href} style={{ textDecoration: "none" }} >
                 <Typography
@@ -182,7 +184,7 @@ export default function Footer() {
       < Box sx={{ color: "white", py: 0 }
       }>
         <Container maxWidth="lg">
-          <Grid container sx={{ display: { xs: "block", sm: "flex:", md: "flex" , lg:"flex"} }} alignItems="center" justifyContent="space-between">
+          <Grid container sx={{ display: { xs: "block", sm: "flex:", md: "flex", lg: "flex" } }} alignItems="center" justifyContent="space-between">
             {/* Left - Copyright */}
             <Grid item xs={12} md={4}>
               <Typography
@@ -190,7 +192,7 @@ export default function Footer() {
                 component="copytext1"
                 sx={{
                   fontSize: "13px",
-                  textAlign: { xs: "left", sm: "left", md: "left", lg:"left" },
+                  textAlign: { xs: "left", sm: "left", md: "left", lg: "left" },
                 }}
               >
                 Copyright © 2025. vyomedge
@@ -206,16 +208,20 @@ export default function Footer() {
                 sx={{ fontSize: "13px", textAlign: "right", color: "white" }}
               >
 
-                <Link href="/privacy-policy" underline="hover" style={{ color: "white", textDecoration: "none" }}>
+                <Link href="/privacyPolicy" underline="hover" style={{ color: "white", textDecoration: "none" }}>
                   Privacy Policy
                 </Link>{" "}
                 .
-                <Link href="/terms" underline="hover" style={{ color: "white", textDecoration: "none" }}>
+                <Link href="/termsAndConditions" underline="hover" style={{ color: "white", textDecoration: "none" }}>
                   Terms & Conditions
                 </Link>{" "}
                 .
                 <Link href="/disclaimer" underline="hover" style={{ color: "white", textDecoration: "none" }}>
                   Disclaimer
+                </Link>{" "}
+                .
+                 <Link href="/cookies" underline="hover" style={{ color: "white", textDecoration: "none" }}>
+                  Cookies
                 </Link>{" "}
               </Typography>
             </Grid>

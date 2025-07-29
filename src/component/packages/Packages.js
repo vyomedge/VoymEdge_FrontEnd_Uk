@@ -10,19 +10,19 @@ const Packages = () => {
     return (
         <>
           <>
-        <SEO
-          url='http://www.poornamevents.com/about-us'
-          metaTitle='About Poornam Events | Wedding Planner in MP'
-          metaDescription='Meet Poornam Events: founders, values & vision. Creating magical weddings across Indore, Bhopal & India.'
-          keywords='wedding planner in MP, about Poornam Events'
-          canonical='http://www.poornamevents.com/about-us'
-          ogTitle='About Poornam Events | Wedding Planner in MP'
-          ogDescription='Meet Poornam Events: founders, values & vision. Creating magical weddings across Indore, Bhopal & India.'
-         // ogImage={`${SITE_URL}/og-image.jpg`}
-          twitterTitle='About Poornam Events | Wedding Planner in MP'
-          twitterDescription='Meet Poornam Events: founders, values & vision. Creating magical weddings across Indore, Bhopal & India.'
-         //  twitterImage={`${SITE_URL}/logoo.jpg`}
-          robots="index, follow"
+          <SEO
+          url='https://www.vyomedge.uk/packages'
+          metaTitle='Affordable Development & Marketing Packages | VyomEdge'
+          metaDescription='Choose from our affordable packages for web development, SEO, design & more — tailored to UK businesses.'
+          keywords='web development packages UK, SEO packages UK, digital marketing plans UK, UI UX pricing UK'
+          canonical='https://www.vyomedge.uk/packages'
+          ogTitle='Affordable Development & Marketing Packages | VyomEdge'
+          ogDescription='Choose from our affordable packages for web development, SEO, design & more — tailored to UK businesses.'
+          ogImage=''
+          twitterTitle='Affordable Development & Marketing Packages | VyomEdge'
+          twitterDescription='Choose from our affordable packages for web development, SEO, design & more — tailored to UK businesses.'
+          twitterImage=''
+          robots="index, follow"//  default
         />
       </>
             <CustomBanner
