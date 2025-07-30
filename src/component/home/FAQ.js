@@ -16,7 +16,7 @@ const faqData = [
         answer: (
             <div>
                 <Typography gutterBottom fontWeight={600}>
-                    VyomEdge UK specializes in:
+                  {`  VyomEdge UK specializes in:`}
                 </Typography>
 
                 <ul style={{ paddingLeft: '1.5rem', listStyleType: 'disc', marginTop: 0, marginBottom: '0.5rem' }}>
@@ -27,8 +27,8 @@ const faqData = [
                             WebkitTextFillColor: 'transparent',
                             fontWeight: 600
                         }}>
-                            Custom MERN Stack Development
-                        </span> (MongoDB, Express.js, React.js, Node.js)
+                           {` Custom MERN Stack Development`}
+                        </span> {`(MongoDB, Express.js, React.js, Node.js)`}
                     </li>
                     <li>
                         <span style={{
@@ -37,7 +37,7 @@ const faqData = [
                             WebkitTextFillColor: 'transparent',
                             fontWeight: 600
                         }}>
-                            Python & Django Development
+                          {`  Python & Django Development`}
                         </span>
                     </li>
                     <li>
@@ -47,7 +47,7 @@ const faqData = [
                             WebkitTextFillColor: 'transparent',
                             fontWeight: 600
                         }}>
-                            UI/UX Design & Prototyping
+                          {`  UI/UX Design & Prototyping`}
                         </span>
                     </li>
                     <li>
@@ -57,8 +57,8 @@ const faqData = [
                             WebkitTextFillColor: 'transparent',
                             fontWeight: 600
                         }}>
-                            Digital Marketing & SEO
-                        </span> tailored for UK markets
+                           {` Digital Marketing & SEO`}
+                        </span> {`tailored for UK markets`}
                     </li>
                 </ul>
 
@@ -70,16 +70,16 @@ const faqData = [
         ),
     },
     {
-        question: 'How long does shipping take?',
-        answer: 'Shipping typically takes 3–5 business days depending on your location.',
+        question: 'How does VyomEdge UK ensure smooth communication for UK clients?',
+        answer:  'How does VyomEdge UK ensure smooth communication for UK clients?',
     },
     {
-        question: 'Do you offer international shipping?',
-        answer: 'Yes, we ship to most countries. Rates may vary depending on destination.',
+        question: 'Where is VyomEdge UK based, and who delivers the work?',
+        answer: 'Where is VyomEdge UK based, and who delivers the work?',
     },
       {
-        question: 'How long does shipping take?',
-        answer: 'Shipping typically takes 3–5 business days depending on your location.',
+        question: 'Are your solutions compliant with UK regulations and GDPR?',
+        answer:  'Are your solutions compliant with UK regulations and GDPR?',
     },
 ];
 
@@ -98,6 +98,7 @@ export default function FAQ() {
                 variant='h2'
                 component="h2"
                 textAlign="center"
+                mb={3}
                 sx={{
                     fontSize: { xs: "30px", sm: "44px", md: "56px", lg: "56px" },
                     fontFamily: "sen,serif",

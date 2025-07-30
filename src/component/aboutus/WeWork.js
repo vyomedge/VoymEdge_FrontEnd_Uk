@@ -7,41 +7,41 @@ const WeWork = () => {
         {
             title: "UK Working Hours",
             subheading: " & Communication",
-            icon: "/why1.svg",
-            bgColor:  "#FFFFFF",
+            icon: "/aboutusIcon1.svg",
+            bgColor: "#FFFFFF",
             textColor: "#443B56",
-            border:" 2px solid #7600C4"
+            border: " 2px solid #7600C4"
         },
         {
             title: "Cost-Effective",
             subheading: "without compromise",
-            icon: "/why2.svg",
-           bgColor:  "#FFFFFF",
-             textColor: "#443B56",
-            border:" 2px solid #7600C4"
+            icon: "/aboutusIcon2.svg",
+            bgColor: "#FFFFFF",
+            textColor: "#443B56",
+            border: " 2px solid #7600C4"
         },
         {
             title: "UK Virtual Presence",
-            icon: "/why3.svg",
-           bgColor:  "#FFFFFF",
-           textColor: "#443B56",
-            border:" 2px solid #7600C4"
+            icon: "/aboutusIcon3.svg",
+            bgColor: "#FFFFFF",
+            textColor: "#443B56",
+            border: " 2px solid #7600C4"
         },
         {
             title: "Agile,Transparents,",
             subheading: "and Scalable",
-            icon: "/why4.svg",
-          bgColor:  "#FFFFFF",
+            icon: "/aboutusIcon4.svg",
+            bgColor: "#FFFFFF",
             textColor: "#443B56",
-            border:" 2px solid #7600C4"
+            border: " 2px solid #7600C4"
         },
         {
             title: "Compliance & ",
             subheading: "Confidentiality.",
-            icon: "/why4.png",
-            bgColor:  "#FFFFFF",
-             textColor: "#443B56",
-            border:" 2px solid #7600C4"
+           icon: "/aboutusIcon5.svg",
+            bgColor: "#FFFFFF",
+            textColor: "#443B56",
+            border: " 2px solid #7600C4"
         }
     ];
     return (
@@ -50,13 +50,13 @@ const WeWork = () => {
             justifyContent="center"
             alignItems="center"
             textAlign="center"
-             
+
             sx={{
                 px: { xs: 2, sm: 6, md: 8, lg: 14 },
                 py: { xs: 2, sm: 8, md: 5, lg: 4 },
                 flexDirection: "column", // If you want vertical stacking
                 textAlign: "center",     // Ensures text is centered as well
-               mb:3
+                mb: 3
             }}
         >
             <Box>
@@ -84,7 +84,7 @@ const WeWork = () => {
                                     gap: 2,
                                     bgcolor: item.bgColor,
                                     color: item.textColor,
-                                    border:item.border,
+                                    border: item.border,
                                     px: 6,
                                     py: 1.5,
                                     borderRadius: "8px",

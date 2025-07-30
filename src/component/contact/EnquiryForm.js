@@ -47,7 +47,7 @@ const EnquiryForm = () => {
 
 
                 >
-                  {`  Enquiry Form`}
+                    {`  Enquiry Form`}
                 </Typography>
 
                 {/* Subheading */}
@@ -58,13 +58,13 @@ const EnquiryForm = () => {
                         fontSize: { xs: "18px", md: "18px" },
                         lineHeight: "160%",
                         mt: 1,
-                        mb:2,
+                        mb: 2,
                         color: '#4B4B4B',
                         maxWidth: 500,
                         maxWidth: '520px',
                     }}
                 >
-                   {` Have a project or just want to say hello? Fill out the form below and
+                    {` Have a project or just want to say hello? Fill out the form below and
                     our team will get back within 24 hours.`}
                 </Typography>
 
@@ -83,45 +83,34 @@ const EnquiryForm = () => {
                             },
                         }}
                     />
-                    {/* Full Name */}
-                    <Grid container spacing={2}>
-                        <Grid item xs={12} sm={12} md={12}>
-                            <label>{'Business Email'}</label>
-                            <TextField
-                                fullWidth
-                                placeholder="Business Email"
-                                variant="outlined"
-                                InputProps={{
-                                    sx: {
-                                        backgroundColor: '#f6f1ff',
-                                        borderRadius: '8px',
-                                        border: 'none',
-                                    },
-                                }}
-                            />
-                        </Grid>
-
-                        <Grid item xs={12} sm={12} md={6}>
-                            <label>{'Phone'}</label>
-                            <TextField
-                                fullWidth
-                                placeholder="Phone"
-                                variant="outlined"
-                                InputProps={{
-                                    sx: {
-                                        backgroundColor: '#f6f1ff',
-                                        borderRadius: '8px',
-                                        border: 'none',
-                                    },
-                                }}
-                            />
-                        </Grid>
-                    </Grid>
-
-
-
-
-
+                    <label>{'Business Email'}</label>
+                    <TextField
+                        fullWidth
+                        placeholder="Business Email"
+                        variant="outlined"
+                        InputProps={{
+                            sx: {
+                                backgroundColor: '#f6f1ff',
+                                borderRadius: '8px',
+                                border: 'none',
+                            },
+                        }}
+                    />
+                    <label>{'Phone'}</label>
+                    <TextField
+                        fullWidth
+                        width="100%"
+                        maxWidth="300px"
+                        placeholder="1234567890"
+                        variant="outlined"
+                        InputProps={{
+                            sx: {
+                                backgroundColor: '#f6f1ff',
+                                borderRadius: '8px',
+                                border: 'none',
+                            },
+                        }}
+                    />
                     <label>{'Type Of  project'}</label>
                     <FormControl fullWidth>
                         <InputLabel id="service-label">{'Service'}</InputLabel>
@@ -176,7 +165,7 @@ const EnquiryForm = () => {
                         fontWeight: '500',
                     }}
                 >
-                   {` Let's Talk`}
+                    {` Let's Talk`}
                 </CustomButton2>
             </Box>
         </Box>

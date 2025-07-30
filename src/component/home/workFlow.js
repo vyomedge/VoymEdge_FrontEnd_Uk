@@ -14,7 +14,8 @@ function WorkFlow() {
     const isTablet = useMediaQuery(theme.breakpoints.between('sm', 'md'));
     return (
         <Grid alignItems="left"   px={{ xs: "30px", sm: "10px", md: "10px" }}
-                py={{ xs: "10px", sm: "10px", md: "20px" }}>
+                py={{ xs: "10px", sm: "10px", md: "20px" }}
+                sx={{  background: "linear-gradient(to bottom,rgba(255, 255, 255, 1), rgba(220, 255, 250, 1))",}}>
             <Grid textAlign="left" width="100%"
                 >
                 <Typography variant='h2' component='h2'
@@ -34,12 +35,13 @@ function WorkFlow() {
                 display="flex"
                 justifyItems="center"
                 justifyContent={"center"}
-                gap={{ xs: "10px", sm: "20px", md: "50px" }}
+                gap={{ xs: "10px", sm: "20px", md: "50px",lg:"50px" }}
                 padding="5px"
             >
                 <Grid padding="5px" >
                     <Grid display="flex"
                         textAlign="left"
+                          gap={{ xs: "10px", sm: "20px", md: "20px",lg:"20px" }}
                     >
                         <Grid
                         >
@@ -61,7 +63,7 @@ function WorkFlow() {
                             }}>
 
 
-                            {`"Discovery Call" `}
+                            {`Discovery Call `}
                         </Typography>
                         <Box
                             sx={{
@@ -71,21 +73,20 @@ function WorkFlow() {
                                 transform: (isMobile || isTablet) ? 'rotate(90deg)' : 'none',
                             }}
                         >
-                            <Box sx={{ height: 2, width: 40, bgcolor: '#000' }} />
-                            <ArrowForwardIcon
-                                sx={{
-                                    fontSize: 20,
-                                    color: '#000',
-                                    ml: '-6px',
-                                }}
-                            />
+                           
+                            <Image
+                                src="/Arrow.svg"
+                                alt="Sample"
+                                width={40}
+                                height={40}
+                                alignItems="center" />
                         </Box>
 
                     </Grid>
                     <Grid textAlign="left" >
                         <Typography
                            variant='copytext1' component='copytext1'
-                            width="250px" px={3} textAlign="left"
+                            width="250px"  textAlign="left"
                             sx={{
                                 fontFamily: 'Manrope, serif',
                                 fontWeight: "500", lineHeight: "160%", color: "#000000",
@@ -117,7 +118,7 @@ function WorkFlow() {
 
                             }}>
 
-                            {`"Project Scope & Quote"`}
+                            {`Project Scope & Quote`}
                         </Typography>
                         <Box
                             sx={{
@@ -127,19 +128,18 @@ function WorkFlow() {
                                 transform: (isMobile || isTablet) ? 'rotate(90deg)' : 'none',
                             }}
                         >
-                            <Box sx={{ height: 2, width: 40, bgcolor: '#000' }} />
-                            <ArrowForwardIcon
-                                sx={{
-                                    fontSize: 20,
-                                    color: '#000',
-                                    ml: '-6px',
-                                }}
-                            />
+                           
+                            <Image
+                                src="/Arrow.svg"
+                                alt="Sample"
+                                width={40}
+                                height={40}
+                                alignItems="center" />
                         </Box>
                     </Grid>
                     <Grid textAlign="left" >
                         <Typography variant='copytext1' component='copytext1'
-                            width="250px" px={3} textAlign="left"
+                            width="250px"  textAlign="left"
                             sx={{
                                 fontFamily: 'Manrope, serif',
                                 fontWeight: "500", lineHeight: "160%", color: "#000000",
@@ -181,20 +181,19 @@ function WorkFlow() {
                                 transform: (isMobile || isTablet) ? 'rotate(90deg)' : 'none',
                             }}
                         >
-                            <Box sx={{ height: 2, width: 40, bgcolor: '#000' }} />
-                            <ArrowForwardIcon
-                                sx={{
-                                    fontSize: 20,
-                                    color: '#000',
-                                    ml: '-6px',
-                                }}
-                            />
+                           
+                            <Image
+                                src="/Arrow.svg"
+                                alt="Sample"
+                                width={40}
+                                height={40}
+                                alignItems="center" />
                         </Box>
                     </Grid>
                     <Grid textAlign="left" >
                         <Typography
                           variant='copytext1' component='copytext1'
-                            width="250px" px={3} textAlign="left"
+                            width="250px"  textAlign="left"
                             sx={{
                                 fontFamily: 'Manrope, serif',
                                 fontWeight: "500", lineHeight: "160%", color: "#000000",
@@ -221,7 +220,7 @@ function WorkFlow() {
 
                     <Grid textAlign="left" >
                         <Typography  variant='copytext1' component='copytext1'
-                            width="250px" px={3} textAlign="left"
+                            width="250px"  textAlign="left"
                             sx={{
                                 fontFamily: 'Manrope, serif',
                                 fontWeight: "500", lineHeight: "160%", color: "#000000",

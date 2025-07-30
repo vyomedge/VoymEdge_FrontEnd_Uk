@@ -32,6 +32,7 @@ const AboutUs = () => {
         title="About Us"
         subtitle="Web Development & Marketing Partner for UK Businesses."
         padding={10}
+          
         breadcrumbs={[
           { href: '/', isHome: true },
           // { href: '/blog', label: 'Blog' },
@@ -39,7 +40,7 @@ const AboutUs = () => {
         ]}
         // Optional: customize breadcrumbs position
         breadcrumbsPosition={{
-          top: '400px',
+          top: '200px',
           left: '43px',
           lg: { top: '350px', left: '60px' },
           md: { top: '300px', left: '10px' },

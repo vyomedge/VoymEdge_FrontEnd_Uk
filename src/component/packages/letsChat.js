@@ -37,29 +37,20 @@ const LetsChat = () => {
            
             <Box display="flex" gap={2} px={2}
                 justifyContent="center">
-                     <Link href="../packages" passHref legacyBehavior>
+                  
+                <Link href="tel:+919876543210" passHref legacyBehavior>
                 <a style={{ textDecoration: 'none' }}>
-                  <CustomButton1 data-testid="notify-button"
+                  <CustomButton2 data-testid="notify-button"
                     onClick={() => console.log('Booked!')}
-                    sx={{ borderRadius: '5px', mt: 1,
-                        fontSize: { xs: "13px", sm: "14px", md: "15px", lg: "15px" },
-                         fontWeight: "500" }}
+                    sx={{ borderRadius: '5px', mt: 1, fontSize: '15px', fontWeight: "500" }}
                 >
-                    {`See the Packages - Pick Yours`}
-                </CustomButton1>
-
+                     {`Book a Call - Start Scaling`}
+                </CustomButton2>
+                
                 </a>
               </Link>
-               
 
-                <CustomButton2 data-testid="notify-button"
-                    onClick={() => console.log('Booked!')}
-                    sx={{ borderRadius: '5px', mt: 1,
-                         fontSize: { xs: "13px", sm: "14px", md: "15px", lg: "15px" },
-                          fontWeight: "500" }}
-                >
-                    {`Book a Call - Start Scaling`}
-                </CustomButton2>
+               
 
             </Box>
         </Grid>

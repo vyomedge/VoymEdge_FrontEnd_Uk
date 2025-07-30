@@ -26,7 +26,7 @@ const services = [
     },
     {
         label: "Fintech & SaaS Startups",
-        icon: "/service6.svg",
+        icon: "/cloud.svg",
         gradient: "linear-gradient(135deg, rgba(211, 0, 229, 1) , rgba(118, 0, 196, 1),rgba(76, 255, 231, 1))",
     },
     {

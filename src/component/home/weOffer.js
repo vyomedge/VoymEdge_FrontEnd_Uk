@@ -37,8 +37,9 @@ const WeOffer = () => {
         }
     ];
     return (
-        <Box textAlign="center">
-            <Box> <Typography variant='Manrope' component='h2' sx={{
+        <Box   textAlign="center">
+            <Box  px={{ xs: "50px", sm: "55px", md: "60px", lg: "100px" }}
+                    py={{ xs: "10px", sm: "20px", md: "30px", lg: "30px" }}> <Typography variant='Manrope' component='h2' sx={{
                 fontFamily: 'sen, serif',
                 whiteSpace: "nowrap",
                 fontWeight: "500", lineHeight: "130%", color: "#322C3E",
@@ -47,9 +48,10 @@ const WeOffer = () => {
                 {` What We Offer`}
             </Typography>
                 <Typography
+                   
                     variant="copytext2"
                     component="copytext2"
-
+                    textAlign="center"
                     sx={{
                         fontFamily: 'Manrope, serif',
                         fontWeight: 500,
@@ -121,24 +123,24 @@ const WeOffer = () => {
                                                 {feature}
                                             </ListItem>
                                         ))}
-                                          <Box sx={{ display: "flex", justifyContent: "flex-end", mt: 2 }}>
-                                        <IconButton data-testid="notify-button"
-                                            sx={{
-                                                bgcolor: "#E3F2FD",
-                                                color: "#D300E5",
-                                                border: "2px solid #4CFFE7",
-                                                width: 40,
-                                                height: 40,
-                                                "&:hover": {
-                                                    cursor: "pointer"
-                                                },
-                                            }}
-                                        >
-                                            <KeyboardArrowRightIcon />
-                                        </IconButton>
-                                    </Box>
+                                        <Box sx={{ display: "flex", justifyContent: "flex-end", mt: 2 }}>
+                                            <IconButton data-testid="notify-button"
+                                                sx={{
+                                                    bgcolor: "#E3F2FD",
+                                                    color: "#D300E5",
+                                                    border: "2px solid #4CFFE7",
+                                                    width: 40,
+                                                    height: 40,
+                                                    "&:hover": {
+                                                        cursor: "pointer"
+                                                    },
+                                                }}
+                                            >
+                                                <KeyboardArrowRightIcon />
+                                            </IconButton>
+                                        </Box>
                                     </List>
-                                  
+
                                 </CardContent>
                             </Card>
                         </Grid>

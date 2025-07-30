@@ -22,7 +22,7 @@ const CustomButton1 = ({
                 borderRadius: 0,
                 textTransform: 'none',
                 fontWeight: 600,
-                fontSize: '1rem',
+                fontSize: '18px',
                 background: 'linear-gradient(135deg, rgba(211, 0, 229, 1), rgba(118, 0, 196, 1), rgba(76, 255, 231, 1))',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
