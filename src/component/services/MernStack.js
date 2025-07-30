@@ -2,24 +2,45 @@ import React from 'react';
 import { Box, Grid, Typography, useMediaQuery, useTheme } from '@mui/material';
 import Image from 'next/image';
 import CustomButton2 from '@/common-component/button/customButton2';
+import { useEffect, useState } from "react";
+import ConnectModal from '@/common-component/model/ConnectModel';
 
 const MernStack = () => {
   const theme = useTheme();
   const isMobileOrTab = useMediaQuery(theme.breakpoints.down('md')); // true for xs, sm, md
 
+  const [open, setOpen] = useState(false);
+
+  const handleForm = () => {
+    setOpen(true);
+  };
+
+  useEffect(() => {
+    const alreadyShown = localStorage.getItem("Formshown");
+
+    if (!alreadyShown) {
+      const timer = setTimeout(() => {
+        setOpen(true);
+        localStorage.setItem("Formshown", "true");
+      }, 5000);
+
+      return () => clearTimeout(timer);
+    }
+  }, []);
   return (
     <Grid container>
       <Grid
         display="flex"
-         alignItems="center"
+        alignItems="center"
         justifyContent="center"
-        flexDirection={{ xs: "column",sm:"column", md: "row" , lg:"row"}}
+        flexDirection={{ xs: "column", sm: "column", md: "row", lg: "row" }}
         align="center"
-       
+
         gap={{ xs: 4, sm: 5, md: 6 }}
-        px={{ xs: 4, sm: 6, md: 10}}
+        px={{ xs: 4, sm: 6, md: 10 }}
         py={{ xs: 6, sm: 8, md: 8 }}
       >
+          <ConnectModal open={open} setOpen={setOpen} />
         {/* Image Section */}
         <Box
           width={{ xs: "100%", md: "50%" }}
@@ -38,7 +59,7 @@ const MernStack = () => {
 
         {/* Text Section */}
         <Box
-          width={{ xs: "100%",sm:"50%", md: "40%" }}
+          width={{ xs: "100%", sm: "50%", md: "40%" }}
           textAlign={isMobileOrTab ? 'center' : 'left'}
         >
           <Typography
@@ -48,12 +69,12 @@ const MernStack = () => {
               fontWeight: 500,
               lineHeight: "130%",
               color: "#322C3E",
-              fontSize: { xs: "32px", sm: "40px", md: "42px",lg:'48px' },
+              fontSize: { xs: "32px", sm: "40px", md: "42px", lg: '48px' },
               mb: 2,
-              whiteSpace:"nowrap"
+              whiteSpace: "nowrap"
             }}
           >
-          {`  Custom MERN Stack`} <br />{` Development`}
+            {`  Custom MERN Stack`} <br />{` Development`}
           </Typography>
 
           <Typography
@@ -66,7 +87,7 @@ const MernStack = () => {
               mb: 2,
             }}
           >
-         {`   Build Powerful, Scalable Web Applications`}
+            {`   Build Powerful, Scalable Web Applications`}
           </Typography>
 
           <Typography
@@ -79,11 +100,11 @@ const MernStack = () => {
               mb: 3,
             }}
           >
-           {` We develop fast, secure, and responsive applications using the MERN stack — MongoDB, Express.js, React.js, and Node.js. Ideal for real-time platforms, SaaS products, CRMs, dashboards, and more.`}
+            {` We develop fast, secure, and responsive applications using the MERN stack — MongoDB, Express.js, React.js, and Node.js. Ideal for real-time platforms, SaaS products, CRMs, dashboards, and more.`}
           </Typography>
 
           <CustomButton2 data-testid="notify-button"
-            onClick={() => console.log('Booked!')}
+             onClick={handleForm}
             sx={{
               mx: isMobileOrTab ? 'auto' : 0,
               display: 'block',
@@ -91,8 +112,9 @@ const MernStack = () => {
               fontWeight: 500,
               borderRadius: '5px',
             }}
+            
           >
-           {` Book a free consultation`}
+            {` Book a free consultation`}
           </CustomButton2>
         </Box>
       </Grid>

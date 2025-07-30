@@ -1,12 +1,11 @@
 // src/common-component/navbar/Navbar.js
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   AppBar,
   Toolbar,
   Box,
   Button,
   Container,
-  Typography,
   IconButton,
   Drawer,
   List,
@@ -18,10 +17,10 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import Image from "next/image";
 import { useTheme } from "@mui/material/styles";
-import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from 'next/navigation';
 import CustomButton1 from '../button/customButton1';
+import ConnectModal from "@/common-component/model/ConnectModel";
 
 
 const navItems = [
@@ -32,77 +31,75 @@ const navItems = [
   { label: "Contact", href: "/contactus" },
 ];
 
-
-
 export default function Navbar() {
-  console.log("Navbar rendered");
+  const [open, setOpen] = useState(false);
+  const [openDrawer, setOpenDrawer] = useState(false);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("lg"));
-  const [openDrawer, setOpenDrawer] = useState(false);
   const pathname = usePathname();
   const isDarkBg = true;
-  const iconColor = isDarkBg ? '#FFFFFF' : '#DCFFFA';
+
+  const handleForm = () => {
+    setOpen(true);
+  };
+
+  useEffect(() => {
+    const alreadyShown = localStorage.getItem("Formshown");
+    if (!alreadyShown) {
+      const timer = setTimeout(() => {
+        setOpen(true);
+        localStorage.setItem("Formshown", "true");
+      }, 5000);
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
   return (
-    <AppBar data-testid="notify-button"
-      position="fixed"
+    <AppBar position="fixed"
       sx={{
-        background: {
-          xs: "white",
-          sm: "white",
-          md: "white",
-          lg: "white"//"linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%, rgba(255,255,255,1) 100%)"
-        },
+        background: "white",
+        boxShadow: "none",
         backdropFilter: "inherit",
         WebkitBackdropFilter: "inherit",
-        boxShadow: "none",
+        height:"80px"
 
       }}
     >
+      <ConnectModal open={open} setOpen={setOpen} />
+
       <Container maxWidth="xl">
-
-
         <Toolbar disableGutters sx={{ justifyContent: "center" }}>
           {!isMobile ? (
-            <Box
-              display="flex"
-              alignItems="center"
-              justifyContent="space-between"
-              sx={{
-                px: 2,
-                py: 1,
-                width: "fit-content",
-              }}
-              gap={2}
-            >
+            <Box display="flex" alignItems="center" 
+            justifyContent="space-between" 
+            sx={{ px: 2, py: 1, width: "fit-content" }} 
+            gap={0.5}>
+              {/* Logo */}
               <Link href="/" passHref>
                 <Box
+                  display="flex"
+                  alignItems="center"
+                 
                   sx={{
                     position: "absolute",
                     top: 18,
-                    left: { xs: 10, sm: -50, md: "10px", lg: 0 }, // Adjust based on breakpoints
+                    left: { xs: 10, sm: -50, md: "10px", lg: 0 },
                     zIndex: 6,
                     cursor: "pointer",
                   }}
                 >
-                  <Image
-                    src="/VElogo.svg"
-                    alt="Logo"
-                    width={250}
-                    height={31}
-                    style={{ display: "inline-block", maxWidth: "100%", height: "auto" }}
-                  />
+                  <Image src="/VElogo.svg" alt="Logo" width={250} height={31} style={{ maxWidth: "100%", height: "auto" }} />
                 </Box>
               </Link>
 
-
+              {/* Nav Links */}
               {navItems.map((item, index) => {
                 const isActive = pathname === item.href;
-
                 return (
                   <Link key={index} href={item.href} style={{ textDecoration: "none" }}>
-                    <Button data-testid="notify-button"
+                    <Button
                       sx={{
-                        color: isActive ? "#D300E5" : "#000",
+                        color: isActive ? "#D300E5" : "#443B56",
                         borderRadius: "20px",
                         textTransform: "none",
                         fontWeight: 500,
@@ -110,69 +107,59 @@ export default function Navbar() {
                         py: 0.5,
                         minWidth: "auto",
                         fontSize: "14px",
-                        position: "relative", top: 10, right: -30,
-
+                        position: "relative",
+                        top: 10,
+                        right: -30,
                       }}
                     >
                       {item.label}
                     </Button>
                   </Link>
-
                 );
               })}
-              <CustomButton1  data-testid="notify-button" sx={{
-                position: "absolute", top: 18, right: 180, zIndex: 6,
-                backgroundColor: "transparent",
-                border: "2px solid #4CFFE7",
 
-                px: 3,
-                py: 1,
-                textTransform: "none",
-                fontWeight: 500
-              }}
-                onClick={() => console.log('Booked!')}
-
+              {/* CTA Button */}
+              <CustomButton1
+                sx={{
+                  position: "absolute",
+                  top: 18,
+                  right: 160,
+                  zIndex: 6,
+                  backgroundColor: "transparent",
+                  border: "2px solid #4CFFE7",
+                  px: 3,
+                  py: 1,
+                  textTransform: "none",
+                  fontWeight: 500,
+                }}
+                onClick={handleForm}
               >
                 {`Build With Us`}
               </CustomButton1>
-
             </Box>
-
           ) : (
+            // Mobile View
             <Box display="flex" justifyContent="space-between" width="100%" py="20px" px="15px">
               <Link href="/" passHref>
                 <Image src="/VElogo.svg" alt="Logo" width={130} height={31} style={{ cursor: 'pointer' }} />
               </Link>
-              <Box >
-                <IconButton data-testid="notify-button" edge="end" color="inherit" onClick={() => setOpenDrawer(true)}
-                  sx={{
 
-                    background: isDarkBg
-                      ? 'linear-gradient(135deg, rgba(76, 255, 231, 1) 0%,rgba(118, 0, 196, 1) 50%,rgba(211, 0, 229, 1) 100%)'
-                      : 'linear-gradient(135deg, rgba(76, 255, 231, 1) 0%,rgba(118, 0, 196, 1) 50%,rgba(211, 0, 229, 1) 100%)',
-                    color: isDarkBg ? '#FFFFFF' : '#000000',
-                    boxShadow: 'none',
-                  }}>
-                  <MenuIcon data-testid="notify-button" />
-                </IconButton>
-              </Box>
-              <Drawer anchor="right" open={openDrawer} onClose={() => setOpenDrawer(false)}
-                PaperProps={{
-                  sx: {
-                    zIndex: 1300,
-                    color:" rgba(76, 255, 231, 1)"
-                  },
+              <IconButton onClick={() => setOpenDrawer(true)}
+                sx={{
+                  background: 'linear-gradient(135deg, rgba(76, 255, 231, 1), rgba(118, 0, 196, 1), rgba(211, 0, 229, 1))',
+                  color: isDarkBg ? '#FFFFFF' : '#000000',
+                  boxShadow: 'none',
                 }}>
+                <MenuIcon />
+              </IconButton>
 
-
-
-                {/* Menu Items */}
+              <Drawer anchor="right" open={openDrawer} onClose={() => setOpenDrawer(false)} PaperProps={{ sx: { zIndex: 1300 } }}>
                 <Box width={250} role="presentation" onClick={() => setOpenDrawer(false)}>
                   <List
                     sx={{
                       background: 'linear-gradient(135deg, rgba(211, 0, 229, 1), rgba(118, 0, 196, 1), rgba(76, 255, 231, 1))',
                       color: "#CBEFFF",
-                      height: "667px",
+                      height: "100vh",
                       padding: "15% 25%",
                     }}
                   >
@@ -189,8 +176,6 @@ export default function Navbar() {
                   </List>
                 </Box>
               </Drawer>
-
-
             </Box>
           )}
         </Toolbar>

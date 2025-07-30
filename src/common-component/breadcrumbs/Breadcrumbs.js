@@ -1,8 +1,9 @@
 import React from 'react';
 import { Breadcrumbs, Typography, Box } from '@mui/material';
 import { Home, NavigateNext } from '@mui/icons-material';
-import NextLink from 'next/link';
+import Link from 'next/link';
 import Image from 'next/image';
+
 
 const BreadcrumbsComponent = ({
   items = [],
@@ -12,7 +13,10 @@ const BreadcrumbsComponent = ({
   homeIconColor = '#DAA412',
   sx = {}
 }) => {
-  if (!items || items.length === 0) return null;
+  // If no items provided, return null or empty component
+  if (!items || items.length === 0) {
+    return null;
+  }
 
   return (
     <Box sx={{ py: 2, px: 2, ...sx }}>
@@ -24,31 +28,22 @@ const BreadcrumbsComponent = ({
           '& .MuiBreadcrumbs-separator': {
             color: 'text.secondary',
           },
+          '& .MuiBreadcrumbs-li': {
+            color: '#FFFFFF',
+            display: 'flex',
+            alignItems: 'center',
+          }
         }}
       >
         {items.map((item, index) => {
           const isLast = index === items.length - 1;
           const isHome = item.isHome || item.href === '/' || item.href === '/home';
 
-          const icon = isHome && showHomeIcon && (
-            item.icon === 'svg' ? (
-              <Image
-                src="/home.svg"
-                alt="Home"
-                width={16}
-                height={16}
-                style={{ marginRight: 6 }}
-              />
-            ) : (
-              <Home sx={{ mr: 0.5, color: homeIconColor }} fontSize="small" />
-            )
-          );
-
-          if (isLast || !item.href) {
+          if (isLast) {
             return (
               <Typography
                 key={index}
-                color="#FFFFFF"
+                color="black"
                 sx={{
                   display: 'flex',
                   alignItems: 'center',
@@ -56,32 +51,45 @@ const BreadcrumbsComponent = ({
                   fontSize: { xs: '12px', md: '14px' },
                 }}
               >
-                {icon}
+                {isHome && showHomeIcon && (
+                  <Home sx={{ mr: 0.5, color: homeIconColor }} fontSize="3rem" />
+                )}
                 {item.label}
               </Typography>
             );
           }
 
           return (
-            <Box
+            <Typography
+              component={Link}
               key={index}
-              component={NextLink}
+              underline="hover"
+              color="inherit"
               href={item.href}
               sx={{
                 display: 'flex',
                 alignItems: 'center',
                 textDecoration: 'none',
-                color: '#FFFFFF',
                 fontSize: { xs: '13px', md: '14px' },
                 cursor: 'pointer',
                 '&:hover': {
                   textDecoration: 'underline',
-                },
+                }
               }}
+              onClick={item.onClick}
             >
-              {icon}
+              {isHome && showHomeIcon && (
+                <Image
+                  src="home.svg"
+                  alt="Home"
+                  width={16}
+                  height={16}
+                // style={{ marginRight: 6 }}
+                />
+                // <Home sx={{ mr: 0, color: homeIconColor }} fontSize="inherit" />
+              )}
               {item.label}
-            </Box>
+            </Typography>
           );
         })}
       </Breadcrumbs>

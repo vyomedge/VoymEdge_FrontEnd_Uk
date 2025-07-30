@@ -4,32 +4,32 @@ import Image from 'next/image';
 
 const services = [
   {
-    icon: '/workFlow1.svg',
+    icon: '/ourService1.svg',
     title: "Custom Web App Development",
     description: "Fully tailored solutions, built from scratch.",
   },
   {
-    icon: '/workFlow1.svg',
+    icon: '/ourService2.svg',
     title: "API Integration (REST & GraphQL)",
     description: "Smooth backend connectivity.",
   },
   {
-    icon: '/workFlow1.svg',
+     icon: '/ourService3.svg',
     title: "React Front-End",
     description: "Dynamic UIs with React, Redux, and Hooks.",
   },
   {
-    icon: '/workFlow1.svg',
+     icon: '/ourService4.svg',
     title: "Node.js Backend",
     description: "Scalable and event-driven backend services.",
   },
   {
-    icon: '/workFlow1.svg',
+   icon: '/ourService5.svg',
     title: "Cloud Deployment",
     description: "AWS, Vercel, or Azure setup with CI/CD.",
   },
   {
-    icon: '/workFlow1.svg',
+  icon: '/ourService6.svg',
     title: "Code Maintenance & Upgrades",
     description: "Ongoing support for scalability.",
   },
@@ -56,7 +56,7 @@ const ServiceCard = ({ icon, title, description }) => (
   >
     <Box display="flex" alignItems="center" mb={2} 
     >
-      <Image src={icon} alt={title} width={30} height={30} style={{ marginRight: 12 }} />
+      <Image src={icon} alt={title} width={50} height={30} style={{ marginRight: 12 }} />
       <Typography
         variant="h6"
         sx={{

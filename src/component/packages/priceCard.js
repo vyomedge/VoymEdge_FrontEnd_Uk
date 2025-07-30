@@ -9,16 +9,11 @@ import {
     Chip,
 } from '@mui/material';
 import CustomButton2 from '@/common-component/button/customButton2';
-import StarIcon from '@mui/icons-material/Star';
+import Image from 'next/image';
+
 const packages = [
     {
-        icon: <StarIcon data-testid="notify-button" sx={{
-            mr: 1,
-            fontSize: 22,
-            backgroundImage: 'linear-gradient(135deg, #8A2BE2, #DA70D6)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent'
-        }} />,
+        icon: "/package1.svg",
         title: 'Starter Package',
         subtitle: 'Kickstart Your Digital Presence',
         price: '£499 – £999',
@@ -35,6 +30,7 @@ const packages = [
         goal: 'Goal: Establish online presence with basic branding.',
     },
     {
+        icon: "/package2.svg",
         title: 'Growth Package',
         subtitle: 'Get Found & Convert',
         price: '£1,299 – £1,999',
@@ -54,6 +50,7 @@ const packages = [
         goal: 'Goal: SEO & social setup for business leads & visibility.',
     },
     {
+        icon: "/package3.svg",
         title: 'Scale Package',
         subtitle: 'Digital Growth Engine',
         price: '£1,299 – £1,999',
@@ -105,9 +102,9 @@ const PriceCards = () => {
                         >
                             <CardContent>
                                 {/* Header */}
-                                <Box display="flex" justifyContent="space-between" alignItems="center" mb={2}>
+                                <Box display="flex" justifyContent="left" alignItems="left" gap={10} mb={2}>
 
-                                    {pkg.icon}
+                                    <Image src={pkg.icon} alt={pkg.title} width={30} height={30} style={{ marginRight: 12 }} />
                                     <Box>
                                         <Typography fontWeight={600} fontSize="18px" color="#2D2A34">
                                             {pkg.title}
@@ -116,13 +113,8 @@ const PriceCards = () => {
                                             {pkg.subtitle}
                                         </Typography>
                                     </Box>
-                                     <CustomButton2 data-testid="notify-button"
-                    onClick={() => console.log('Booked!')}
-                    sx={{ borderRadius: '5px', mt: 1, fontSize: '15px', fontWeight: "500" }}
-                >
-                    {` Get started`}
-                </CustomButton2>
-                                   
+                                
+
                                 </Box>
 
                                 {/* Price */}
@@ -139,7 +131,7 @@ const PriceCards = () => {
                                 </Typography>
 
                                 {/* Feature List */}
-                                <Stack  spacing={1.2} mb={3}>
+                                <Stack spacing={1.2} mb={3}>
                                     {pkg.features.map((feature, i) => (
                                         <Box key={i} display="flex" alignItems="center">
                                             <Box

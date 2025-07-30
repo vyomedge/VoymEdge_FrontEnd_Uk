@@ -3,7 +3,7 @@ import React from 'react'
 
 const Partner = () => {
     return (
-        <Box textAlign="center"
+        <Box textAlign="left"
               px={{ xs: "50px", sm: "55px", md: "60px", lg: "100px" }}
               py={{ xs: "10px", sm: "20px", md: "30px", lg: "30px" }}
           >

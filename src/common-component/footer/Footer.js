@@ -151,13 +151,13 @@ export default function Footer() {
                       onMouseEnter={(e) => (e.target.style.textDecoration = "underline")}
                       onMouseLeave={(e) => (e.target.style.textDecoration = "none")}
                     >
-                      info@vyomedge.com
+                   {`   info@vyomedge.com`}
                     </Box>
                   </Typography>
 
                   <Typography variant="copytext1"
                     component="copytext1" sx={{ fontSize: { xs: "14px", sm: "14px", md: "18px" }, mb: 0, fontWeight: 500, color: "white" }}>
-                    +91 7974186754
+               {`     +91 7974186754`}
                   </Typography>
                   <Box sx={{ display: 'flex', justifyContent: "right", gap: 2, mt: 0 }}>
                     {socialLinks.map(({ src, alt, url }, i) => (
@@ -211,7 +211,7 @@ export default function Footer() {
                 <Link href="/privacyPolicy" underline="hover" style={{ color: "white", textDecoration: "none" }}>
                   Privacy Policy
                 </Link>{" "}
-                .
+               <span color='#4CFFE7' fontSize={20}> .</span>
                 <Link href="/termsAndConditions" underline="hover" style={{ color: "white", textDecoration: "none" }}>
                   Terms & Conditions
                 </Link>{" "}

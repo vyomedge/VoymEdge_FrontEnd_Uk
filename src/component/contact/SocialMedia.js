@@ -13,7 +13,7 @@ const socialIcons = [
 
 const contactIcons = [
     { src: '/contactIcon1.svg', alt: 'Phone' },
-    { src: '/contactIcon2.svg', alt: 'Email' },
+    { src: '/contactIcon2.svg', alt: 'Email',url:"info@vyomedge.com" },
     { src: '/contactIcon3.svg', alt: 'Location' },
 ];
 

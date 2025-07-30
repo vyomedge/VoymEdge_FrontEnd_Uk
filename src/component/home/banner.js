@@ -4,29 +4,43 @@ import Link from "next/link";
 import { Box, Typography, Stack, Button } from "@mui/material";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import ConnectModal from "@/common-component/model/ConnectModel";
+import BorderAnimatedLinkButton from "@/common-component/button/botton";
 
 
 export default function HeroSection() {
-  const [open, setOpen] = useState(false)
-  const [autoOpened, setAutoOpened] = useState(false);
-  const handleSession = () => {
-    setOpen(true)
+
+
+  const [open, setOpen] = useState(false);
+
+  const handleForm = () => {
+    setOpen(true);
   };
 
+  useEffect(() => {
+    const alreadyShown = localStorage.getItem("Formshown");
 
+    if (!alreadyShown) {
+      const timer = setTimeout(() => {
+        setOpen(true);
+        localStorage.setItem("Formshown", "true");
+      }, 5000);
 
+      return () => clearTimeout(timer);
+    }
+  }, []);
   return (
     <Box
       width="100%"
       sx={{
         background: "linear-gradient(to bottom,rgba(255, 255, 255, 1), rgba(220, 255, 250, 1))",
-        px: { xs: 0, sm: 1, md: 0, lg: 0 },
-        py: { xs: 8, sm: 8, md: 5, lg: 6 },
+        px: { xs: 0, sm: 0, md: 0, lg: 0 },
+        py: { xs: 8, sm: 8, md: 6, lg: 10 },
 
 
       }}
     >
-      
+      <ConnectModal open={open} setOpen={setOpen} />
       <Box
         sx={{
           display: "flex",
@@ -61,8 +75,8 @@ export default function HeroSection() {
                 fontFamily: 'sen, serif',
                 width: "300px",
                 textAlign: { xs: "left", sm: "left", md: "left" },
-                ml: 5,
-                mb: 1,
+                ml: 4,
+                mb: 1, mr: 4,
                 whiteSpace: { xs: 'wrap', sm: 'nowrap', md: 'nowrap', lg: 'nowrap' },
               }}
               dangerouslySetInnerHTML={{
@@ -85,10 +99,11 @@ export default function HeroSection() {
               component={"h5"}
               sx={{
                 color: "#443B56", mb: 2, fontWeight: 500,
-                fontSize: { xs: "14px", sm: "15px", md: "15px" },
+                fontSize: { xs: "15px", sm: "15px", md: "15px" },
                 frontFamily: "Manrope,Sans-serif",
                 textAlign: { xs: "left", sm: "left", md: "left" },
-                ml: 5,
+                ml: 4, mr: 4,
+                
               }}
             >
               {`  From cutting-edge web applications to data-driven marketing, VyomEdge UK delivers smart, secure, and scalable technology tailored to British business needs.`}
@@ -99,68 +114,53 @@ export default function HeroSection() {
               sx={{
                 color: "#443B56",
                 textAlign: { xs: "left", md: "left" },
-                fontSize: { xs: "14px", sm: "15px", md: "15px" },
+                fontSize: { xs: "15px", sm: "15px", md: "15px" },
                 frontFamily: "Manrope,Sans-serif",
                 fontWeight: 500,
                 whiteSpace: { xs: 'wrap', md: 'nowrap' },
                 mb: 3,
-                ml: 5,
+                ml: 4,
+                mr: 4
               }}
             >
               {`We code. We design. We market. You grow.`}
             </Typography>
             <Stack
               direction={{ xs: "row", sm: "row", md: "row" }}
-              spacing={2}
-              marginTop={{ xs: 0, sm: 0, md: 4, lg: 5 }}
-              marginLeft={5}
+              spacing={0}
+              marginTop={{ xs: 0, sm: 0, md: 4, lg: 3 }}
+              marginLeft={4}
               alignContent={{ xs: "center", sm: "flex-start", md: "flex-start" }}
             >
-              <Link href="/contactus" passHref legacyBehavior>
-                <a style={{ textDecoration: 'none' }}>
-                  <CustomButton1 data-testid="notify-button"
-                    onClick={() => console.log('Booked!')}
-                    sx={{ borderRadius: '5px', mt: 4, fontSize: '15px', fontWeight: "500" }}
-                  >
-                    {`Get a Free Strategy Session`}
-                  </CustomButton1>
+              <BorderAnimatedLinkButton handleClick={handleForm} />
 
-                </a>
-              </Link>
 
             </Stack>
           </Box>
         </Box>
         <Box
+          ml={3}
+          mr={3}
           sx={{
-            position: "relative",
-            position: "relative",
-            display: "flex",
-            justifyContent: {
-              xs: "center", // mobile
-              sm: "center", // tablet
-              md: "flex-end" // desktop
-            },
-            right: {
-              xs: 0,
-              sm: 0,
-              md: "20px", // apply offset only in desktop
-            },
-            alignItems: "center",
-            width: { xs: "100%", sm: "100%", md: "450px", lg: "550px" },  // responsive width
-            height: { xs: "200px", sm: "200px", md: "300px", lg: "400px" }, // responsive height
-            mx: "auto" // center horizontally
+            flex: 0.5,
+            // borderRadius: 2,
+            zIndex: 1
           }}
         >
           <Image
             src="/bannerimage.png"
-            alt="Banner"
-            fill  // important for full responsiveness
-            style={{ objectFit: "contain" }} // or "cover" based on your need
-            sizes="(max-width: 600px) 100vw, (max-width: 960px) 50vw, 600px"
+            alt="Bridal Hero"
+            width={100}
+            height={100}
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "contain",
+              objectPosition: "top",
+              display: "block",
+            }}
           />
         </Box>
-
       </Box>
     </Box>
   );
