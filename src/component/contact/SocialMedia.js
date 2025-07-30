@@ -76,7 +76,7 @@ const SocialMedia = () => {
                             }}
                         >
                             {socialIcons.map((item, i) => (
-                                <IconButton
+                                <IconButton data-testid="notify-button"
                                     key={i}
                                     component="a"
                                     href={item.url}

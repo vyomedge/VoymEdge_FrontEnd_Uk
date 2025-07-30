@@ -101,7 +101,7 @@ const AddOnServices = () => {
                 <TableCell
                   sx={{
                     fontFamily: "Manrope,san serif",
-                    fontWeight: 600,
+                    fontWeight: 500,
                     fontSize: { xs: "15px", md: "18px" },
                     lineHeight: "160%",
                     color: "#3C3C3C",

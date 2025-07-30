@@ -10,7 +10,7 @@ const CustomButton1 = ({
     ...props
 }) => {
     return (
-        <Button
+        <Button data-testid="notify-button"
             onClick={onClick}
             startIcon={startIcon}
             endIcon={endIcon}

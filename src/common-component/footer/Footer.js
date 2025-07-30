@@ -161,7 +161,7 @@ export default function Footer() {
                   </Typography>
                   <Box sx={{ display: 'flex', justifyContent: "right", gap: 2, mt: 0 }}>
                     {socialLinks.map(({ src, alt, url }, i) => (
-                      <IconButton
+                      <IconButton data-testid="notify-button"
                         key={i}
                         component="a"
                         href={url}

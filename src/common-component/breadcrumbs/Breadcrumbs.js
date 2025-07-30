@@ -1,58 +1,92 @@
 import React from 'react';
-import { Breadcrumbs, Link, Typography, Box } from '@mui/material';
-import NavigateNextIcon from '@mui/icons-material/NavigateNext';
-import { useRouter } from 'next/router';
+import { Breadcrumbs, Typography, Box } from '@mui/material';
+import { Home, NavigateNext } from '@mui/icons-material';
+import NextLink from 'next/link';
+import Image from 'next/image';
 
-const BreadcrumbsButton = ({ items = [] }) => {
-  const router = useRouter();
+const BreadcrumbsComponent = ({
+  items = [],
+  separator = <NavigateNext fontSize="small" sx={{ color: '#DAA412' }} />,
+  showHomeIcon = true,
+  maxItems = 8,
+  homeIconColor = '#DAA412',
+  sx = {}
+}) => {
+  if (!items || items.length === 0) return null;
 
   return (
-    <Box
-      sx={{
-        display: 'inline-block',
-        px: 2,
-        py: 1,
-        borderRadius: 2,
-        background: '#322C3E',
-        boxShadow: '0px 4px 10px rgba(0,0,0,0.05)',
-        '&:hover': {
-          background: 'linear-gradient(to right, rgba(211, 0, 229, 1), rgba(118, 0, 196, 1), rgba(76, 255, 231, 1))',
-          '& a, & .MuiTypography-root': {
-            color:'#322C3E',
-          },
-        },
-      }}
-    >
+    <Box sx={{ py: 2, px: 2, ...sx }}>
       <Breadcrumbs
-        separator={<NavigateNextIcon fontSize="medium" />}
+        separator={separator}
+        maxItems={maxItems}
         aria-label="breadcrumb"
-        sx={{ fontSize: 14 }}
+        sx={{
+          '& .MuiBreadcrumbs-separator': {
+            color: 'text.secondary',
+          },
+        }}
       >
         {items.map((item, index) => {
           const isLast = index === items.length - 1;
-          if (isLast) {
+          const isHome = item.isHome || item.href === '/' || item.href === '/home';
+
+          const icon = isHome && showHomeIcon && (
+            item.icon === 'svg' ? (
+              <Image
+                src="/home.svg"
+                alt="Home"
+                width={16}
+                height={16}
+                style={{ marginRight: 6 }}
+              />
+            ) : (
+              <Home sx={{ mr: 0.5, color: homeIconColor }} fontSize="small" />
+            )
+          );
+
+          if (isLast || !item.href) {
             return (
-              <Typography key={index} color="text.primary" fontWeight={500}>
+              <Typography
+                key={index}
+                color="#FFFFFF"
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  fontWeight: 500,
+                  fontSize: { xs: '12px', md: '14px' },
+                }}
+              >
+                {icon}
                 {item.label}
               </Typography>
             );
-          } else {
-            return (
-              <Link
-                key={index}
-                underline="hover"
-                color="inherit"
-                onClick={() => router.push(item.href)}
-                sx={{ cursor: 'pointer', fontWeight: 500 }}
-              >
-                {item.label}
-              </Link>
-            );
           }
+
+          return (
+            <Box
+              key={index}
+              component={NextLink}
+              href={item.href}
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                textDecoration: 'none',
+                color: '#FFFFFF',
+                fontSize: { xs: '13px', md: '14px' },
+                cursor: 'pointer',
+                '&:hover': {
+                  textDecoration: 'underline',
+                },
+              }}
+            >
+              {icon}
+              {item.label}
+            </Box>
+          );
         })}
       </Breadcrumbs>
     </Box>
   );
 };
 
-export default BreadcrumbsButton;
+export default BreadcrumbsComponent;
