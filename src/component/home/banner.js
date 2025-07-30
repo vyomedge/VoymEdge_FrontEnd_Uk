@@ -4,6 +4,8 @@ import Link from "next/link";
 import { Box, Typography, Stack, Button } from "@mui/material";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+
+
 export default function HeroSection() {
   const [open, setOpen] = useState(false)
   const [autoOpened, setAutoOpened] = useState(false);
@@ -24,6 +26,7 @@ export default function HeroSection() {
 
       }}
     >
+      
       <Box
         sx={{
           display: "flex",
@@ -115,7 +118,7 @@ export default function HeroSection() {
             >
               <Link href="/contactus" passHref legacyBehavior>
                 <a style={{ textDecoration: 'none' }}>
-                  <CustomButton1
+                  <CustomButton1 data-testid="notify-button"
                     onClick={() => console.log('Booked!')}
                     sx={{ borderRadius: '5px', mt: 4, fontSize: '15px', fontWeight: "500" }}
                   >

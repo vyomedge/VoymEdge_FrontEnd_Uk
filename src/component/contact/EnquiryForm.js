@@ -167,7 +167,7 @@ const EnquiryForm = () => {
                 </Grid>
 
                 {/* Submit Button */}
-                <CustomButton2
+                <CustomButton2 data-testid="notify-button"
                     onClick={() => console.log('Form Submitted')}
                     sx={{
                         borderRadius: '5px',

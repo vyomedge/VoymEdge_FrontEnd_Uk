@@ -12,7 +12,7 @@ import CustomButton2 from '@/common-component/button/customButton2';
 import StarIcon from '@mui/icons-material/Star';
 const packages = [
     {
-        icon: <StarIcon sx={{
+        icon: <StarIcon data-testid="notify-button" sx={{
             mr: 1,
             fontSize: 22,
             backgroundImage: 'linear-gradient(135deg, #8A2BE2, #DA70D6)',
@@ -116,7 +116,7 @@ const PriceCards = () => {
                                             {pkg.subtitle}
                                         </Typography>
                                     </Box>
-                                     <CustomButton2
+                                     <CustomButton2 data-testid="notify-button"
                     onClick={() => console.log('Booked!')}
                     sx={{ borderRadius: '5px', mt: 1, fontSize: '15px', fontWeight: "500" }}
                 >

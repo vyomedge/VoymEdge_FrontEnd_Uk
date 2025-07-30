@@ -7,7 +7,9 @@ import WeWork from './WeWork';
 import FreeCall from '@/common-component/freeCall/freeCall';
 import SEO from '@/common-component/SEO/seo';
 
+
 const AboutUs = () => {
+
   return (
     <>
       <>
@@ -26,11 +28,36 @@ const AboutUs = () => {
           robots="index, follow"
         />
       </>
-      <CustomBanner
+      <CustomBanner 
         title="About Us"
         subtitle="Web Development & Marketing Partner for UK Businesses."
         padding={10}
+        breadcrumbs={[
+          { href: '/', isHome: true },
+          // { href: '/blog', label: 'Blog' },
+          { label: 'Services' }
+        ]}
+        // Optional: customize breadcrumbs position
+        breadcrumbsPosition={{
+          top: '400px',
+          left: '43px',
+          lg: { top: '350px', left: '60px' },
+          md: { top: '300px', left: '10px' },
+          sm: { top: '330px', left: '3px' },
+          xs: { top: '310px', left: '20px' }
+        }}
+        overlay={{
+          background: 'linear-gradient(270deg, rgba(0, 13, 31, 0) 0%, #000D1E 100%)',
+          width: '70%',
+          responsive: {
+            md: {
+              width: '100%',
+              background: 'linear-gradient(270deg, rgba(0, 13, 31, 0) 0%, #000D1E 90%)'
+            }
+          }
+        }}
       />
+
       <AboutusUK></AboutusUK>
       <OurMission></OurMission>
       <ClientTrust></ClientTrust>

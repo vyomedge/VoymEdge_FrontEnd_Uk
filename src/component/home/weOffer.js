@@ -122,7 +122,7 @@ const WeOffer = () => {
                                             </ListItem>
                                         ))}
                                           <Box sx={{ display: "flex", justifyContent: "flex-end", mt: 2 }}>
-                                        <IconButton
+                                        <IconButton data-testid="notify-button"
                                             sx={{
                                                 bgcolor: "#E3F2FD",
                                                 color: "#D300E5",

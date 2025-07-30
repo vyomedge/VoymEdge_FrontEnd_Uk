@@ -52,7 +52,7 @@ const FreeCall = () => {
             justifyContent="center">
                   <Link href="/contactus" passHref legacyBehavior>
                 <a style={{ textDecoration: 'none' }}>
-                  <CustomButton1
+                  <CustomButton1 data-testid="notify-button"
                     onClick={() => console.log('Booked!')}
                     sx={{ borderRadius: '5px', mt: 1, fontSize: '15px', fontWeight: "500" }}
                 >
@@ -63,7 +63,7 @@ const FreeCall = () => {
               </Link>
                 <Link href="/packages" passHref legacyBehavior>
                 <a style={{ textDecoration: 'none' }}>
-                    <CustomButton2
+                    <CustomButton2 data-testid="notify-button"
                     onClick={() => console.log('Booked!')}
                     sx={{ borderRadius: '5px', mt: 1, fontSize: '15px', fontWeight: "500" }}
                 >

@@ -26,7 +26,7 @@ const Packages = () => {
         />
       </>
             <CustomBanner
-                title="About Us"
+                title="Packages"
                 subtitle="Web Development & Marketing Partner for UK Businesses."
                 padding={10}
             />

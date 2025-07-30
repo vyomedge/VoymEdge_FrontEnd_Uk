@@ -11,9 +11,11 @@ const MernStack = () => {
     <Grid container>
       <Grid
         display="flex"
-        flexDirection={{ xs: "column", md: "row" }}
-        alignItems="center"
+         alignItems="center"
         justifyContent="center"
+        flexDirection={{ xs: "column",sm:"column", md: "row" , lg:"row"}}
+        align="center"
+       
         gap={{ xs: 4, sm: 5, md: 6 }}
         px={{ xs: 4, sm: 6, md: 10}}
         py={{ xs: 6, sm: 8, md: 8 }}
@@ -23,6 +25,7 @@ const MernStack = () => {
           width={{ xs: "100%", md: "50%" }}
           display="flex"
           justifyContent="center"
+          justifyItems="center"
         >
           <Image
             src="/servicesPic1.png"
@@ -79,7 +82,7 @@ const MernStack = () => {
            {` We develop fast, secure, and responsive applications using the MERN stack — MongoDB, Express.js, React.js, and Node.js. Ideal for real-time platforms, SaaS products, CRMs, dashboards, and more.`}
           </Typography>
 
-          <CustomButton2
+          <CustomButton2 data-testid="notify-button"
             onClick={() => console.log('Booked!')}
             sx={{
               mx: isMobileOrTab ? 'auto' : 0,

@@ -2,6 +2,7 @@ import { Box, Grid, Typography } from '@mui/material';
 import React from 'react'
 import CustomButton1 from '@/common-component/button/customButton1';
 import CustomButton2 from '@/common-component/button/customButton2';
+import Link from 'next/link';
 
 const LetsChat = () => {
     return (
@@ -36,7 +37,9 @@ const LetsChat = () => {
            
             <Box display="flex" gap={2} px={2}
                 justifyContent="center">
-                <CustomButton1
+                     <Link href="../packages" passHref legacyBehavior>
+                <a style={{ textDecoration: 'none' }}>
+                  <CustomButton1 data-testid="notify-button"
                     onClick={() => console.log('Booked!')}
                     sx={{ borderRadius: '5px', mt: 1,
                         fontSize: { xs: "13px", sm: "14px", md: "15px", lg: "15px" },
@@ -45,7 +48,11 @@ const LetsChat = () => {
                     {`See the Packages - Pick Yours`}
                 </CustomButton1>
 
-                <CustomButton2
+                </a>
+              </Link>
+               
+
+                <CustomButton2 data-testid="notify-button"
                     onClick={() => console.log('Booked!')}
                     sx={{ borderRadius: '5px', mt: 1,
                          fontSize: { xs: "13px", sm: "14px", md: "15px", lg: "15px" },

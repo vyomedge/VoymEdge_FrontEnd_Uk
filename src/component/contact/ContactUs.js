@@ -29,7 +29,7 @@ const ContactUs = () => {
           robots="index, follow"//  default
         />
       </>
-      <CustomBanner
+      <CustomBanner data-testid="notify-button"
         title="Contact"
         subtitle="Web Development & Marketing Partner for UK Businesses."
         padding={10} >

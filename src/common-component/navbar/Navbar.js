@@ -43,7 +43,7 @@ export default function Navbar() {
   const isDarkBg = true;
   const iconColor = isDarkBg ? '#FFFFFF' : '#DCFFFA';
   return (
-    <AppBar
+    <AppBar data-testid="notify-button"
       position="fixed"
       sx={{
         background: {
@@ -100,7 +100,7 @@ export default function Navbar() {
 
                 return (
                   <Link key={index} href={item.href} style={{ textDecoration: "none" }}>
-                    <Button
+                    <Button data-testid="notify-button"
                       sx={{
                         color: isActive ? "#D300E5" : "#000",
                         borderRadius: "20px",
@@ -120,7 +120,7 @@ export default function Navbar() {
 
                 );
               })}
-              <CustomButton1 sx={{
+              <CustomButton1  data-testid="notify-button" sx={{
                 position: "absolute", top: 18, right: 180, zIndex: 6,
                 backgroundColor: "transparent",
                 border: "2px solid #4CFFE7",
@@ -144,7 +144,7 @@ export default function Navbar() {
                 <Image src="/VElogo.svg" alt="Logo" width={130} height={31} style={{ cursor: 'pointer' }} />
               </Link>
               <Box >
-                <IconButton edge="end" color="inherit" onClick={() => setOpenDrawer(true)}
+                <IconButton data-testid="notify-button" edge="end" color="inherit" onClick={() => setOpenDrawer(true)}
                   sx={{
 
                     background: isDarkBg
@@ -153,7 +153,7 @@ export default function Navbar() {
                     color: isDarkBg ? '#FFFFFF' : '#000000',
                     boxShadow: 'none',
                   }}>
-                  <MenuIcon />
+                  <MenuIcon data-testid="notify-button" />
                 </IconButton>
               </Box>
               <Drawer anchor="right" open={openDrawer} onClose={() => setOpenDrawer(false)}
