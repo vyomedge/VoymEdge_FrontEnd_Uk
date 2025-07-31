@@ -65,7 +65,7 @@ const MernStack = () => {
           <Typography
             variant="h2"
             sx={{
-              fontFamily: "Sen, serif",
+            fontFamily: 'sen, sans-serif',
               fontWeight: 500,
               lineHeight: "130%",
               color: "#322C3E",
@@ -79,7 +79,7 @@ const MernStack = () => {
 
           <Typography
             sx={{
-              fontFamily: "Manrope, serif",
+             frontFamily: "Manrope, sans-serif",
               fontWeight: 500,
               fontSize: { xs: "18px", md: "24px" },
               lineHeight: "160%",
@@ -92,7 +92,7 @@ const MernStack = () => {
 
           <Typography
             sx={{
-              fontFamily: "Manrope, serif",
+             frontFamily: "Manrope, sans-serif",
               fontWeight: 500,
               fontSize: { xs: "15px", md: "18px" },
               lineHeight: "160%",

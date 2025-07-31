@@ -25,7 +25,7 @@ const ClientTrust = () => {
             <Box py={1} textAlign="center" sx={{ width: { xs: "100%", sm: "100%", md: "50%", lg: "40%" } }}>
                 <Typography
                     variant='h2' component='h2' sx={{
-                        fontFamily: 'sen, serif',
+                      fontFamily: 'sen, sans-serif',
                         whiteSpace: "nowrap",
                         fontWeight: "500", lineHeight: "130%", color: "#322C3E",
                         fontSize: { xs: "32px", sm: "46px", md: "56px", lg: "56px" }
@@ -69,7 +69,7 @@ const ClientTrust = () => {
                 >
                     <Typography
                         sx={{
-                            fontFamily: 'Manrope, serif',
+                           frontFamily: "Manrope, sans-serif",
                             fontWeight: 500,
                             lineHeight: '160%',
                             color: '#443B56',

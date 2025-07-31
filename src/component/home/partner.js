@@ -3,12 +3,19 @@ import React from 'react'
 
 const Partner = () => {
     return (
-        <Box textAlign="left"
+        <Box textAlign={
+            {
+                xs:"left",
+                sm:"left",
+                ms:"center",
+                lg:"center"
+            }
+        }
               px={{ xs: "50px", sm: "55px", md: "60px", lg: "100px" }}
               py={{ xs: "10px", sm: "20px", md: "30px", lg: "30px" }}
           >
               <Typography variant='h2' component='h2' sx={{
-                  fontFamily: 'sen, serif',
+                  fontFamily: 'sen, sans-serif',
                   whiteSpace:"nowrap",
                   fontWeight: "500", lineHeight: "130%", color: "#322C3E",
                   fontSize: { xs: "32px", sm: "46px", md: "56px", lg: "56px" }
@@ -16,7 +23,7 @@ const Partner = () => {
                   {`Your Strategic Partner`}
               </Typography >
               <Typography variant='copytext1' component='copytext1' sx={{
-                  fontFamily: 'Manrope, serif',
+                   frontFamily: "Manrope, sans-serif",
                   fontWeight: "500", lineHeight: "160%", color: "#443B56",
                   fontSize: { xs: "18px", sm: "18px", md: "18px", lg: "18px" }
               }}>
@@ -29,7 +36,7 @@ const Partner = () => {
                   component="div"
                  
                   sx={{
-                      fontFamily: 'Manrope, serif',
+                       frontFamily: "Manrope, sans-serif",
                       fontWeight: 500,
                       lineHeight: "160%",
                       color: "#443B56",

@@ -38,7 +38,7 @@ const services = [
 const ServiceCard = ({ icon, title, description }) => (
   <Box
     sx={{
-       
+        frontFamily: "Manrope, sans-serif",
       border: "1.8px solid #8A2BE2",
       borderRadius: "12px",
       p: { xs: 2.5, sm: 3 },
@@ -60,6 +60,7 @@ const ServiceCard = ({ icon, title, description }) => (
       <Typography
         variant="h6"
         sx={{
+           frontFamily: "Manrope, sans-serif",
           fontWeight: 700,
           fontSize: { xs: "16px", sm: "18px" },
           color: "#2D2A34",
@@ -71,6 +72,7 @@ const ServiceCard = ({ icon, title, description }) => (
 
     <Typography
       sx={{
+         frontFamily: "Manrope, sans-serif",
         fontSize: { xs: "14px", sm: "15px", md: "18px" },
         fontWeight:"500 ",
         color: "#443B56",
@@ -94,7 +96,7 @@ const MernServices = () => {
       <Typography
         variant="h2"
         sx={{
-          fontFamily: "Sen, serif",
+            fontFamily: 'sen, sans-serif',
           fontWeight: 600,
           color: "#322C3E",
           fontSize: { xs: "36px", sm: "44px", md: "48px" },

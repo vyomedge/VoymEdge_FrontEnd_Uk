@@ -76,7 +76,7 @@ const PriceCards = () => {
             <Typography textAlign="center"
                 variant="h2"
                 sx={{
-                    fontFamily: "Sen, serif",
+                  fontFamily: 'sen, sans-serif',
                     fontWeight: 500,
                     lineHeight: "130%",
                     color: "#322C3E",
@@ -106,10 +106,10 @@ const PriceCards = () => {
 
                                     <Image src={pkg.icon} alt={pkg.title} width={30} height={30} style={{ marginRight: 12 }} />
                                     <Box>
-                                        <Typography fontWeight={600} fontSize="18px" color="#2D2A34">
+                                        <Typography fontWeight={600}   frontFamily= "Manrope, sans-serif" fontSize="18px" color="#2D2A34">
                                             {pkg.title}
                                         </Typography>
-                                        <Typography fontSize="14px" color="#888">
+                                        <Typography  frontFamily= "Manrope, sans-serif" fontSize="14px" color="#2D2A34">
                                             {pkg.subtitle}
                                         </Typography>
                                     </Box>
@@ -167,7 +167,7 @@ const PriceCards = () => {
 
 
                                             </Box>
-                                            <Typography fontSize="14px" color="#2D2A34">
+                                            <Typography  frontFamily= "Manrope, sans-serif" fontSize="14px" color="#2D2A34">
                                                 {feature}
                                             </Typography>
 
@@ -175,7 +175,7 @@ const PriceCards = () => {
                                     ))}
                                 </Stack>
 
-                                <Typography fontSize="14px" color="#2D2A34">
+                                <Typography  frontFamily= "Manrope, sans-serif" fontSize="14px" color="#2D2A34">
                                     {pkg.perfect}
                                 </Typography>
 
@@ -183,6 +183,7 @@ const PriceCards = () => {
                                 <Chip
                                     label={pkg.goal}
                                     sx={{
+                                         frontFamily: "Manrope, sans-serif",
                                         fontSize: '12px',
                                         background: '#4CFFE733',
                                         color: '#000',

@@ -66,7 +66,7 @@ const Services = () => {
                 component="h2"
                 sx={{
                     fontSize: { xs: "30px", sm: "46px", md: "56px", lg: "56px" },
-                    fontFamily: "sen,serif",
+                    fontFamily: 'sen, sans-serif',
                     fontWeight: "500",
                     color: "#322C3E",
                     lineHeight: "130%",
@@ -79,7 +79,7 @@ const Services = () => {
                 component="h2"
                 sx={{
                     fontSize: { xs: "30px", sm: "46px", md: "56px", lg: "56px" },
-                    fontFamily: "sen,serif",
+                    fontFamily: 'sen, sans-serif',
                     fontWeight: "500",
                     color: "#322C3E",
                     lineHeight: "130%",
@@ -107,6 +107,7 @@ const Services = () => {
                         <Box
                             key={index}
                             sx={{
+                                 frontFamily: "Manrope, sans-serif",
                                 position: "absolute",
                                 left: `calc(50% + ${x}px - ${avatarSize / 2}px)`,
                                 top: `calc(50% + ${y}px - ${avatarSize / 2}px)`,

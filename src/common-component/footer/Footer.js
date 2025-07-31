@@ -36,7 +36,7 @@ export default function Footer() {
       }}>
         {isClient && (
           <Box
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            onClick={() => window.scrollTo({ top: 0, behavior:"instant" })}
             sx={{
               display: 'flex',
               alignItems: 'center',
@@ -195,7 +195,7 @@ export default function Footer() {
                   textAlign: { xs: "left", sm: "left", md: "left", lg: "left" },
                 }}
               >
-                Copyright © 2025. vyomedge
+              {`  Copyright © 2025. vyomedge`}
               </Typography>
             </Grid>
 
@@ -209,19 +209,19 @@ export default function Footer() {
               >
 
                 <Link href="/privacyPolicy" underline="hover" style={{ color: "white", textDecoration: "none" }}>
-                  Privacy Policy
+                {`  Privacy Policy`}
                 </Link>{" "}
-               <span color='#4CFFE7' fontSize={20}> .</span>
+           .
                 <Link href="/termsAndConditions" underline="hover" style={{ color: "white", textDecoration: "none" }}>
-                  Terms & Conditions
+                 {` Terms & Conditions`}
                 </Link>{" "}
                 .
                 <Link href="/disclaimer" underline="hover" style={{ color: "white", textDecoration: "none" }}>
-                  Disclaimer
+                {`  Disclaimer`}
                 </Link>{" "}
-                .
+           .
                  <Link href="/cookies" underline="hover" style={{ color: "white", textDecoration: "none" }}>
-                  Cookies
+                {`  Cookies`}
                 </Link>{" "}
               </Typography>
             </Grid>
