@@ -37,23 +37,24 @@ const WeOffer = () => {
         }
     ];
     return (
-        <Box   textAlign="center">
-            <Box  px={{ xs: "50px", sm: "55px", md: "60px", lg: "100px" }}
-                    py={{ xs: "10px", sm: "20px", md: "30px", lg: "30px" }}> <Typography variant='Manrope' component='h2' sx={{
-                fontFamily: 'sen, serif',
-                whiteSpace: "nowrap",
-                fontWeight: "500", lineHeight: "130%", color: "#322C3E",
-                fontSize: { xs: "32px", sm: "46px", md: "56px", lg: "56px" }
-            }}>
-                {` What We Offer`}
-            </Typography>
+        <Box textAlign="center">
+            <Box px={{ xs: "50px", sm: "55px", md: "60px", lg: "100px" }}
+                py={{ xs: "10px", sm: "20px", md: "30px", lg: "30px" }}>
+                <Typography variant='h2' component='h2' sx={{
+                    fontFamily: 'sen, sans-serif',
+                    whiteSpace: "nowrap",
+                    fontWeight: "500", lineHeight: "130%", color: "#322C3E",
+                    fontSize: { xs: "32px", sm: "46px", md: "56px", lg: "56px" }
+                }}>
+                    {` What We Offer`}
+                </Typography>
                 <Typography
-                   
+
                     variant="copytext2"
                     component="copytext2"
                     textAlign="center"
                     sx={{
-                        fontFamily: 'Manrope, serif',
+                        frontFamily: "Manrope, sans-serif",
                         fontWeight: 500,
                         lineHeight: "160%",
                         color: "#443B56",
@@ -92,6 +93,7 @@ const WeOffer = () => {
                                         variant="subheading"
                                         component="subheading"
                                         sx={{
+                                            frontFamily: "Manrope, sans-serif",
                                             fontWeight: 500,
                                             fontSize: "24px",
                                             mb: 1,
@@ -105,12 +107,12 @@ const WeOffer = () => {
                                     </Typography>
                                     <Typography
 
-                                        sx={{ color: "#555", mb: 0, fontWeight: 500, fontSize: "18px" }}>
+                                        sx={{ frontFamily: "Manrope, sans-serif", color: "#555", mb: 0, fontWeight: 500, fontSize: "18px" }}>
                                         {card.subtitle}
                                     </Typography>
                                     <Typography
 
-                                        sx={{ color: "#555", mb: 2, fontWeight: 500, fontSize: "18px" }}>
+                                        sx={{ frontFamily: "Manrope, sans-serif", color: "#555", mb: 2, fontWeight: 500, fontSize: "18px" }}>
                                         {card.line}
                                     </Typography>
                                     <List dense sx={{ pl: 1 }}>
@@ -118,7 +120,7 @@ const WeOffer = () => {
                                             <ListItem
                                                 key={i}
 
-                                                sx={{ pl: 0, fontSize: "15px", fontWeight: 500, color: "#444", display: "list-item", listStyle: "disc" }}
+                                                sx={{ frontFamily: "Manrope, sans-serif", pl: 0, fontSize: "15px", fontWeight: 500, color: "#444", display: "list-item", listStyle: "disc" }}
                                             >
                                                 {feature}
                                             </ListItem>

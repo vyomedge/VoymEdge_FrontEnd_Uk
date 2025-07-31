@@ -51,7 +51,7 @@ const ComparisonTable = () => {
         textAlign="center"
         variant="h2"
         sx={{
-          fontFamily: 'Sen, serif',
+         fontFamily: 'sen, sans-serif',
           fontWeight: 500,
           lineHeight: '130%',
           color: '#322C3E',
@@ -60,7 +60,7 @@ const ComparisonTable = () => {
           whiteSpace: 'nowrap',
         }}
       >
-        How We Compare
+      {`  How We Compare`}
       </Typography>
 
       <Box
@@ -96,7 +96,7 @@ const ComparisonTable = () => {
             >
               <Typography
                 sx={{
-                  fontFamily: 'Manrope, serif',
+                 frontFamily: "Manrope, sans-serif",
                   fontWeight: 700,
                   fontSize: { xs: '18px', md: '24px' },
                   mb: 3,
@@ -110,7 +110,7 @@ const ComparisonTable = () => {
                 <Box
                   key={idx}
                   sx={{
-                    fontFamily: 'Manrope, serif',
+                   frontFamily: "Manrope, sans-serif",
                     fontWeight: 500,
                     fontSize: { xs: '16px', md: '20px' },
                     color: '#443B56',
@@ -133,7 +133,7 @@ const ComparisonTable = () => {
                     {['Starter', 'Growth', 'Scale'].map((plan, i) => (
                       <TableCell
                         key={i}
-                        align="center"
+                        align="center"  frontFamily= "Manrope, sans-serif"
                         sx={{
                           fontSize: { xs: '16px', md: '20px' },
                           fontWeight: 600,
@@ -173,6 +173,7 @@ const ComparisonTable = () => {
                             <CrossIcon />
                           ) : (
                             <Typography
+                             frontFamily= "Manrope, sans-serif"
                               sx={{
                                 fontSize: { xs: '16px', md: '18px' },
                                 color: '#443B56',

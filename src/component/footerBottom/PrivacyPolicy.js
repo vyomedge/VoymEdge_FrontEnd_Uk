@@ -236,7 +236,7 @@ export default function PrivacyPolicy() {
               gutterBottom
               sx={{
                 fontWeight: 700,
-                fontFamily: "Akatab,Sans-serif",
+              fontFamily: 'sen, sans-serif',
                 background: "#001538",
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',

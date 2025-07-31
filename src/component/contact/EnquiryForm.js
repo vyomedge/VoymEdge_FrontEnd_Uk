@@ -37,7 +37,7 @@ const EnquiryForm = () => {
                     variant='h2'
                     component="h2"
                     sx={{
-                        fontFamily: "Sen",
+                       fontFamily: 'sen, sans-serif',
                         fontWeight: 500,
                         lineHeight: "130%",
                         color: "#322C3E",
@@ -53,7 +53,7 @@ const EnquiryForm = () => {
                 {/* Subheading */}
                 <Typography
                     sx={{
-                        fontFamily: "Manrope",
+                        frontFamily: "Manrope, sans-serif",
                         fontWeight: 500,
                         fontSize: { xs: "18px", md: "18px" },
                         lineHeight: "160%",

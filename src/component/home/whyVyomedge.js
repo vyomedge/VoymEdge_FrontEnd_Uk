@@ -58,7 +58,7 @@ const WhyVyomedge = () => {
                     component="h2"
                     sx={{
                         fontSize: { xs: "36px", sm: "46px", md: "56px", lg: "56px" },
-                        fontFamily: "sen,serif",
+                      fontFamily: 'sen, sans-serif',
                         fontWeight: "500",
                         color: "#322C3E",
                         lineHeight: "130%",
@@ -91,7 +91,7 @@ const WhyVyomedge = () => {
                                         sx={{
                                             fontWeight: 700,
                                             fontSize: "18px bold",
-                                            fontFamily: "Manrope, sans-serif",
+                                            frontFamily: "Manrope, sans-serif",
                                             lineHeight: "160%",
                                         }}
                                     >
@@ -103,7 +103,7 @@ const WhyVyomedge = () => {
                                         sx={{
                                             fontWeight: 700,
                                             fontSize: "18px bold",
-                                            fontFamily: "Manrope, sans-serif",
+                                           frontFamily: "Manrope, sans-serif",
                                             lineHeight: "160%",
 
                                         }}

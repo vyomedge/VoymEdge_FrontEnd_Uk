@@ -72,7 +72,7 @@ export default function HeroSection() {
 
                 // position:"absolute",
                 fontSize: { xs: "36px", sm: "46px", md: "54px" },
-                fontFamily: 'sen, serif',
+                fontFamily: 'sen, sans-serif',
                 width: "300px",
                 textAlign: { xs: "left", sm: "left", md: "left" },
                 ml: 4,
@@ -100,7 +100,7 @@ export default function HeroSection() {
               sx={{
                 color: "#443B56", mb: 2, fontWeight: 500,
                 fontSize: { xs: "15px", sm: "15px", md: "15px" },
-                frontFamily: "Manrope,Sans-serif",
+                  frontFamily: "Manrope, sans-serif",
                 textAlign: { xs: "left", sm: "left", md: "left" },
                 ml: 4, mr: 4,
                 
@@ -115,7 +115,7 @@ export default function HeroSection() {
                 color: "#443B56",
                 textAlign: { xs: "left", md: "left" },
                 fontSize: { xs: "15px", sm: "15px", md: "15px" },
-                frontFamily: "Manrope,Sans-serif",
+                 frontFamily: "Manrope, sans-serif",
                 fontWeight: 500,
                 whiteSpace: { xs: 'wrap', md: 'nowrap' },
                 mb: 3,

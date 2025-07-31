@@ -19,7 +19,7 @@ const CustomButton1 = ({
                 border: '2px solid #4CFFE7',
                 px: 1,
                 py: 1,
-                borderRadius: 0,
+                borderRadius:"5px",
                 textTransform: 'none',
                 fontWeight: 600,
                 fontSize: '18px',
