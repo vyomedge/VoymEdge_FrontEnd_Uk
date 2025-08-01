@@ -41,13 +41,25 @@ const OurMission = () => {
     `
                     }}
                 />
-
+<br />
                 <Typography variant='h2' component='h2' sx={{
                     fontFamily: 'sen, sans-serif',
                     whiteSpace: "nowrap",
                     fontWeight: "500", lineHeight: "130%", color: "#322C3E",
                     fontSize: { xs: "32px", sm: "46px", md: "56px", lg: "56px" },
-                    textAlign: "center"
+                    textAlign: "center",
+                     position: 'relative',
+                                display: 'inline-block',
+                                '&::after': {
+                                    content: '""',
+                                    position: 'absolute',
+                                    bottom: -4,
+                                    left: 0,
+                                    width: '100%',
+                                    height: '3px',
+                                    background:
+                                        'linear-gradient(to right, rgba(211, 0, 229, 1), rgba(118, 0, 196, 1), rgba(76, 255, 231, 1))',
+                                },
                 }}>
                     {`Our Mission`}
                 </Typography>

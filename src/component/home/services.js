@@ -6,7 +6,7 @@ import {
     useTheme,
     useMediaQuery,
 } from "@mui/material";
-
+import WbCloudySharpIcon from '@mui/icons-material/WbCloudySharp';
 
 const services = [
 
@@ -27,7 +27,7 @@ const services = [
     },
     {
         label: "Fintech & SaaS Startups",
-        icon: "/Cloud.svg",
+        icon: WbCloudySharpIcon, 
         gradient: "linear-gradient(135deg, rgba(211, 0, 229, 1) , rgba(118, 0, 196, 1),rgba(76, 255, 231, 1))",
     },
     {
@@ -66,11 +66,12 @@ const Services = () => {
                 variant='h2'
                 component="h2"
                 sx={{
-                    fontSize: { xs: "30px", sm: "46px", md: "56px", lg: "56px" },
+                    fontSize: { xs: "28px", sm: "46px", md: "56px", lg: "56px" },
                     fontFamily: 'sen, sans-serif',
                     fontWeight: "500",
                     color: "#322C3E",
                     lineHeight: "130%",
+                    flexWrap:"wrap"
 
                 }}>
                 {` Industries We Serve in the`}
@@ -129,7 +130,7 @@ const Services = () => {
 
                                     boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
                                     background: service.gradient,
-                                    p: { xs: 2, sm: 2, md: 3, lg: 3 }
+                                    p: { xs: 1, sm: 2, md: 3, lg: 3 }
                                 }}
                             />
 

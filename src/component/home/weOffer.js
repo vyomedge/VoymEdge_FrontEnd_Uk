@@ -88,7 +88,7 @@ const WeOffer = () => {
                                 <Box sx={{ position: "relative", height: 200 }}>
                                     <Image src={card.image} alt={card.title} layout="fill" objectFit="cover" />
                                 </Box>
-                                <CardContent>
+                                <CardContent textAlign="left">
                                     <Typography
                                         variant="subheading"
                                         component="subheading"
@@ -112,20 +112,21 @@ const WeOffer = () => {
                                     </Typography>
                                     <Typography
 
-                                        sx={{ frontFamily: "Manrope, sans-serif", color: "#555", mb: 2, fontWeight: 500, fontSize: "18px" }}>
+                                        sx={{ frontFamily: "Manrope, sans-serif", color: "#555", mb: 0, fontWeight: 500, fontSize: "18px" }}>
                                         {card.line}
                                     </Typography>
-                                    <List dense sx={{ pl: 1 }}>
+                                   
+                                    <List dense sx={{ pl: 0 }}>
                                         {card.features.map((feature, i) => (
                                             <ListItem
                                                 key={i}
 
-                                                sx={{ frontFamily: "Manrope, sans-serif", pl: 0, fontSize: "15px", fontWeight: 500, color: "#444", display: "list-item", listStyle: "disc" }}
+                                                sx={{ frontFamily: "Manrope, sans-serif", pl: 1, fontSize: "15px", fontWeight: 500, color: "#444", display: "list-item", listStyle: "disc" }}
                                             >
                                                 {feature}
                                             </ListItem>
                                         ))}
-                                        <Box sx={{ display: "flex", justifyContent: "flex-end", mt: 2 }}>
+                                         <Box sx={{ display: "flex", justifyContent: "flex-end", mt: 0 }}>
                                             <IconButton data-testid="notify-button"
                                                 sx={{
                                                     bgcolor: "#E3F2FD",

@@ -50,7 +50,7 @@ const FreeCall = () => {
             </Typography>
             <Box   display="flex" gap={2}
             justifyContent="center">
-                  <Link href="tel:+919876543210" passHref legacyBehavior>
+                  <Link href="tel:+447774709698" passHref legacyBehavior>
                 <a style={{ textDecoration: 'none' }}>
                   <CustomButton1 data-testid="notify-button"
                     onClick={() => console.log('Booked!')}

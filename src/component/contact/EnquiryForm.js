@@ -125,6 +125,14 @@ const EnquiryForm = () => {
                             sx: {
                                 backgroundColor: "#F7F3FF",
                                 borderRadius: '8px',
+                                  transition: "0.3s ease",
+                                '&:hover': {
+                                  border:"1px solid  rgba(211, 0, 229, 0.5)"
+                                },
+                                '&.Mui-focused': {
+                                   
+                                    boxShadow: "0 0 0 2px rgba(211, 0, 229, 0.5)", // optional glowing effect
+                                },
                             },
                         }}
                     />
@@ -143,7 +151,15 @@ const EnquiryForm = () => {
                         InputProps={{
                             sx: {
                                 backgroundColor: "#F7F3FF",
-                                borderRadius: '8px',
+                                borderRadius: '8px', 
+                                 transition: "0.3s ease",
+                                '&:hover': {
+                                  border:"1px solid  rgba(211, 0, 229, 0.5)"
+                                },
+                                '&.Mui-focused': {
+                                   
+                                    boxShadow: "0 0 0 2px rgba(211, 0, 229, 0.5)", // optional glowing effect
+                                },
                             },
                         }}
                     />
@@ -163,6 +179,14 @@ const EnquiryForm = () => {
                             sx: {
                                 backgroundColor: "#F7F3FF",
                                 borderRadius: '8px',
+                                  transition: "0.3s ease",
+                                '&:hover': {
+                                  border:"1px solid  rgba(211, 0, 229, 0.5)"
+                                },
+                                '&.Mui-focused': {
+                                   
+                                    boxShadow: "0 0 0 2px rgba(211, 0, 229, 0.5)", // optional glowing effect
+                                },
                             },
                         }}
                     />
@@ -180,6 +204,14 @@ const EnquiryForm = () => {
                             sx={{
                                 backgroundColor: "#F7F3FF",
                                 borderRadius: '8px',
+                                  transition: "0.3s ease",
+                                '&:hover': {
+                                  border:"1px solid  rgba(211, 0, 229, 0.5)"
+                                },
+                                '&.Mui-focused': {
+                                   
+                                    boxShadow: "0 0 0 2px rgba(211, 0, 229, 0.5)", // optional glowing effect
+                                },
 
                             }}
                         >
@@ -211,7 +243,7 @@ const EnquiryForm = () => {
                                 borderRadius: "8px",
                                 transition: "0.3s ease",
                                 '&:hover': {
-                                  border:"1px solid yellow"
+                                  border:"1px solid  rgba(211, 0, 229, 0.5)"
                                 },
                                 '&.Mui-focused': {
                                    

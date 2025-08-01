@@ -118,7 +118,7 @@ export default function HeroSection() {
                  frontFamily: "Manrope, sans-serif",
                 fontWeight: 500,
                 whiteSpace: { xs: 'wrap', md: 'nowrap' },
-                mb: 3,
+                mb: 0,
                 ml: 4,
                 mr: 4
               }}
