@@ -13,7 +13,7 @@ export default function Footer() {
   }, []);
 
   const socialLinks = [
-    { src: '/whatsappicon.svg', alt: 'YouTube', url: 'https://www.whatsapp.com' },
+    { src: '/whatsappicon.svg', alt: 'WhatsApp', url: 'https://wa.me/447774709698' },
     { src: '/instaicon.svg', alt: 'Instagram', url: 'https://www.instagram.com/vyomedge_official?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==' },
     { src: '/twittericon.svg', alt: 'Twitter', url: 'https://x.com/vyomedge' },
     { src: '/facebookicon.svg', alt: 'Facebook', url: 'https://www.facebook.com/vyomedge' },
@@ -36,7 +36,7 @@ export default function Footer() {
       }}>
         {isClient && (
           <Box
-            onClick={() => window.scrollTo({ top: 0, behavior:"instant" })}
+            onClick={() => window.scrollTo({ top: 0, behavior: "instant" })}
             sx={{
               display: 'flex',
               alignItems: 'center',
@@ -137,27 +137,43 @@ export default function Footer() {
                   gap: "5px",
                 }}
                 >
-                  <Typography variant="copytext1"
-                    component="copytext1"
-                    sx={{
-                      fontSize: { xs: "14px", sm: "14px", md: "18px" },
-                      mb: 0, fontWeight: 500, color: "white"
-                    }}>
+                  <Typography
+                    variant="body2"
+                    sx={{ fontSize: "15px", color: "#E4E4E4", fontWeight: 400 }}
+                  >
+
                     <Box
-                      variant="copytext1"
-                      component="copytext1"
-                      href="aaaas.com"
+                      component="a"
+                      href="mailto:info@vyomedge.com"
                       style={{ color: "white", textDecoration: "none" }}
-                      onMouseEnter={(e) => (e.target.style.textDecoration = "underline")}
-                      onMouseLeave={(e) => (e.target.style.textDecoration = "none")}
+                      onMouseEnter={(e) =>
+                        (e.target.style.textDecoration = "underline")
+                      }
+                      onMouseLeave={(e) =>
+                        (e.target.style.textDecoration = "none")
+                      }
                     >
-                   {`   info@vyomedge.com`}
+                      info@vyomedge.com
                     </Box>
                   </Typography>
 
-                  <Typography variant="copytext1"
-                    component="copytext1" sx={{ fontSize: { xs: "14px", sm: "14px", md: "18px" }, mb: 0, fontWeight: 500, color: "white" }}>
-               {`     +91 7974186754`}
+                  <Typography
+                    variant="body2"
+                    sx={{ fontSize: "15px", color: "#E4E4E4", fontWeight: 400 }}
+                  >
+
+                    <a
+                      href="tel:+447774709698"
+                      style={{ color: "#E4E4E4", textDecoration: "none" }}
+                      onMouseEnter={(e) =>
+                        (e.target.style.textDecoration = "underline")
+                      }
+                      onMouseLeave={(e) =>
+                        (e.target.style.textDecoration = "none")
+                      }
+                    >
+                      +44 7774709698
+                    </a>
                   </Typography>
                   <Box sx={{ display: 'flex', justifyContent: "right", gap: 2, mt: 0 }}>
                     {socialLinks.map(({ src, alt, url }, i) => (
@@ -195,7 +211,7 @@ export default function Footer() {
                   textAlign: { xs: "left", sm: "left", md: "left", lg: "left" },
                 }}
               >
-              {`  Copyright © 2025. vyomedge`}
+                {`  Copyright © 2025. vyomedge`}
               </Typography>
             </Grid>
 
@@ -209,19 +225,19 @@ export default function Footer() {
               >
 
                 <Link href="/privacyPolicy" underline="hover" style={{ color: "white", textDecoration: "none" }}>
-                {`  Privacy Policy`}
+                  {`  Privacy Policy`}
                 </Link>{" "}
-           .
+                .
                 <Link href="/termsAndConditions" underline="hover" style={{ color: "white", textDecoration: "none" }}>
-                 {` Terms & Conditions`}
+                  {` Terms & Conditions`}
                 </Link>{" "}
                 .
                 <Link href="/disclaimer" underline="hover" style={{ color: "white", textDecoration: "none" }}>
-                {`  Disclaimer`}
+                  {`  Disclaimer`}
                 </Link>{" "}
-           .
-                 <Link href="/cookies" underline="hover" style={{ color: "white", textDecoration: "none" }}>
-                {`  Cookies`}
+                .
+                <Link href="/cookies" underline="hover" style={{ color: "white", textDecoration: "none" }}>
+                  {`  Cookies`}
                 </Link>{" "}
               </Typography>
             </Grid>
