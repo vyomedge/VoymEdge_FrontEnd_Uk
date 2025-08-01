@@ -227,7 +227,7 @@ function WorkFlow() {
                                 fontSize: { xs: "18px", sm: "18px", md: "18px", lg: "18px" }
                             }}
                            >
-                            {`Post-laur`}</Typography>
+                            {`Post-launch`}</Typography>
                     </Grid>
                 </Grid>
             </Grid>

@@ -66,7 +66,7 @@ const packages = [
             'Tech Support (bug fixes, uptime checks)',
         ],
         perfect: 'Perfect for: Helping established brands grow digitally',
-        goal: 'Goal: Full- funnel digital growth - traffic, leads & conversions.',
+        goal: 'Goal: Full-funnel digital growth - traffic, leads & conversions.',
     },
 ];
 

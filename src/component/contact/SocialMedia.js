@@ -23,7 +23,7 @@ const SocialMedia = () => {
     return (
         <Box
             sx={{
-                px: { xs: 4, sm: 6, md: 6 },
+                px: { xs: 4, sm: 6, md: 6, lg:6 },
                 py: { xs: 6, sm: 8, md: 7 },
                 display: 'flex',
                 justifyContent: 'center',
@@ -70,7 +70,7 @@ const SocialMedia = () => {
                         <Box
                             sx={{
                                 display: 'flex',
-                                gap: 2,
+                                gap: 1,
                                 justifyContent: 'center',
                                 position: 'absolute',
                                 bottom: 16,
@@ -141,7 +141,7 @@ const SocialMedia = () => {
                                 lineHeight: "160%",
                                 mt: 1,
                                 color: '#4B4B4B',
-                                maxWidth: 500,
+                                maxWidth: 360,
                                 mx: { xs: 'auto', md: 0 },
                                 position: 'relative',
                                 display: 'inline-block',

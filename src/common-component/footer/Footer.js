@@ -32,7 +32,7 @@ export default function Footer() {
       }}>
       <Container sx={{
         py: { xs: 0, sm: 1, md: 1, lg: 1 },
-        px: { xs: 2, sm: 3, md: 2, lg: 2 }
+        px: { xs: 2, sm: 3, md: 1, lg: 2 }
       }}>
         {isClient && (
           <Box

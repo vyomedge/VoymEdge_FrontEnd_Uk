@@ -27,7 +27,7 @@ const Partner = () => {
                   fontWeight: "500", lineHeight: "160%", color: "#443B56",
                   fontSize: { xs: "18px", sm: "18px", md: "18px", lg: "18px" }
               }}>
-                  {`Strategi partners for UK companies ready to accelerate their digital presence. Backed by a senior 
+                  {`Strategic partners for UK companies ready to accelerate their digital presence. Backed by a senior 
                   team of developers, designers, and marketers in India and a virtual office presence in the UK, VyomEdge UK combines global talent with local insight.`}
               </Typography>
               <br />

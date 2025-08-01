@@ -25,7 +25,7 @@ const WhyVyomedge = () => {
             textColor: "#FFFFFF"
         },
         {
-            title: "Agile,Transparents,",
+            title: "Agile,Transparent,",
             subheading: "and Scalable",
             icon: "/why4.svg",
             bgColor: "#4C3A73",
@@ -66,55 +66,55 @@ const WhyVyomedge = () => {
                     }}>
                     {` Why VyomEdge for UK Businesses?`}
                 </Typography>
-                {<Grid container spacing={3} justifyContent="center">
-                    {cardData.map((item, i) => (
-                        <Grid item key={i} xs={12} sm={6} md={3} lg={3}>
+                <Grid container spacing={3} justifyContent="center">
+                        {cardData.map((item, i) => (
+                          <Grid item key={i}>
                             <Paper
-                                elevation={0}
-                                sx={{
-                                    display: "flex",
-                                    alignItems: "center",
-                                    gap: 2,
-                                    bgcolor: item.bgColor,
-                                    color: item.textColor,
-                                    px: 6,
-                                    py: 1.5,
-                                    borderRadius: "8px",
-                                    width: "100%"
-                                }}
+                              elevation={0}
+                              sx={{
+                                width: "290px",
+                                height: "100px",
+                                display: "flex",
+                                alignItems: "center",
+                                gap: 2,
+                                bgcolor: item.bgColor,
+                                color: item.textColor,
+                                border: item.border,
+                                px: 3,
+                                py: 2,
+                                borderRadius: "8px",
+                              }}
                             >
-                                <Image src={item.icon} alt={item.title} width={60} height={50} />
-                                <Box textAlign="left">
-                                    <Typography
-                                        variant="copytext1"
-                                        component="copytext1"
-                                        sx={{
-                                            fontWeight: 700,
-                                            fontSize: "18px bold",
-                                            frontFamily: "Manrope, sans-serif",
-                                            lineHeight: "160%",
-                                        }}
-                                    >
-                                        {item.title}
-                                    </Typography>
-
-                                    <Typography
-
-                                        sx={{
-                                            fontWeight: 700,
-                                            fontSize: "18px bold",
-                                           frontFamily: "Manrope, sans-serif",
-                                            lineHeight: "160%",
-
-                                        }}
-                                    >
-                                        {item.subheading}
-                                    </Typography>
-                                </Box>
+                              <Image src={item.icon} alt={item.title} width={50} height={50} />
+                              <Box textAlign="left">
+                                <Typography
+                                  sx={{
+                                    fontWeight: 600,
+                                    fontSize: "16px",
+                                    fontFamily: "Manrope, sans-serif",
+                                    lineHeight: "140%",
+                                  }}
+                                >
+                                  {item.title}
+                                </Typography>
+              
+                                {item.subheading && (
+                                  <Typography
+                                    sx={{
+                                      fontWeight: 500,
+                                      fontSize: "14px",
+                                      fontFamily: "Manrope, sans-serif",
+                                      lineHeight: "140%",
+                                    }}
+                                  >
+                                    {item.subheading}
+                                  </Typography>
+                                )}
+                              </Box>
                             </Paper>
-                        </Grid>
-                    ))}
-                </Grid>}
+                          </Grid>
+                        ))}
+                      </Grid>
             </Box>
         </Box>
     )

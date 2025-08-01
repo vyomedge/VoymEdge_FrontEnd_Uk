@@ -30,7 +30,7 @@ const WeOffer = () => {
             features: ["WireFrames", "Design systems", "WCAG compliance", "UX audits"]
         },
         {
-            title: "Degital Marketing & SEO (UK)",
+            title: "Digital Marketing & SEO (UK)",
             subtitle: "Targeted strategies for UK visibility & growth.",
             image: "/WeOffer4.png",
             features: ["Local SEO", "Technical audits", "Meta/Google Ads", "UK-focused content"]

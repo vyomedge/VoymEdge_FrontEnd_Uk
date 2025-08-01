@@ -31,7 +31,7 @@ const FreeCall = () => {
                     WebkitTextFillColor: 'transparent',
                 }}
             >
-                {`affordable, reliably, and seamleesly.`}
+                {`affordable, reliable, and seamlessly.`}
             </Typography>
 
             <Typography variant="copytext2"

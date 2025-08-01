@@ -93,7 +93,7 @@ const AboutusUK = () => {
               mb: 0,
             }}
              dangerouslySetInnerHTML={{
-                      __html:` With over a decade of combined team experience, we specialise in
+                      __html:` With over a decade of combined team experience, we specialize in
             <span style="color:#7600C4"> MERN Stack development, Python solutions, UI/UX design,</span>
              and   <span style="color:#7600C4">digital marketing </span> support tailored to meet the unique demands of UK startups, agencies, and enterprises.`
                   }}

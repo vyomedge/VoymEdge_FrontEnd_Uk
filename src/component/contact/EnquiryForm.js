@@ -8,14 +8,62 @@ import {
     InputLabel,
     MenuItem,
     Select,
+    FormHelperText,
 } from '@mui/material';
 import CustomButton2 from '@/common-component/button/customButton2';
 
 const EnquiryForm = () => {
-    const [service, setService] = useState('');
+    const [formData, setFormData] = useState({
+        fullName: '',
+        email: '',
+        phone: '',
+        service: '',
+        message: '',
+    });
 
-    const handleChange = (event) => {
-        setService(event.target.value);
+    const [errors, setErrors] = useState({});
+
+    const validate = () => {
+        const newErrors = {};
+        if (!formData.fullName.trim()) newErrors.fullName = 'Full name is required';
+        if (!formData.email) {
+            newErrors.email = 'Email is required';
+        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+            newErrors.email = 'Enter a valid email';
+        }
+        if (!formData.phone) {
+            newErrors.phone = 'Phone number is required';
+        } else if (!/^\d{10}$/.test(formData.phone)) {
+            newErrors.phone = 'Phone must be 10 digits';
+        }
+        if (!formData.service) newErrors.service = 'Please select a service';
+        if (!formData.message.trim()) newErrors.message = 'Message is required';
+
+        setErrors(newErrors);
+        return Object.keys(newErrors).length === 0;
+    };
+
+    const handleChange = (field) => (event) => {
+        setFormData((prev) => ({
+            ...prev,
+            [field]: event.target.value,
+        }));
+    };
+
+    const handleSubmit = () => {
+        if (validate()) {
+            console.log('Submitted:', formData);
+            // Optional: Clear form
+            setFormData({
+                fullName: '',
+                email: '',
+                phone: '',
+                service: '',
+                message: '',
+            });
+            setErrors({});
+            alert('Form submitted successfully!');
+        }
     };
 
     return (
@@ -26,138 +74,159 @@ const EnquiryForm = () => {
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
-                px: { xs: 4, sm: 6, md: 6 },
+                px: { xs: 2, sm: 2, md: 2 },
                 py: { xs: 4, sm: 4, md: 4 },
             }}
         >
-            <Box sx={{ maxWidth: '700px', width: '100%' }}>
-                {/* Heading */}
+            <Box sx={{ maxWidth: '800px', width: '100%' }}>
                 <Typography
-
                     variant='h2'
                     component="h2"
                     sx={{
-                       fontFamily: 'sen, sans-serif',
+                        fontFamily: 'sen, sans-serif',
                         fontWeight: 500,
                         lineHeight: "130%",
                         color: "#322C3E",
                         fontSize: { xs: "40px", sm: "40px", md: "42px", lg: '48px' },
                         mb: 1,
                     }}
-
-
                 >
                     {`  Enquiry Form`}
                 </Typography>
 
-                {/* Subheading */}
                 <Typography
                     sx={{
-                        frontFamily: "Manrope, sans-serif",
+                        fontFamily: "Manrope, sans-serif",
                         fontWeight: 500,
                         fontSize: { xs: "18px", md: "18px" },
                         lineHeight: "160%",
                         mt: 1,
                         mb: 2,
                         color: '#4B4B4B',
-                        maxWidth: 500,
                         maxWidth: '520px',
                     }}
                 >
                     {` Have a project or just want to say hello? Fill out the form below and
-                    our team will get back within 24 hours.`}
+          our team will get back within 24 hours.`}
                 </Typography>
 
-                {/* Form Starts */}
-                <Grid container spacing={2} xs={12} sm={12} md={6}>
-                    <label>{'Full Name'}</label>
+                <Grid container spacing={2}>
+
+                    <label>Full Name</label>
                     <TextField
                         fullWidth
                         placeholder="Full Name"
                         variant="outlined"
+                        value={formData.fullName}
+                        onChange={handleChange('fullName')}
+                        error={!!errors.fullName}
+                        helperText={errors.fullName}
                         InputProps={{
                             sx: {
-                                backgroundColor: '#f6f1ff',
+                                backgroundColor: "#F7F3FF",
                                 borderRadius: '8px',
-                                border: 'none',
                             },
                         }}
                     />
-                    <label>{'Business Email'}</label>
+
+
+
+                    <label>Business Email</label>
                     <TextField
                         fullWidth
                         placeholder="Business Email"
                         variant="outlined"
+                        value={formData.email}
+                        onChange={handleChange('email')}
+                        error={!!errors.email}
+                        helperText={errors.email}
                         InputProps={{
                             sx: {
-                                backgroundColor: '#f6f1ff',
+                                backgroundColor: "#F7F3FF",
                                 borderRadius: '8px',
-                                border: 'none',
                             },
                         }}
                     />
-                    <label>{'Phone'}</label>
+
+
+
+                    <label>Phone</label>
                     <TextField
                         fullWidth
-                        width="100%"
-                        maxWidth="300px"
                         placeholder="1234567890"
                         variant="outlined"
+                        value={formData.phone}
+                        onChange={handleChange('phone')}
+                        error={!!errors.phone}
+                        helperText={errors.phone}
                         InputProps={{
                             sx: {
-                                backgroundColor: '#f6f1ff',
+                                backgroundColor: "#F7F3FF",
                                 borderRadius: '8px',
-                                border: 'none',
                             },
                         }}
                     />
-                    <label>{'Type Of  project'}</label>
-                    <FormControl fullWidth>
-                        <InputLabel id="service-label">{'Service'}</InputLabel>
+
+
+
+                    <label>Type Of Project</label>
+                    <FormControl fullWidth error={!!errors.service}>
+                        <InputLabel id="service-label">Service</InputLabel>
                         <Select
                             labelId="service-label"
-                            id="service-select"
-                            value={service}
+                            value={formData.service}
                             label="Service"
-                            onChange={handleChange}
+                            onChange={handleChange('service')}
                             sx={{
-                                backgroundColor: '#f6f1ff',
+                                backgroundColor: "#F7F3FF",
                                 borderRadius: '8px',
+
                             }}
                         >
-                            <MenuItem value="web">{'Web Development'}</MenuItem>
-                            <MenuItem value="seo">{'SEO Optimization'}</MenuItem>
-                            <MenuItem value="ads">{'Paid Ads'}</MenuItem>
-                            <MenuItem value="design">{'UI/UX Design'}</MenuItem>
+                            <MenuItem value="web">Web Development</MenuItem>
+                            <MenuItem value="seo">SEO Optimization</MenuItem>
+                            <MenuItem value="ads">Paid Ads</MenuItem>
+                            <MenuItem value="design">UI/UX Design</MenuItem>
                         </Select>
+                        {errors.service && <FormHelperText>{errors.service}</FormHelperText>}
                     </FormControl>
 
 
 
-                    <label>{'Tell us about your project'}</label>
+                    <label>Tell us about your project</label>
                     <TextField
                         fullWidth
                         multiline
                         rows={4}
                         placeholder="Your Message"
-                        variant="outlined"
+                      
+                        value={formData.message}
+                        onChange={handleChange('message')}
+                        error={!!errors.message}
+                        helperText={errors.message}
                         InputProps={{
                             sx: {
-                                backgroundColor: '#f6f1ff',
+                                backgroundColor: "#F7F3FF",
                                 borderRadius: '8px',
-                                border: 'none',
+                                borderRadius: "8px",
+                                transition: "0.3s ease",
+                                '&:hover': {
+                                  border:"1px solid yellow"
+                                },
+                                '&.Mui-focused': {
+                                   
+                                    boxShadow: "0 0 0 2px rgba(211, 0, 229, 0.5)", // optional glowing effect
+                                },
                             },
                         }}
                     />
-
-
-
-
                 </Grid>
 
+
                 {/* Submit Button */}
-                <CustomButton2 data-testid="notify-button"
-                    onClick={() => console.log('Form Submitted')}
+                <CustomButton2
+                    data-testid="notify-button"
+                    onClick={handleSubmit}
                     sx={{
                         borderRadius: '5px',
                         mt: 4,
@@ -165,7 +234,7 @@ const EnquiryForm = () => {
                         fontWeight: '500',
                     }}
                 >
-                    {` Let's Talk`}
+                    Let's Talk
                 </CustomButton2>
             </Box>
         </Box>

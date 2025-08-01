@@ -47,7 +47,7 @@ const ClientTrust = () => {
                                 textAlign: { xs: "left", sm: "left", md: "center" },
                                 borderRadius: '8px',
                                 backgroundColor: '#fff',
-                                boxShadow: '0 2px 8px rgba(0, 0, 0, 0.04)',
+                                boxShadow: '0 2px 8px rgba(76, 255, 231, 1)',
                                 minWidth: '300px',
                                 maxWidth: '100%',
                                 width: { xs: '90%', sm: '75%', md: '50%', lg: "50%" },

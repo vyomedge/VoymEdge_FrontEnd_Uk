@@ -7,6 +7,7 @@ import {
     useMediaQuery,
 } from "@mui/material";
 
+
 const services = [
 
     {
@@ -15,7 +16,7 @@ const services = [
         gradient: "linear-gradient(135deg, rgba(211, 0, 229, 1) , rgba(118, 0, 196, 1),rgba(76, 255, 231, 1))",
     },
     {
-        label: "Leagal, Local Government & Public Services",
+        label: "Legal, Local Government & Public Services",
         icon: "/service4.svg",
         gradient: "linear-gradient(135deg, rgba(211, 0, 229, 1) , rgba(118, 0, 196, 1),rgba(76, 255, 231, 1))",
     },
@@ -26,7 +27,7 @@ const services = [
     },
     {
         label: "Fintech & SaaS Startups",
-        icon: "/cloud.svg",
+        icon: "/Cloud.svg",
         gradient: "linear-gradient(135deg, rgba(211, 0, 229, 1) , rgba(118, 0, 196, 1),rgba(76, 255, 231, 1))",
     },
     {
@@ -117,8 +118,9 @@ const Services = () => {
                                 flexDirection: "column",
                                 alignItems: "center",
                             }}
-                        >
+                        > 
                             <Avatar
+                           
                                 src={service.icon}
                                 alt={service.label}
                                 sx={{
