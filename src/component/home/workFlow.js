@@ -22,7 +22,7 @@ function WorkFlow() {
                     px={{ xs: "50px", sm: "50px", md: "130px" }}
                     py={{ xs: "20px", sm: "20px", md: "10px" }}
                     sx={{
-                        fontFamily: 'sen, serif',
+                       fontFamily: 'sen, sans-serif',
                         whiteSpace: "nowrap",
                         fontWeight: "500", lineHeight: "130%", color: "#322C3E",
                         fontSize: { xs: "32px", sm: "46px", md: "56px", lg: "56px" }
@@ -56,7 +56,7 @@ function WorkFlow() {
                             variant='copytext1' component='copytext1'
                             width="250px"
                             px={2} sx={{
-                                fontFamily: 'Manrope, serif',
+                                frontFamily: "Manrope, sans-serif",
                                 fontWeight: "500", lineHeight: "160%", color: "#000000",
                                 fontSize: { xs: "18px", sm: "18px", md: "18px", lg: "18px" }
 
@@ -88,7 +88,7 @@ function WorkFlow() {
                            variant='copytext1' component='copytext1'
                             width="250px"  textAlign="left"
                             sx={{
-                                fontFamily: 'Manrope, serif',
+                               frontFamily: "Manrope, sans-serif",
                                 fontWeight: "500", lineHeight: "160%", color: "#000000",
                                 fontSize: { xs: "18px", sm: "18px", md: "18px", lg: "18px" }
                             }}>
@@ -112,7 +112,7 @@ function WorkFlow() {
                            variant='copytext1' component='copytext1'
                             width="250px"
                             px={2} sx={{
-                                fontFamily: 'Manrope, serif',
+                              frontFamily: "Manrope, sans-serif",
                                 fontWeight: "500", lineHeight: "160%", color: "#000000",
                                 fontSize: { xs: "18px", sm: "18px", md: "18px", lg: "18px" }
 
@@ -141,7 +141,7 @@ function WorkFlow() {
                         <Typography variant='copytext1' component='copytext1'
                             width="250px"  textAlign="left"
                             sx={{
-                                fontFamily: 'Manrope, serif',
+                                frontFamily: "Manrope, sans-serif",
                                 fontWeight: "500", lineHeight: "160%", color: "#000000",
                                 fontSize: { xs: "18px", sm: "18px", md: "18px", lg: "18px" }
                             }}>
@@ -165,7 +165,7 @@ function WorkFlow() {
                         variant='copytext1' component='copytext1'
                             width="250px"
                             px={2} sx={{
-                                fontFamily: 'Manrope, serif',
+                               frontFamily: "Manrope, sans-serif",
                                 fontWeight: "500", lineHeight: "160%", color: "#000000",
                                 fontSize: { xs: "18px", sm: "18px", md: "18px", lg: "18px" }
 
@@ -195,7 +195,7 @@ function WorkFlow() {
                           variant='copytext1' component='copytext1'
                             width="250px"  textAlign="left"
                             sx={{
-                                fontFamily: 'Manrope, serif',
+                               frontFamily: "Manrope, sans-serif",
                                 fontWeight: "500", lineHeight: "160%", color: "#000000",
                                 fontSize: { xs: "18px", sm: "18px", md: "18px", lg: "18px" }
                             }}>
@@ -222,12 +222,12 @@ function WorkFlow() {
                         <Typography  variant='copytext1' component='copytext1'
                             width="250px"  textAlign="left"
                             sx={{
-                                fontFamily: 'Manrope, serif',
+                               frontFamily: "Manrope, sans-serif",
                                 fontWeight: "500", lineHeight: "160%", color: "#000000",
                                 fontSize: { xs: "18px", sm: "18px", md: "18px", lg: "18px" }
                             }}
                            >
-                            {`Post-laur`}</Typography>
+                            {`Post-launch`}</Typography>
                     </Grid>
                 </Grid>
             </Grid>

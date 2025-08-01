@@ -31,7 +31,7 @@ const AddOnServices = () => {
       <Typography textAlign="center"
         variant="h2"
         sx={{
-          fontFamily: "Sen, serif",
+         fontFamily: 'sen, sans-serif',
           fontWeight: 500,
           lineHeight: "130%",
           color: "#322C3E",
@@ -60,7 +60,7 @@ const AddOnServices = () => {
             <TableRow>
               <TableCell
                 sx={{
-                  fontFamily: "Manrope, serif",
+                  frontFamily: "Manrope, sans-serif",
                   fontWeight: 500,
                   fontSize: { xs: "18px", md: "24px" },
                   borderBottom: '2px solid #D273FF',
@@ -74,7 +74,7 @@ const AddOnServices = () => {
               <TableCell
                 align="left"
                 sx={{
-                  fontFamily: "Manrope, serif",
+                frontFamily: "Manrope, sans-serif",
                   fontWeight: 500,
                   fontSize: { xs: "18px", md: "24px" },
                   borderBottom: '2px solid #D273FF',
@@ -100,7 +100,7 @@ const AddOnServices = () => {
               <TableRow key={index}>
                 <TableCell
                   sx={{
-                    fontFamily: "Manrope,san serif",
+                    frontFamily: "Manrope, sans-serif",
                     fontWeight: 500,
                     fontSize: { xs: "15px", md: "18px" },
                     lineHeight: "160%",
@@ -114,7 +114,7 @@ const AddOnServices = () => {
                 <TableCell
                   align="left"
                   sx={{
-                    fontFamily: "Manrope, serif",
+                   frontFamily: "Manrope, sans-serif",
                     fontWeight: 700,
                     fontSize: { xs: "15px", md: "18px" },
                     lineHeight: "160%",

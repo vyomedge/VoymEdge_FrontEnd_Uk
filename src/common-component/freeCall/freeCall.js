@@ -13,7 +13,7 @@ const FreeCall = () => {
                 background: "linear-gradient(to bottom,rgba(255, 255, 255, 1), rgba(220, 255, 250, 1))"
             }} >
             <Typography variant='h2' component='h2' sx={{
-                fontFamily: 'sen, serif',
+                   fontFamily: 'sen, sans-serif',
                 whiteSpace: "wrap",
                 fontWeight: "500", lineHeight: "130%", color: "#08070aff",
                 fontSize: { xs: "24px", sm: "42px", md: "54px", lg: "56px" }
@@ -22,7 +22,7 @@ const FreeCall = () => {
             </Typography>
             <Typography
                 variant='h2' component='h2' sx={{
-                    fontFamily: 'sen, serif',
+                      fontFamily: 'sen, sans-serif',
                     whiteSpace: "wrap",
                     fontWeight: "500", lineHeight: "130%",
                     fontSize: { xs: "24px", sm: "42px", md: "54px", lg: "56px" },
@@ -31,14 +31,14 @@ const FreeCall = () => {
                     WebkitTextFillColor: 'transparent',
                 }}
             >
-                {`affordable, reliably, and seamleesly.`}
+                {`affordable, reliable, and seamlessly.`}
             </Typography>
 
             <Typography variant="copytext2"
                 component="div"
 
                 sx={{
-                    fontFamily: 'Manrope, serif',
+                    frontFamily: "Manrope, sans-serif",
                     fontWeight: 500,
                     lineHeight: "160%",
                     color: "#443B56",

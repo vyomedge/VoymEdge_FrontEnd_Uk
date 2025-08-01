@@ -7,6 +7,7 @@ import {
     useMediaQuery,
 } from "@mui/material";
 
+
 const services = [
 
     {
@@ -15,7 +16,7 @@ const services = [
         gradient: "linear-gradient(135deg, rgba(211, 0, 229, 1) , rgba(118, 0, 196, 1),rgba(76, 255, 231, 1))",
     },
     {
-        label: "Leagal, Local Government & Public Services",
+        label: "Legal, Local Government & Public Services",
         icon: "/service4.svg",
         gradient: "linear-gradient(135deg, rgba(211, 0, 229, 1) , rgba(118, 0, 196, 1),rgba(76, 255, 231, 1))",
     },
@@ -26,7 +27,7 @@ const services = [
     },
     {
         label: "Fintech & SaaS Startups",
-        icon: "/cloud.svg",
+        icon: "/Cloud.svg",
         gradient: "linear-gradient(135deg, rgba(211, 0, 229, 1) , rgba(118, 0, 196, 1),rgba(76, 255, 231, 1))",
     },
     {
@@ -66,7 +67,7 @@ const Services = () => {
                 component="h2"
                 sx={{
                     fontSize: { xs: "30px", sm: "46px", md: "56px", lg: "56px" },
-                    fontFamily: "sen,serif",
+                    fontFamily: 'sen, sans-serif',
                     fontWeight: "500",
                     color: "#322C3E",
                     lineHeight: "130%",
@@ -79,7 +80,7 @@ const Services = () => {
                 component="h2"
                 sx={{
                     fontSize: { xs: "30px", sm: "46px", md: "56px", lg: "56px" },
-                    fontFamily: "sen,serif",
+                    fontFamily: 'sen, sans-serif',
                     fontWeight: "500",
                     color: "#322C3E",
                     lineHeight: "130%",
@@ -107,6 +108,7 @@ const Services = () => {
                         <Box
                             key={index}
                             sx={{
+                                 frontFamily: "Manrope, sans-serif",
                                 position: "absolute",
                                 left: `calc(50% + ${x}px - ${avatarSize / 2}px)`,
                                 top: `calc(50% + ${y}px - ${avatarSize / 2}px)`,
@@ -116,8 +118,9 @@ const Services = () => {
                                 flexDirection: "column",
                                 alignItems: "center",
                             }}
-                        >
+                        > 
                             <Avatar
+                           
                                 src={service.icon}
                                 alt={service.label}
                                 sx={{

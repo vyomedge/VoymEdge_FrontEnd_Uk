@@ -15,7 +15,7 @@ const faqData = [
         question: 'What services does VyomEdge UK offer for British businesses?',
         answer: (
             <div>
-                <Typography gutterBottom fontWeight={600}>
+                <Typography gutterBottom fontWeight={500}>
                   {`  VyomEdge UK specializes in:`}
                 </Typography>
 
@@ -25,7 +25,7 @@ const faqData = [
                             background: 'linear-gradient(135deg, rgba(211, 0, 229, 1), rgba(118, 0, 196, 1), rgba(76, 255, 231, 1))',
                             WebkitBackgroundClip: 'text',
                             WebkitTextFillColor: 'transparent',
-                            fontWeight: 600
+                            fontWeight: 500
                         }}>
                            {` Custom MERN Stack Development`}
                         </span> {`(MongoDB, Express.js, React.js, Node.js)`}
@@ -35,7 +35,7 @@ const faqData = [
                             background: 'linear-gradient(135deg, rgba(211, 0, 229, 1), rgba(118, 0, 196, 1), rgba(76, 255, 231, 1))',
                             WebkitBackgroundClip: 'text',
                             WebkitTextFillColor: 'transparent',
-                            fontWeight: 600
+                            fontWeight: 500
                         }}>
                           {`  Python & Django Development`}
                         </span>
@@ -45,7 +45,7 @@ const faqData = [
                             background: 'linear-gradient(135deg, rgba(211, 0, 229, 1), rgba(118, 0, 196, 1), rgba(76, 255, 231, 1))',
                             WebkitBackgroundClip: 'text',
                             WebkitTextFillColor: 'transparent',
-                            fontWeight: 600
+                            fontWeight: 500
                         }}>
                           {`  UI/UX Design & Prototyping`}
                         </span>
@@ -55,7 +55,7 @@ const faqData = [
                             background: 'linear-gradient(135deg, rgba(211, 0, 229, 1), rgba(118, 0, 196, 1), rgba(76, 255, 231, 1))',
                             WebkitBackgroundClip: 'text',
                             WebkitTextFillColor: 'transparent',
-                            fontWeight: 600
+                            fontWeight: 500
                         }}>
                            {` Digital Marketing & SEO`}
                         </span> {`tailored for UK markets`}
@@ -101,7 +101,7 @@ export default function FAQ() {
                 mb={3}
                 sx={{
                     fontSize: { xs: "30px", sm: "44px", md: "56px", lg: "56px" },
-                    fontFamily: "sen,serif",
+                  fontFamily: 'sen, sans-serif',
                     fontWeight: "500",
                     color: "#322C3E",
                     lineHeight: "130%",
@@ -137,9 +137,9 @@ export default function FAQ() {
                                 component="copytext1"
                                 sx={{
                                     color: "#322C3E",
-                                    fontWeight: 700,
+                                   fontWeight: 500,
                                     fontSize: "18px bold",
-                                    fontFamily: "Manrope, sans-serif",
+                                      frontFamily: "Manrope, sans-serif",
                                     lineHeight: "160%",
                                 }}>{item.question}</Typography>
                             <hr style={{ marginTop: 8, border: 'none', borderTop: '1px solid #ccc' }} />
@@ -152,7 +152,7 @@ export default function FAQ() {
                                 component="copytext2"
 
                                 sx={{
-                                    fontFamily: 'Manrope, serif',
+                                   frontFamily: "Manrope, sans-serif",
                                     fontWeight: 500,
                                     lineHeight: "160%",
                                     color: "#443B56",

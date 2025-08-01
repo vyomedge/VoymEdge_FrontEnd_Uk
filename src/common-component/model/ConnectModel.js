@@ -73,12 +73,12 @@ export default function ConnectModal({ open, setOpen }) {
             top: 8,
             color: (theme) => theme.palette.grey[500],
             '&:hover': {
-              backgroundColor: (theme) => theme.palette.grey[100],
+              backgroundColor:" #F7F3FF",
             },
           }}
           aria-label="close"
         >
-          <CloseIcon sx={{ fontSize: 24, color: "#DAA412" }} />
+          <CloseIcon sx={{ fontSize: 24, color: " rgba(118, 0, 196, 1)" }} />
         </IconButton>
         
         {/* Form Content */}

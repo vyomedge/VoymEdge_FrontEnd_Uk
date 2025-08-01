@@ -96,6 +96,7 @@ export default function Navbar() {
               {navItems.map((item, index) => {
                 const isActive = pathname === item.href;
                 return (
+                
                   <Link key={index} href={item.href} style={{ textDecoration: "none" }}>
                     <Button
                       sx={{
@@ -125,6 +126,7 @@ export default function Navbar() {
                   top: 18,
                   right: 160,
                   zIndex: 6,
+                  borderRadius:"5px",
                   backgroundColor: "transparent",
                   border: "2px solid #4CFFE7",
                   px: 3,

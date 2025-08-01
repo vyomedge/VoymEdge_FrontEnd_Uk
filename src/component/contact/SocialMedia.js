@@ -2,6 +2,8 @@
 
 import React from 'react';
 import { Box, Grid, Typography, IconButton } from '@mui/material';
+import Image from 'next/image';
+import Link from 'next/link';
 
 const socialIcons = [
     { src: '/whatsappicon1.svg', alt: 'WhatsApp', url: 'https://www.whatsapp.com' },
@@ -13,7 +15,7 @@ const socialIcons = [
 
 const contactIcons = [
     { src: '/contactIcon1.svg', alt: 'Phone' },
-    { src: '/contactIcon2.svg', alt: 'Email',url:"info@vyomedge.com" },
+    { src: '/contactIcon2.svg', alt: 'Email', label: "info@vyomedge.com" },
     { src: '/contactIcon3.svg', alt: 'Location' },
 ];
 
@@ -21,7 +23,7 @@ const SocialMedia = () => {
     return (
         <Box
             sx={{
-                px: { xs: 4, sm: 6, md: 6 },
+                px: { xs: 4, sm: 6, md: 6, lg:6 },
                 py: { xs: 6, sm: 8, md: 7 },
                 display: 'flex',
                 justifyContent: 'center',
@@ -46,7 +48,7 @@ const SocialMedia = () => {
                     <Box
                         sx={{
                             width: '100%',
-                            maxWidth: 400,
+                            maxWidth: 500,
                             mx: 'auto',
                             borderRadius: 2,
                             overflow: 'hidden',
@@ -56,18 +58,19 @@ const SocialMedia = () => {
                             position: 'relative',
                         }}
                     >
-                        <Box
-                            component="img"
-                            src="/contact.png"
-                            alt="contact-image"
-                            sx={{ width: '100%', borderRadius: 2 }}
+                        <Image
+                            src="/Contact.png"
+                            alt="Aboutus UK"
+                            width={400}
+                            height={430}
+                            style={{ maxWidth: "100%", height: "auto" }}
                         />
 
                         {/* Social Icons Overlay */}
                         <Box
                             sx={{
                                 display: 'flex',
-                                gap: 2,
+                                gap: 1,
                                 justifyContent: 'center',
                                 position: 'absolute',
                                 bottom: 16,
@@ -76,32 +79,37 @@ const SocialMedia = () => {
                             }}
                         >
                             {socialIcons.map((item, i) => (
-                                <IconButton data-testid="notify-button"
+                                <Link
                                     key={i}
-                                    component="a"
                                     href={item.url}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    sx={{
-                                        width: 40,
-                                        height: 40,
-                                        p: 1,
-                                        backgroundColor: '#fff',
-                                        borderRadius: '50%',
-                                        transition: '0.3s',
-                                        '&:hover': {
-                                            background:
-                                                'linear-gradient(to right, rgba(211, 0, 229, 1), rgba(118, 0, 196, 1), rgba(76, 255, 231, 1))',
-                                        },
-                                    }}
+                                    passHref
                                 >
-                                    <Box
-                                        component="img"
-                                        src={item.src}
-                                        alt={item.alt}
-                                        sx={{ width: 20, height: 20 }}
-                                    />
-                                </IconButton>
+                                    <IconButton
+                                        data-testid="notify-button"
+                                        sx={{
+
+                                            backgroundColor: '#fff',
+                                            transition: '0.3s',
+                                            '&:hover': {
+                                                background:
+                                                    'linear-gradient(to right, rgba(211, 0, 229, 1), rgba(118, 0, 196, 1), rgba(76, 255, 231, 1))',
+                                                color: '#fff',
+                                            },
+                                        }}
+                                    >
+                                        <Image
+                                            src={item.src}
+                                            alt={item.alt}
+                                            width={20}
+                                            height={20}
+                                            style={{ objectFit: 'fill' }}
+                                        />
+                                       
+                                      
+                                    </IconButton>
+                                </Link>
                             ))}
                         </Box>
                     </Box>
@@ -114,7 +122,7 @@ const SocialMedia = () => {
                             variant='h2'
                             component="h2"
                             sx={{
-                                fontFamily: "Sen",
+                                fontFamily: 'sen, sans-serif',
                                 fontWeight: 500,
                                 lineHeight: "130%",
                                 color: "#322C3E",
@@ -127,13 +135,13 @@ const SocialMedia = () => {
 
                         <Typography
                             sx={{
-                                fontFamily: "Manrope",
+                                frontFamily: "Manrope, sans-serif",
                                 fontWeight: 500,
                                 fontSize: { xs: "15px", md: "15px" },
                                 lineHeight: "160%",
                                 mt: 1,
                                 color: '#4B4B4B',
-                                maxWidth: 500,
+                                maxWidth: 360,
                                 mx: { xs: 'auto', md: 0 },
                                 position: 'relative',
                                 display: 'inline-block',
@@ -157,16 +165,24 @@ const SocialMedia = () => {
                         {/* Contact Icons */}
                         <Box sx={{ mt: 5, ml: 1 }}>
                             {contactIcons.map((item, i) => (
-                                <Box key={i} sx={{ my: 2 }}>
-                                    <Box
-                                        component="img"
+                                <Box  display={'flex'} gap={4} key={i} sx={{ my: 2 }}>
+                                    <Image
                                         src={item.src}
                                         alt={item.alt}
-                                        sx={{
-                                            width: 28,
-                                            height: 28,
-                                        }}
+                                        width={30}
+                                        height={30}
+                                        style={{ objectFit: 'fill' }}
                                     />
+                                    <Typography
+                                        variant="body2"
+                                        sx={{
+                                            fontWeight: 500,
+                                            color: 'inherit', // to support color change on hover
+                                            textTransform: 'none',
+                                        }}
+                                    >
+                                        {item.label}
+                                    </Typography>
                                 </Box>
                             ))}
                         </Box>

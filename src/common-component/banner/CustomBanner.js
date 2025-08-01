@@ -24,7 +24,7 @@ const CustomBanner = ({
         variant="h2"
         component="h2"
         sx={{
-          fontFamily: 'sen, serif',
+        fontFamily: 'sen, sans-serif',
           whiteSpace: 'wrap',
           fontWeight: 500,
           lineHeight: '130%',
@@ -39,7 +39,7 @@ const CustomBanner = ({
         variant="h2"
         component="h2"
         sx={{
-          fontFamily: 'sen, serif',
+         fontFamily: 'sen, sans-serif',
           whiteSpace: 'wrap',
           fontWeight: 500,
           lineHeight: '130%',

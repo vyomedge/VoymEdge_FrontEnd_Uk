@@ -41,7 +41,7 @@ const AboutusUK = () => {
           <Typography
             variant="h2"
             sx={{
-              fontFamily: "Sen, serif",
+            fontFamily: 'sen, sans-serif',
               fontWeight: 500,
               lineHeight: "130%",
               color: "#322C3E",
@@ -55,7 +55,7 @@ const AboutusUK = () => {
 
           <Typography
             sx={{
-              fontFamily: "Manrope, serif",
+              frontFamily: "Manrope, sans-serif",
               fontWeight: 500,
               fontSize: { xs: "18px", md: "24px" },
               lineHeight: "160%",
@@ -68,7 +68,7 @@ const AboutusUK = () => {
 
           <Typography
             sx={{
-              fontFamily: "Manrope, san serif",
+             frontFamily: "Manrope, sans-serif",
               fontWeight: 500,
               fontSize: { xs: "15px", md: "18px" },
               lineHeight: "160%",
@@ -85,7 +85,7 @@ const AboutusUK = () => {
 
   <Typography
             sx={{
-              fontFamily: "Manrope, serif",
+               frontFamily: "Manrope, sans-serif",
               fontWeight: 500,
               fontSize: { xs: "15px", md: "18px" },
               lineHeight: "160%",
@@ -93,7 +93,7 @@ const AboutusUK = () => {
               mb: 0,
             }}
              dangerouslySetInnerHTML={{
-                      __html:` With over a decade of combined team experience, we specialise in
+                      __html:` With over a decade of combined team experience, we specialize in
             <span style="color:#7600C4"> MERN Stack development, Python solutions, UI/UX design,</span>
              and   <span style="color:#7600C4">digital marketing </span> support tailored to meet the unique demands of UK startups, agencies, and enterprises.`
                   }}
