@@ -23,7 +23,7 @@ export default function Footer() {
   return (
     <Box container
       sx={{
-        backgroundImage: `linear-gradient(to bottom, rgba(50, 44, 62, 0.9), rgba(50, 44, 62, 0.9)), url("/footerimage.png")`,
+        backgroundImage: `linear-gradient(to bottom, rgba(50, 44, 62, 0.9), rgba(50, 44, 62, 0.9)), url("/footerimag.webp")`,
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
         backgroundPosition: 'center',

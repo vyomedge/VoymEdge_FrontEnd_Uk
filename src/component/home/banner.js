@@ -1,16 +1,13 @@
 // components/HeroSection.js
 import CustomButton1 from "@/common-component/button/customButton1";
 import Link from "next/link";
-import { Box, Typography, Stack, Button } from "@mui/material";
+import { Box, Typography, Stack, Button, Container } from "@mui/material";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import ConnectModal from "@/common-component/model/ConnectModel";
 import BorderAnimatedLinkButton from "@/common-component/button/botton";
 
-
 export default function HeroSection() {
-
-
   const [open, setOpen] = useState(false);
 
   const handleForm = () => {
@@ -33,51 +30,62 @@ export default function HeroSection() {
     <Box
       width="100%"
       sx={{
-        background: "linear-gradient(to bottom,rgba(255, 255, 255, 1), rgba(220, 255, 250, 1))",
-        px: { xs: 0, sm: 0, md: 0, lg: 0 },
-        py: { xs: 8, sm: 8, md: 6, lg: 10 },
-
-
+        background:
+          "linear-gradient(to bottom,rgba(255, 255, 255, 1), rgba(220, 255, 250, 1))",
+        px: 0,
+        pt: { xs: 10, sm: 8, md: 8, lg: 8 },
       }}
     >
       <ConnectModal open={open} setOpen={setOpen} />
-      <Box
+      <Container
         sx={{
           display: "flex",
           flexDirection: { xs: "column", sm: "column", md: "row", lg: "row" },
 
           justifyContent: "space-between",
-          padding: { xs: "10px 0px", sm: "25px 0px", md: "60px 10px" },
+          // padding: { xs: "10px 0px", sm: "25px 0px", md: "60px 10px" },
         }}
         gap={3}
-
       >
         {/* Text Section */}
-        <Box flex={1} display="flex" flexDirection="column" justifyContent="center" position="relative"
+        <Box
+          flex={1}
+          display="flex"
+          flexDirection="column"
+          justifyContent="center"
+          position="relative"
         >
-
-
-          <Box sx={{
-            zIndex: 5, width: { xs: '100%', sm: '100%', md: '100%' },
-            height: { xs: '100%', sm: "100%", md: '100%', lg: '50%' },
-            position: { xs: "initial", sm: "initial", md: "absolute" },
-            top: { xs: "20px", sm: "100px", md: "40px", lg: "60px" },
-            left: { xs: 0, sm: 0, md: 0, }, mt: { xs: "4px", sm: "15px", md: 0, lg: 0 }
-          }}>
+          <Box
+            sx={{
+              zIndex: 5,
+              width: { xs: "100%", sm: "100%", md: "100%" },
+              height: { xs: "100%", sm: "100%", md: "100%", lg: "50%" },
+              position: { xs: "initial", sm: "initial", md: "absolute" },
+              top: { xs: "20px", sm: "100px", md: "40px", lg: "60px" },
+              left: { xs: 0, sm: 0, md: 0 },
+              mt: { xs: "4px", sm: "15px", md: 0, lg: 0 },
+            }}
+          >
             <Typography
               variant="h1"
               component="h1"
               fontWeight="regular"
               sx={{
-
                 // position:"absolute",
-                fontSize: { xs: "36px", sm: "46px", md: "54px" },
-                fontFamily: 'sen, sans-serif',
-                width: "300px",
+                fontSize: { xs: "28px", sm: "32px", md: "42px", lg: "54px" },
+                fontFamily: "sen, sans-serif",
+                // width: "300px",
                 textAlign: { xs: "left", sm: "left", md: "left" },
-                ml: 4,
-                mb: 1, mr: 4,
-                whiteSpace: { xs: 'wrap', sm: 'nowrap', md: 'nowrap', lg: 'nowrap' },
+                ml: 2,
+                mb: 1,
+                mr: 2,
+                mt: 2,
+                whiteSpace: {
+                  xs: "wrap",
+                  sm: "nowrap",
+                  md: "nowrap",
+                  lg: "nowrap",
+                },
               }}
               dangerouslySetInnerHTML={{
                 __html: `
@@ -87,23 +95,26 @@ export default function HeroSection() {
                             -webkit-background-clip: text;
                             -webkit-text-fill-color: transparent;
                             display: inline-block;
+                            font-family: sen, sans-serif,
                           ">
                             UK Businesses
                           </span>
-                        `
-              }}>
-            </Typography>
+                        `,
+              }}
+            ></Typography>
 
             <Typography
               variant="h5"
               component={"h5"}
               sx={{
-                color: "#443B56", mb: 2, fontWeight: 500,
+                color: "#443B56",
+                mb: 2,
+                fontWeight: 500,
                 fontSize: { xs: "15px", sm: "15px", md: "15px" },
-                  frontFamily: "Manrope, sans-serif",
+                frontFamily: "Manrope, sans-serif",
                 textAlign: { xs: "left", sm: "left", md: "left" },
-                ml: 4, mr: 4,
-                
+                ml: 2,
+                mr: 2,
               }}
             >
               {`  From cutting-edge web applications to data-driven marketing, VyomEdge UK delivers smart, secure, and scalable technology tailored to British business needs.`}
@@ -115,12 +126,12 @@ export default function HeroSection() {
                 color: "#443B56",
                 textAlign: { xs: "left", md: "left" },
                 fontSize: { xs: "15px", sm: "15px", md: "15px" },
-                 frontFamily: "Manrope, sans-serif",
+                frontFamily: "Manrope, sans-serif",
                 fontWeight: 500,
-                whiteSpace: { xs: 'wrap', md: 'nowrap' },
+                whiteSpace: { xs: "wrap", md: "nowrap" },
                 mb: 0,
-                ml: 4,
-                mr: 4
+                ml: 2,
+                mr: 2,
               }}
             >
               {`We code. We design. We market. You grow.`}
@@ -129,12 +140,14 @@ export default function HeroSection() {
               direction={{ xs: "row", sm: "row", md: "row" }}
               spacing={0}
               marginTop={{ xs: 0, sm: 0, md: 4, lg: 3 }}
-              marginLeft={4}
-              alignContent={{ xs: "center", sm: "flex-start", md: "flex-start" }}
+              marginLeft={2}
+              alignContent={{
+                xs: "center",
+                sm: "flex-start",
+                md: "flex-start",
+              }}
             >
-              <BorderAnimatedLinkButton handleClick={handleForm} />
-
-
+              <BorderAnimatedLinkButton handleClick={handleForm} title={`Get a Free Strategy Session`} />
             </Stack>
           </Box>
         </Box>
@@ -144,26 +157,28 @@ export default function HeroSection() {
           sx={{
             flex: 0.5,
             // borderRadius: 2,
-            zIndex: 1
+            zIndex: 1,
           }}
         >
-          <Image
-            src="/bannerimage.png"
-            alt="Bridal Hero"
-            width={100}
-            height={100}
-            style={{
-              width: "100%",
-              height: "100%",
-              objectFit: "contain",
-              objectPosition: "top",
-              display: "block",
+          <Box
+            sx={{
+              width: { xs: 250, sm: 400, md: 450, lg: 500 },
+              height: { xs: 250, sm: 400, md: 450, lg: 500 },
+              position: "relative",
+              margin: "auto",
             }}
-          />
+          >
+            <Image
+              src="/bannerimage.png"
+              alt="Bridal Hero"
+              fill
+              style={{
+                objectFit: "contain",
+              }}
+            />
+          </Box>
         </Box>
-      </Box>
+      </Container>
     </Box>
   );
 }
-
-

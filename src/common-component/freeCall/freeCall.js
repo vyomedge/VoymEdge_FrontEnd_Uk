@@ -15,8 +15,9 @@ const FreeCall = () => {
             <Typography variant='h2' component='h2' sx={{
                    fontFamily: 'sen, sans-serif',
                 whiteSpace: "wrap",
+                
                 fontWeight: "500", lineHeight: "130%", color: "#08070aff",
-                fontSize: { xs: "24px", sm: "42px", md: "54px", lg: "56px" }
+                fontSize: { xs: "28px", sm: "32px", md: "42px", lg: "56px" }
             }}>
                 {`Let's bring your digital vision to life`}
             </Typography>
@@ -25,7 +26,7 @@ const FreeCall = () => {
                       fontFamily: 'sen, sans-serif',
                     whiteSpace: "wrap",
                     fontWeight: "500", lineHeight: "130%",
-                    fontSize: { xs: "24px", sm: "42px", md: "54px", lg: "56px" },
+                    fontSize: { xs: "28px", sm: "32px", md: "42px", lg: "56px" },
                     background: 'linear-gradient(135deg, rgba(211, 0, 229, 1), rgba(118, 0, 196, 1), rgba(76, 255, 231, 1))',
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',

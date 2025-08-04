@@ -57,6 +57,7 @@ const Services = () => {
             sx={{
                 py: 6,
                 px: 2,
+                pb:8,
                 textAlign: "center",
                 background: "linear-gradient(to bottom, #ffffff, #e6ffff)",
             }}
@@ -66,7 +67,7 @@ const Services = () => {
                 variant='h2'
                 component="h2"
                 sx={{
-                    fontSize: { xs: "28px", sm: "46px", md: "56px", lg: "56px" },
+                    fontSize: { xs: "28px", sm: "32px", md: "42px", lg: "56px" },
                     fontFamily: 'sen, sans-serif',
                     fontWeight: "500",
                     color: "#322C3E",
@@ -74,9 +75,9 @@ const Services = () => {
                     flexWrap:"wrap"
 
                 }}>
-                {` Industries We Serve in the`}
+                {` Industries We Serve in the UK`}
             </Typography>
-            <Typography
+            {/* <Typography
                 variant='h2'
                 component="h2"
                 sx={{
@@ -88,7 +89,7 @@ const Services = () => {
 
                 }}>
                 {`UK`}
-            </Typography>
+            </Typography> */}
 
             {/* Orbit Container */}
             <Box

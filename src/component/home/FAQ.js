@@ -100,7 +100,7 @@ export default function FAQ() {
                 textAlign="center"
                 mb={3}
                 sx={{
-                    fontSize: { xs: "30px", sm: "44px", md: "56px", lg: "56px" },
+                    fontSize: { xs: "28px", sm: "32px", md: "42px", lg: "56px" },
                   fontFamily: 'sen, sans-serif',
                     fontWeight: "500",
                     color: "#322C3E",
@@ -130,38 +130,39 @@ export default function FAQ() {
                                 <AddIcon sx={{ color: '#443B56' }} />
                             )
                         }
-                        sx={{}} // remove row-reverse
+                        sx={{borderBottom:"1px solid #999"}}
+                        // remove row-reverse
                     >
-                        <Box sx={{ width: '100%' }}>
+                        <Box sx={{ width: '100%', }}>
                             <Typography variant="copytext1"
                                 component="copytext1"
                                 sx={{
                                     color: "#322C3E",
-                                   fontWeight: 500,
+                                   fontWeight:expanded === index?700: 500,
                                     fontSize: "18px bold",
                                       frontFamily: "Manrope, sans-serif",
                                     lineHeight: "160%",
+                                    
                                 }}>{item.question}</Typography>
-                            <hr style={{ marginTop: 8, border: 'none', borderTop: '1px solid #ccc' }} />
+                            {/* <hr style={{ marginTop: 8, border: 'none', borderTop: '1px solid #ccc' }} /> */}
                         </Box>
                     </AccordionSummary>
 
-                    <AccordionDetails sx={{ color: 'text.secondary' }}>
+                    <AccordionDetails sx={{ color: 'text.secondary' ,backgroundColor:expanded === index&&"#f3f3f3"}}>
                         {typeof item.answer === 'string' ? (
                             <Typography variant="copytext2"
                                 component="copytext2"
 
                                 sx={{
                                    frontFamily: "Manrope, sans-serif",
-                                    fontWeight: 500,
+                                    fontWeight: 400,
                                     lineHeight: "160%",
                                     color: "#443B56",
-                                    fontSize: { xs: "15px", sm: "15px", md: "15px", lg: "15px" }
                                 }}>{item.answer}</Typography>
                         ) : (
                             item.answer
                         )}
-                        <hr style={{ marginTop: 16, border: 'none', borderTop: '1px solid #ccc' }} />
+                        {/* <hr style={{ marginTop: 16, border: 'none', borderTop: '1px solid #ccc' }} /> */}
                     </AccordionDetails>
                 </Accordion>
             ))}
