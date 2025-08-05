@@ -35,11 +35,17 @@ const navItems = [
 export default function Navbar() {
   const [open, setOpen] = React.useState(false);
   const [openDrawer, setOpenDrawer] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const toggleDrawer = (newOpen) => () => {
     setOpenDrawer(newOpen);
   };
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"), { noSsr: true });
   const pathname = usePathname();
   const isDarkBg = true;
 
@@ -57,6 +63,8 @@ export default function Navbar() {
       return () => clearTimeout(timer);
     }
   }, []);
+  
+  if (!mounted) return null; // or return a loading skeleton
 
   return (
     <AppBar
@@ -71,7 +79,7 @@ export default function Navbar() {
     >
       <ConnectModal open={open} setOpen={setOpen} />
 
-      <Container maxWidth="xl">
+      <Container>
         <Toolbar disableGutters sx={{ justifyContent: "center" }}>
           {!isMobile ? (
             <Box
@@ -122,7 +130,7 @@ export default function Navbar() {
                         px: 1,
                         py: 0.5,
                         // minWidth: "auto",
-                        fontSize: "14px",
+                        fontSize: "15px",
                         // position: "relative",
                         top: 10,
                         right: -30,
@@ -162,7 +170,7 @@ export default function Navbar() {
                   zIndex: 6,
                   borderRadius: "5px",
                   backgroundColor: "transparent",
-                  border: "2px solid #4CFFE7",
+                  // border: "2px solid #4CFFE7",
                   px: 3,
                   py: 1,
                   textTransform: "none",
@@ -224,7 +232,7 @@ export default function Navbar() {
                       // background:
                       //   "linear-gradient(135deg, rgba(211, 0, 229, 1), rgba(118, 0, 196, 1), rgba(76, 255, 231, 1))",
                       color: "#000",
-                      height: "100vh",
+                      height: "90vh",
                       padding: "50px 20px 0px 20px",
                     }}
                   >

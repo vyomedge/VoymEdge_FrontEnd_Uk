@@ -21,7 +21,7 @@ export default function Footer() {
   ];
 
   return (
-    <Box container
+    <Box 
       sx={{
         backgroundImage: `linear-gradient(to bottom, rgba(50, 44, 62, 0.9), rgba(50, 44, 62, 0.9)), url("/footerimag.webp")`,
         backgroundRepeat: 'no-repeat',
@@ -30,13 +30,10 @@ export default function Footer() {
         color: 'white',
         py: 5,
       }}>
-      <Container sx={{
-        py: { xs: 0, sm: 1, md: 1, lg: 1 },
-        px: { xs: 2, sm: 3, md: 1, lg: 2 }
-      }}>
+      <Container >
         {isClient && (
           <Box
-            onClick={() => window.scrollTo({ top: 0, behavior: "instant" })}
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             sx={{
               display: 'flex',
               alignItems: 'center',
@@ -52,7 +49,6 @@ export default function Footer() {
               sx={{
                 fontSize: { xs: "16px", sm: "16px", md: "18px" },
                 py: { xs: 0, sm: 1, md: 1, lg: 1 },
-                px: { xs: 0, sm: 0, md: 1, lg: 1 },
                 fontWeight: 500,
                 color: "white",
                 fontFamily: "Manrope, Sans-serif",
@@ -65,19 +61,17 @@ export default function Footer() {
         )}
         <Grid item xs={12} sm={4} md={2}
           display="flex"
-          justifyItems="center"
+          justifyItems="flex-end"
           justifyContent="space-between"
           gap={{ xs: 3, sm: 5, md: 1 }}
         >
           <Box
             sx={{
-              textAlign: "left", width: "130px",
-              py: { xs: 3, sm: 5, md: 1 },
-              px: { xs: 3, sm: 5, md: 1 },
-
+              // textAlign: "left", width: "130px",
+              py: { xs: 3, sm: 5, md: 3 },
               display: { xs: "contents", md: "grid" },
               gap: "1px",
-              lineHeight: "36px"
+              lineHeight: "30px"
             }}>
             <Stack> {[
 
@@ -118,7 +112,7 @@ export default function Footer() {
                     <Image
                       src="/logo.svg"
                       alt="Logo"
-                      width={50}
+                      width={80}
                       height={60}
                       style={{ height: "auto" }}
                     />
@@ -130,7 +124,7 @@ export default function Footer() {
               <Grid item xs={12} sm={4} md={2}>
                 <Box sx={{
                   textAlign: "right",
-                  width: "250px",
+                  // width: "250px",
                   px: { xs: "8px", md: "10px" },
                   py: { xs: "1px", md: "10px" },
                   display: { xs: "grid", md: "grid" },

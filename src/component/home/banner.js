@@ -71,37 +71,125 @@ export default function HeroSection() {
               component="h1"
               fontWeight="regular"
               sx={{
-                // position:"absolute",
                 fontSize: { xs: "28px", sm: "32px", md: "42px", lg: "54px" },
                 fontFamily: "sen, sans-serif",
-                // width: "300px",
                 textAlign: { xs: "left", sm: "left", md: "left" },
-                ml: 2,
-                mb: 1,
-                mr: 2,
-                mt: 2,
-                whiteSpace: {
-                  xs: "wrap",
-                  sm: "nowrap",
-                  md: "nowrap",
-                  lg: "nowrap",
-                },
+                m: 2,
               }}
-              dangerouslySetInnerHTML={{
-                __html: `
-                          Scalable Digital Solutions <br/> for 
-                          <span style="
-                            background: linear-gradient(135deg, rgba(76, 255, 231, 1), rgba(118, 0, 196, 1), rgba(211, 0, 229, 1));
-                            -webkit-background-clip: text;
-                            -webkit-text-fill-color: transparent;
-                            display: inline-block;
-                            font-family: sen, sans-serif,
-                          ">
-                            UK Businesses
-                          </span>
-                        `,
-              }}
-            ></Typography>
+            >
+              Scalable Digital Solutions <br /> for{" "}
+              <Box
+                sx={{
+                  display: "inline-block",
+                  position: "relative",
+                  px: 1,
+                }}
+              >
+                {/* Corner Decorations */}
+                {/* Top Left */}
+                <Box
+                  sx={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "10px",
+                    height: "10px",
+                    borderTop: "3px solid rgba(118, 0, 196, 1)",
+                    borderLeft: "3px solid rgba(118, 0, 196, 1)",
+                    animation: "blink 1s infinite",
+                    "@keyframes blink": {
+                      "0%": { opacity: 1 },
+                      "50%": { opacity: 0.5 },
+                      "100%": { opacity: 1 },
+                    },
+                  }}
+                />
+                {/* Top Right */}
+                <Box
+                  sx={{
+                    position: "absolute",
+                    top: 0,
+                    right: 0,
+                    width: "10px",
+                    height: "10px",
+                    borderTop: "3px solid rgba(118, 0, 196, 1)",
+                    borderRight: "3px solid rgba(118, 0, 196, 1)",
+                    animation: "blink 1s infinite",
+                    "@keyframes blink": {
+                      "0%": { opacity: 1 },
+                      "50%": { opacity: 0.5 },
+                      "100%": { opacity: 1 },
+                    },
+                  }}
+                />
+                {/* Bottom Left */}
+                <Box
+                  sx={{
+                    position: "absolute",
+                    bottom: 0,
+                    left: 0,
+                    width: "10px",
+                    height: "10px",
+                    borderBottom: "3px solid rgba(118, 0, 196, 1)",
+                    borderLeft: "3px solid rgba(118, 0, 196, 1)",
+                    animation: "blink 1s infinite",
+                    "@keyframes blink": {
+                      "0%": { opacity: 1 },
+                      "50%": { opacity: 0.5 },
+                      "100%": { opacity: 1 },
+                    },
+                  }}
+                />
+                {/* Bottom Right */}
+                <Box
+                  sx={{
+                    position: "absolute",
+                    bottom: 0,
+                    right: 0,
+                    width: "10px",
+                    height: "10px",
+                    borderBottom: "3px solid rgba(118, 0, 196, 1)",
+                    borderRight: "3px solid rgba(118, 0, 196, 1)",
+                    animation: "blink 1s infinite",
+                    "@keyframes blink": {
+                      "0%": { opacity: 1 },
+                      "50%": { opacity: 0.5 },
+                      "100%": { opacity: 1 },
+                    },
+                  }}
+                />
+
+                {/* Gradient Text */}
+                <Box
+                  component="span"
+                  sx={{
+                    background:
+                      "linear-gradient(135deg, rgba(76, 255, 231, 1), rgba(118, 0, 196, 1), rgba(211, 0, 229, 1))",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    fontFamily: "sen, sans-serif",
+                    position: "relative",
+                    zIndex: 1,
+                    backgroundSize: "200% 200%", // makes room for animation
+                    animation: "gradientMove 3s linear infinite",
+
+                    "@keyframes gradientMove": {
+                      "0%": {
+                        backgroundPosition: "0% 0%",
+                      },
+                      "50%": {
+                        backgroundPosition: "100% 100%",
+                      },
+                      "100%": {
+                        backgroundPosition: "0% 0%",
+                      },
+                    },
+                  }}
+                >
+                  UK Businesses
+                </Box>
+              </Box>
+            </Typography>
 
             <Typography
               variant="h5"
@@ -147,7 +235,10 @@ export default function HeroSection() {
                 md: "flex-start",
               }}
             >
-              <BorderAnimatedLinkButton handleClick={handleForm} title={`Get a Free Strategy Session`} />
+              <BorderAnimatedLinkButton
+                handleClick={handleForm}
+                title={`Get a Free Strategy Session`}
+              />
             </Stack>
           </Box>
         </Box>

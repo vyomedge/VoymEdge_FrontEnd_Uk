@@ -5,12 +5,7 @@ const Partner = () => {
   return (
     <Container>
       <Box
-        textAlign={{
-          xs: "left",
-          sm: "left",
-          ms: "center",
-          lg: "center",
-        }}
+        textAlign="center"
         //   px={{ xs: "20px", sm: "55px", md: "60px", lg: "100px" }}
         py={{ xs: "10px", sm: "20px", md: "30px", lg: "30px" }}
       >
@@ -20,7 +15,6 @@ const Partner = () => {
           sx={{
             fontFamily: "sen, sans-serif",
             //   whiteSpace:"nowrap",
-            fontWeight: "500",
             lineHeight: "130%",
             color: "#322C3E",
             fontSize: { xs: "28px", sm: "32px", md: "42px", lg: "56px" },
@@ -40,6 +34,7 @@ const Partner = () => {
             lineHeight: "160%",
             color: "#443B56",
             fontSize: { xs: "18px", sm: "18px", md: "18px", lg: "18px" },
+            textAlign:"center"
           }}
         >
           {`Strategic partners for UK companies ready to accelerate their digital presence. Backed by a senior 

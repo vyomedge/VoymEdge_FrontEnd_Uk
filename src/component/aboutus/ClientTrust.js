@@ -1,108 +1,127 @@
-import React from 'react'
-import { Box, Typography, Stack, Grid } from '@mui/material';
-import Image from 'next/image';
+import React from "react";
+import { Box, Typography, Stack, Grid, Container } from "@mui/material";
+import Image from "next/image";
 
 const features = [
-    "NDA & GDPR Compliance",
-    "Dedicated Account Manager for UK Region",
-    "UK-Level Quality, Indian-Level Cost",
-    "Tech-Driven with Marketing Vision",
-    "Virtual Office in London for Local Presence",
+  "NDA & GDPR Compliance",
+  "Dedicated Account Manager for UK Region",
+  "UK-Level Quality, Indian-Level Cost",
+  "Tech-Driven with Marketing Vision",
+  "Virtual Office in London for Local Presence",
 ];
 
 const ClientTrust = () => {
-    return (
-        <Grid display="flex"
-            flexDirection={{ xs: "column", sm: "column", md: "row", lg: "row" }}
-            alignItems="center"
-            justifyContent="space-evenly"
-            width="100%"
-            sx={{ background: 'linear-gradient(to bottom, #ffffff, #f0fefe )' }}
-            gap={{ xs: 4, sm: 5, md: 8, lg: 4 }}
-            px={{ xs: 2, sm: 6, md: 2, lg: 2 }}
-            py={{ xs: 4, sm: 2, md: 2, lg: 2 }}
-        >
-            <Box py={1} textAlign="center" sx={{ width: { xs: "100%", sm: "100%", md: "50%", lg: "40%" } }}>
+  return (
+    <>
+      <Box
+        sx={{
+          flexGrow: 1,
+          paddingTop: 4,
+          background: `linear-gradient(180deg, #FFFFFF 0%, #E5FFFB 100%)`,
+        }}
+      >
+        <Container>
+          <Grid
+            container
+            spacing={{ xs: 2, md: 7, lg: 7 }}
+            paddingBottom={5}
+            //   columns={{ xs: 4, sm: 8, md: 4 }}
+          >
+            <Grid size={{ xs: 12, sm: 12, md: 6, lg: 6 }}>
+              <Box py={1}>
                 <Typography
-                    variant='h2' component='h2' sx={{
-                      fontFamily: 'sen, sans-serif',
-                        whiteSpace: "nowrap",
-                        fontWeight: "500", lineHeight: "130%", color: "#322C3E",
-                        fontSize: { xs: "32px", sm: "46px", md: "56px", lg: "56px" }
-                    }}
+                  variant="h2"
+                  component="h2"
+                  sx={{
+                    fontFamily: "sen, sans-serif",
+                    whiteSpace: "nowrap",
+                    lineHeight: "130%",
+                    color: "#322C3E",
+                    fontSize: {
+                      xs: "22px",
+                      sm: "32px",
+                      md: "40px",
+                      lg: "40px",
+                    },
+                  }}
                 >
-                    {` Why UK Clients`}
-                    <br />
-                    {`  Trust VyomEdge`}
+                  {` Why UK Clients`}
+                  <br />
+                  {`  Trust VyomEdge`}
                 </Typography>
-
-                <Stack spacing={1} alignItems="center">
-                    {features.map((text, index) => (
-                        <Box
-
-                            px={{ xs: 2, sm: 2, md: 2, lg: 2 }}
-                            py={{ xs: 2, sm: 2, md: 2, lg: 2 }}
-                            key={index}
-                            sx={{
-                                textAlign: { xs: "left", sm: "left", md: "center" },
-                                borderRadius: '8px',
-                                backgroundColor: '#fff',
-                                boxShadow: '0 2px 8px rgba(76, 255, 231, 1)',
-                                minWidth: '300px',
-                                maxWidth: '100%',
-                                width: { xs: '90%', sm: '75%', md: '50%', lg: "50%" },
-                            }}
-                        >
-                            <Typography sx={{ fontSize: '16px', fontWeight: 500, color: '#322C3E' }}>
-                                {text}
-
-                            </Typography>
-                        </Box>
-                    ))}
-                </Stack>
-            </Box >
-            <Grid item xs={12} md={6} display="flex" flexDirection="column" alignItems="center" justifyContent="center"
-                px={{ xs: 2, sm: 3, md: 3, lg: 2 }}
-              sx={{ width: { xs: '90%', sm: '100%', md: '50%', lg: "50%" },}}
-            >
-                <Box sx={{ width: '100%', maxWidth: 530, textAlign: 'left' }}
-                >
+                <br />
+                {features.map((text, index) => (
+                  <Box
+                    px={{ xs: 2, sm: 2, md: 2, lg: 2 }}
+                    py={{ xs: 2, sm: 2, md: 2, lg: 2 }}
+                    mb={2}
+                    key={index}
+                    sx={{
+                      textAlign: { xs: "left", sm: "left", md: "center" },
+                      borderRadius: "8px",
+                      backgroundColor: "#fff",
+                      boxShadow: "0px 0px 2px #ddd",
+                      Width: "300px",
+                      // maxWidth: "100%",
+                    }}
+                  >
                     <Typography
-                        sx={{
-                           frontFamily: "Manrope, sans-serif",
-                            fontWeight: 500,
-                            lineHeight: '160%',
-                            color: '#443B56',
-                            fontSize: { xs: '18px', sm: '18px', md: '18px', lg: "18px" },
-                            mb: 4,
-                        }}
-                        dangerouslySetInnerHTML={{
-                            __html: `
+                      sx={{
+                        fontSize: "16px",
+                        fontWeight: 500,
+                        color: "#322C3E",
+                      }}
+                    >
+                      {text}
+                    </Typography>
+                  </Box>
+                ))}
+              </Box>
+            </Grid>
+            <Grid size={{ xs: 12, sm: 12, md: 6, lg: 6 }}>
+              <Box sx={{ width: "100%", textAlign: "left" }}>
+                <Typography
+                  sx={{
+                    frontFamily: "Manrope, sans-serif",
+                    fontWeight: 500,
+                    lineHeight: "160%",
+                    color: "#443B56",
+                    fontSize: {
+                      xs: "18px",
+                      sm: "18px",
+                      md: "18px",
+                      lg: "18px",
+                    },
+                    mb: 4,
+                  }}
+                  dangerouslySetInnerHTML={{
+                    __html: `
                        We understand the challenges UK businesses face when outsourcing — lack of clarity, 
                        time-zone friction, missed expectations. With VyomEdge UK, you experience none of that. We combine the 
                         <span style="color:#7600C4">cost advantage of offshore</span> teams with the
-                    <span style="color:#7600C4">professionalism and precision of UK agencies.</span>`
-                        }}
-                    />
+                    <span style="color:#7600C4">professionalism and precision of UK agencies.</span>`,
+                  }}
+                />
 
-                    <Box
-                        width={{ xs: "100%", md: "100%" }}
-                        display="flex"
-                        justifyContent="center"
-                    >
-                        <Image
-                            src="/clientTrust.png"
-                            alt="Aboutus UK"
-                            width={500}
-                            height={430}
-
-                        />
-                    </Box>
+                <Box
+                  width={{ xs: "100%", md: "100%" }}
+                  display="flex"
+                  justifyContent="center"
+                >
+                  <Image
+                    src="/clientTrust.png"
+                    alt="Aboutus UK"
+                    width={500}
+                    height={430}
+                  />
                 </Box>
+              </Box>
             </Grid>
-        </Grid >
-
-    )
-}
+          </Grid>
+        </Container>
+      </Box>
+    </>
+  );
+};
 
 export default ClientTrust;

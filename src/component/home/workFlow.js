@@ -26,8 +26,8 @@ const workflowSteps = [
   },
   {
     icon: "/workflow4.svg",
-    title: "Post-launch",
-    desc: "Ongoing support & optimization.",
+    title: "Launch & Support",
+    desc: "Post-launch bug fixes, optimisation & marketing.",
   },
 ];
 
@@ -44,7 +44,6 @@ export default function WorkFlow() {
         sx={{
           fontFamily: "sen, sans-serif",
           whiteSpace: "nowrap",
-          fontWeight: "500",
           lineHeight: "130%",
           color: "#322C3E",
           fontSize: { xs: "32px", sm: "46px", md: "45px", lg: "56px" },
@@ -64,6 +63,7 @@ export default function WorkFlow() {
           background: `linear-gradient(180deg, #FFFFFF 0%, #DCFFFA 100%)`,
         }}
       >
+       
         <Box
           sx={{
             display: "inline-flex",
@@ -121,12 +121,13 @@ export default function WorkFlow() {
                 <Box
                   mx={2}
                   sx={{
-                    transform: isTabletOrMobile ? "rotate(90deg)" : "none",
+                    // transform: isTabletOrMobile ? "rotate(90deg)" : "none",
                     display: "flex",
                     alignItems: "center",
+                    width:"100px",
                   }}
                 >
-                  <Image src="/Arrow.svg" alt="arrow" width={30} height={30} />
+                  <Image src="/Arrow.svg" alt="arrow" width={100} height={30} />
                 </Box>
               )}
             </Box>
