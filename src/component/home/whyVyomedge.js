@@ -66,7 +66,6 @@ const WhyVyomedge = () => {
           sx={{
             fontSize: { xs: "28px", sm: "32px", md: "42px", lg: "56px" },
             fontFamily: "sen, sans-serif",
-            fontWeight: 500,
             color: "#322C3E",
             lineHeight: 1.3,
             padding: "20px",
