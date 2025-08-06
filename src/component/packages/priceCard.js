@@ -17,10 +17,10 @@ const packages = [
     icon: "/package1.svg",
     title: "Starter Package",
     subtitle: "Kickstart Your Digital Presence",
-    price: "£499 – £999",
+    price: "£111 – £444",
     time: " (one-time)",
     features: [
-      "5-Page Website (WordPress/MERN)",
+      "5-Page Website (MERN)",
       "Mobile Responsive Design",
       "Basic SEO Setup (Metadata + GMB Setup)",
       "Social Media Profile Setup (FB, IG, LinkedIn)",
@@ -35,8 +35,8 @@ const packages = [
     icon: "/package2.svg",
     title: "Growth Package",
     subtitle: "Get Found & Convert",
-    price: "£1,299 – £1,999",
-    time: " £1,299 – £1,999",
+    price: "£999 – £1,499",
+    time: " £999 – £1,499",
     time: "(one-time, or £299/month for 6 months)",
     features: [
       "7-10 Page Website (or landing + funnel system)",
@@ -75,7 +75,7 @@ const packages = [
 const PriceCards = () => {
   return (
     <Container>
-      <Box py={{ xs: 6, md: 4 }} bgcolor="#f9f9ff">
+      <Box py={{ xs: 6, md: 4 }} >
         <Typography
           textAlign="center"
           variant="h2"
