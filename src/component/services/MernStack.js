@@ -46,7 +46,7 @@ const MernStack = () => {
         <Container>
           <Grid
             container
-            spacing={{ xs: 2, md: 7, lg: 7 }}
+            spacing={{ xs: 2, md: 5, lg: 5 }}
             paddingBottom={5}
             //   columns={{ xs: 4, sm: 8, md: 4 }}
           >
@@ -79,7 +79,6 @@ const MernStack = () => {
                   variant="h2"
                   sx={{
                     fontFamily: "sen, sans-serif",
-                    fontWeight: 500,
                     lineHeight: "130%",
                     color: "#322C3E",
                     fontSize: {
@@ -89,37 +88,20 @@ const MernStack = () => {
                       lg: "48px",
                     },
                     mb: 2,
-                    whiteSpace: "nowrap",
                   }}
                 >
-                  {`  Custom MERN Stack`} <br />
-                  {` Development`}
+                  {`Bespoke Technology & Digital Solutions for UK Businesses`}
                 </Typography>
-
                 <Typography
                   sx={{
                     frontFamily: "Manrope, sans-serif",
-                    fontWeight: 500,
-                    fontSize: { xs: "18px", md: "24px" },
-                    lineHeight: "160%",
-                    color: "#000",
-                    mb: 2,
-                  }}
-                >
-                  {`   Build Powerful, Scalable Web Applications`}
-                </Typography>
-
-                <Typography
-                  sx={{
-                    frontFamily: "Manrope, sans-serif",
-                    fontWeight: 500,
                     fontSize: { xs: "15px", md: "18px" },
                     lineHeight: "160%",
-                    color: "#000",
+                    color: "#443B56",
                     mb: 3,
                   }}
                 >
-                  {` We develop fast, secure, and responsive applications using the MERN stack — MongoDB, Express.js, React.js, and Node.js. Ideal for real-time platforms, SaaS products, CRMs, dashboards, and more.`}
+                  {`At VyomEdge, we partner with UK startups, SMEs, and enterprises to deliver robust, scalable, and future-ready digital solutions. Whether you're seeking cutting-edge software development, intuitive user experience, enterprise-grade cloud transformation, or intelligent marketing – we've got you covered.`}
                 </Typography>
 
                 <CustomButton2
