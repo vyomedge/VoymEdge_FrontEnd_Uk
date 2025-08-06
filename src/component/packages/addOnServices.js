@@ -11,7 +11,7 @@ import {
 } from '@mui/material';
 
 const services = [
-  { name: 'Landing Page (1-page funnel)', price: '£199–£299' },
+  { name: 'Landing Page (1-page funnel)', price: '£99–£199' },
   { name: 'Logo + Brand Kit Design', price: '£149' },
   { name: 'SEO Audit Report', price: '£49' },
   { name: 'Website Speed Optimization', price: '£99' },
@@ -26,7 +26,7 @@ const services = [
 const AddOnServices = () => {
   return (
     <Box sx={{ 
-      background: 'linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(220, 255, 250, 1))', textAlign: 'center' }}>
+      background: 'linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(220, 255, 250, 1))', textAlign: 'center',py:3 }}>
       {/* Title */}
       <Typography textAlign="center"
         variant="h2"
