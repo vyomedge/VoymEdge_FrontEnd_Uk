@@ -71,8 +71,8 @@ const SocialMedia = () => {
                 }}
               >
                 <Image
-                  src="/Contact.png"
-                  alt="Aboutus UK"
+                  src="/contact.png"
+                  alt="contackus UK"
                   width={400}
                   height={430}
                   style={{ maxWidth: "100%", height: "auto" }}
@@ -146,6 +146,8 @@ const SocialMedia = () => {
                 </Typography>
 
                 <Typography
+                  variant="h2"
+                  component="h2"
                   sx={{
                     frontFamily: "Manrope, sans-serif",
                     fontWeight: 500,
@@ -195,7 +197,7 @@ const SocialMedia = () => {
                           fontWeight: 500,
                           color: "inherit", // to support color change on hover
                           textTransform: "none",
-                          textAlign:"start"
+                          textAlign: "start",
                         }}
                       >
                         {item.label}

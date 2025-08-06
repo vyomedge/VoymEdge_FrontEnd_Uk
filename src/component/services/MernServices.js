@@ -202,8 +202,8 @@ const servicesData = [
       "Stay compliant, secure, and resilient in an evolving threat landscape.",
   },
   {
-    id: 4,
-    image: "/services4.png",
+    id: 5,
+    image: "/services5.png",
     title: "Cloud Services (AWS, Azure, GCP)",
     description: "Accelerate innovation with cloud-native architectures.",
     list: {
@@ -218,8 +218,8 @@ const servicesData = [
     footer: "Optimised for agility, scale, and performance.",
   },
   {
-    id: 4,
-    image: "/services4.png",
+    id: 6,
+    image: "/services6.png",
     title: "Blockchain Development",
     description: "",
     list: {
@@ -236,8 +236,8 @@ const servicesData = [
       "For fintechs, startups, and innovators seeking a technological edge.",
   },
   {
-    id: 4,
-    image: "/services4.png",
+    id: 7,
+    image: "/services7.png",
     title: "UI/UX Design Services",
     description: "",
     list: {
@@ -252,8 +252,8 @@ const servicesData = [
     footer: "Because beautiful design should convert, not just impress.",
   },
   {
-    id: 4,
-    image: "/services4.png",
+    id: 8,
+    image: "/services8.png",
     title: "Digital Marketing & SEO",
     description: "",
     list: {
@@ -269,8 +269,8 @@ const servicesData = [
     footer: "Let your brand be seen — and chosen.",
   },
   {
-    id: 4,
-    image: "/services4.png",
+    id: 9,
+    image: "/services9.png",
     title: "IT Support & Maintenance",
     description:
       "24/7 tech support that keeps your operations smooth and secure.",
@@ -286,8 +286,8 @@ const servicesData = [
     footer: "Let us manage the tech, so you can focus on growth.",
   },
   {
-    id: 4,
-    image: "/services4.png",
+    id: 10,
+    image: "/services10.png",
     title: " IT Staffing & Resource Augmentation",
     description:
       "Whether you need short-term specialists or dedicated full-time resources, we provide:",
@@ -391,14 +391,16 @@ const MernServices = () => {
                     >
                       {ele.title}
                     </Typography>
-                    <Typography>{ele.description}</Typography>
-                    <Typography>{ele?.list?.title}</Typography>
+                    <Typography color="#443B56">{ele.description}</Typography>
+                    <Typography color="#443B56">{ele?.list?.title}</Typography>
                     <List>
-                      {ele?.list?.points.map((val,index) => (
-                        <ListItem sx={{ p: 0 }} key={index}>*&ensp; {val}</ListItem>
+                      {ele?.list?.points.map((val, index) => (
+                        <ListItem sx={{ p: 0 ,color:"#443B56"}} key={index}>
+                          *&ensp; {val}
+                        </ListItem>
                       ))}
                     </List>
-                    <Typography>{ele?.footer}</Typography>
+                    <Typography color="#443B56">{ele?.footer}</Typography>
                   </Box>
                 </Grid>
               ))}
@@ -433,7 +435,6 @@ const MernServices = () => {
               fontFamily: "sen, sans-serif",
               lineHeight: "130%",
               color: "#322C3E",
-              fontWeight: 500,
               fontSize: {
                 xs: "14px", // mobile
                 sm: "16px", // tablet

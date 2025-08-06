@@ -25,7 +25,7 @@ const services = [
 
 const AddOnServices = () => {
   return (
-    <Box sx={{ py: 8, px: 6,
+    <Box sx={{ 
       background: 'linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(220, 255, 250, 1))', textAlign: 'center' }}>
       {/* Title */}
       <Typography textAlign="center"
@@ -54,7 +54,9 @@ const AddOnServices = () => {
          border:"none",
          borderRadius:"15px",
          padding:"20px"
-         }}>
+         }
+         } 
+         p={{md:3,sm:2,xs:1}}>
         <Table>
           <TableHead>
             <TableRow>

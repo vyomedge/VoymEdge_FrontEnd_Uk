@@ -30,11 +30,7 @@ const faqData = [
           <li>
             <span
               style={{
-                background:
-                  "linear-gradient(135deg, rgba(211, 0, 229, 1), rgba(118, 0, 196, 1), rgba(76, 255, 231, 1))",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                fontWeight: 500,
+                fontWeight: 600,
               }}
             >
               {` Custom MERN Stack Development`}
@@ -44,11 +40,7 @@ const faqData = [
           <li>
             <span
               style={{
-                background:
-                  "linear-gradient(135deg, rgba(211, 0, 229, 1), rgba(118, 0, 196, 1), rgba(76, 255, 231, 1))",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                fontWeight: 500,
+                fontWeight: 600,
               }}
             >
               {`  Python & Django Development`}
@@ -57,11 +49,7 @@ const faqData = [
           <li>
             <span
               style={{
-                background:
-                  "linear-gradient(135deg, rgba(211, 0, 229, 1), rgba(118, 0, 196, 1), rgba(76, 255, 231, 1))",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                fontWeight: 500,
+                fontWeight: 600,
               }}
             >
               {`  UI/UX Design & Prototyping`}
@@ -70,11 +58,7 @@ const faqData = [
           <li>
             <span
               style={{
-                background:
-                  "linear-gradient(135deg, rgba(211, 0, 229, 1), rgba(118, 0, 196, 1), rgba(76, 255, 231, 1))",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                fontWeight: 500,
+                fontWeight: 600,
               }}
             >
               {` Digital Marketing & SEO`}
@@ -90,17 +74,19 @@ const faqData = [
     ),
   },
   {
-    question:
-      "How does VyomEdge UK ensure smooth communication for UK clients?",
-    answer: "How does VyomEdge UK ensure smooth communication for UK clients?",
+    question: "How does VyomEdge ensure smooth communication for UK clients?",
+    answer:
+      "We align with UK business hours and assign a dedicated manager for real-time updates via Zoom, Slack, or WhatsApp.",
   },
   {
-    question: "Where is VyomEdge UK based, and who delivers the work?",
-    answer: "Where is VyomEdge UK based, and who delivers the work?",
+    question: "Where is VyomEdge based, and who delivers the work?",
+    answer:
+      "Our core team is based in India, but all work is done in-house and managed through our UK-facing platform — no third-party outsourcing.",
   },
   {
     question: "Are your solutions compliant with UK regulations and GDPR?",
-    answer: "Are your solutions compliant with UK regulations and GDPR?",
+    answer:
+      "Yes. All our services fully comply with UK laws and GDPR, ensuring secure data handling and privacy at every step.",
   },
 ];
 
@@ -138,6 +124,7 @@ export default function FAQ() {
             bgcolor: "transparent",
             "&:before": { display: "none" },
             // mb: 2,
+            p: 0,
           }}
         >
           <AccordionSummary
@@ -148,7 +135,21 @@ export default function FAQ() {
                 <AddIcon sx={{ color: "#443B56" }} />
               )
             }
-            sx={{ borderBottom: "1px solid #999", px: 0, py: 2 }}
+            sx={{
+              borderBottom: "1px solid #ccc",
+              px:0,
+              py:2,
+              minHeight: "55px", // keep it same when expanded
+              "&.Mui-expanded": {
+                minHeight: "55px",
+              },
+              "& .MuiAccordionSummary-content": {
+                margin: 0,
+                "&.Mui-expanded": {
+                  margin: 0,
+                },
+              },
+            }}
             // remove row-reverse
           >
             <Box sx={{ width: "100%" }}>

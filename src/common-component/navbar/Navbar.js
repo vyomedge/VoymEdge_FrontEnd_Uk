@@ -53,17 +53,30 @@ export default function Navbar() {
     setOpen(true);
   };
 
+  // useEffect(() => {
+  //   const alreadyShown = localStorage.getItem("Formshown");
+  //   if (!alreadyShown) {
+  //     const timer = setTimeout(() => {
+  //       setOpen(true);
+  //       localStorage.setItem("Formshown", "true");
+  //     }, 5000);
+  //     return () => clearTimeout(timer);
+  //   }
+  // }, []);
+
   useEffect(() => {
-    const alreadyShown = localStorage.getItem("Formshown");
+    if (typeof window === "undefined") return;
+
+    const alreadyShown = sessionStorage.getItem("Formshown");
     if (!alreadyShown) {
       const timer = setTimeout(() => {
         setOpen(true);
-        localStorage.setItem("Formshown", "true");
+        sessionStorage.setItem("Formshown", "true");
       }, 5000);
       return () => clearTimeout(timer);
     }
   }, []);
-  
+
   if (!mounted) return null; // or return a loading skeleton
 
   return (
