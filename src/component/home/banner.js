@@ -192,8 +192,8 @@ export default function HeroSection() {
             </Typography>
 
             <Typography
-              variant="h5"
-              component={"h5"}
+              variant="p"
+              component={"p"}
               sx={{
                 color: "#443B56",
                 mb: 2,
@@ -261,11 +261,12 @@ export default function HeroSection() {
           >
             <Image
               src="/bannerimage.png"
-              alt="Bridal Hero"
+              alt="vyomedge banner image"
               fill
               style={{
                 objectFit: "contain",
               }}
+              title="vyomedge banner image"
             />
           </Box>
         </Box>

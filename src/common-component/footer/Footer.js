@@ -116,7 +116,7 @@ export default function Footer() {
                   variant="copytext1"
                   component="copytext1"
                   sx={{
-                    fontSize: { xs: "14px", sm: "14px", md: "18px" },
+                    fontSize: { xs: "12px", sm: "13px", md: "15px" },
                     fontWeight: 500,
                     // mb: 2,
                     // mt: 2,
@@ -141,6 +141,7 @@ export default function Footer() {
                     <Image
                       src="/logo.svg"
                       alt="Logo"
+                      title="Logo"
                       width={80}
                       height={60}
                       style={{ height: "auto" }}
@@ -211,7 +212,7 @@ export default function Footer() {
                       aria-label={alt}
                       sx={footerstyle.footericonhover}
                     >
-                      <Image src={src} alt={alt} width={20} height={20} />
+                      <Image src={src} alt={alt} title={alt} width={20} height={20} />
                     </IconButton>
                   ))}
                 </Box>

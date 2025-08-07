@@ -56,7 +56,7 @@ const OurMission = () => {
             dangerouslySetInnerHTML={{
               __html: `
                   To empower British businesses
-                  <Image src="/ArrowG.svg" alt="arrow" style="
+                  <Image src="/ArrowG.svg" alt="arrow" title="arrow" style="
                   height: 24px;
                   width: 24px;
                   display: inline-block;
@@ -64,7 +64,7 @@ const OurMission = () => {
                   margin: 0 6px;
                 "/>
                   from high-growth startups to well-established enterprises
-                   <Image src="/ArrowG.svg" alt="arrow" style="
+                   <Image src="/ArrowG.svg" alt="arrow" title="arrow" style="
                   height: 24px;
                   width: 24px;
                   display: inline-block;

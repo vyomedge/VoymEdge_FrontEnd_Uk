@@ -120,6 +120,7 @@ const WeOffer = () => {
                 <Card
                   elevation={3}
                   sx={{
+                    position:"relative",
                     textAlign: "left",
                     borderRadius: 3,
                     overflow: "hidden",
@@ -153,7 +154,8 @@ const WeOffer = () => {
                       src={card.image}
                       alt={card.title}
                       layout="fill"
-                      objectFit="cover"
+                      // objectFit="cover"
+                      title="vyomedge offer image"
                     />
                   </Box>
                   {/* <CardContent
@@ -232,8 +234,18 @@ const WeOffer = () => {
                       bottom: "20px",
                       right: "20px",
                       justifyContent: "flex-end",
-                      opacity: 0,
-                      visibility: "hidden",
+                      visibility: {
+                        lg: "hidden",
+                        md: "hidden",
+                        sm: "visible",
+                        xs: "visible",
+                      },
+                      opacity: {
+                        lg: 0,
+                        md: 0,
+                        sm: 1,
+                        xs: 1,
+                      },
                       transition: "opacity 0.5s ease, visibility 0.5s ease",
                     }}
                   >

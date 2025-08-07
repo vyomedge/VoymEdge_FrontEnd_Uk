@@ -30,8 +30,8 @@ const CustomBanner = ({
       {...props}
     >
       <Typography
-        variant="h2"
-        component="h2"
+        variant="h1"
+        component="h1"
         sx={{
           fontFamily: "sen, sans-serif",
           whiteSpace: "wrap",

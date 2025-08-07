@@ -67,6 +67,7 @@ const MernStack = () => {
                 <Image
                   src="/servicesPic1.png"
                   alt="MERN Stack"
+                  title="MERN Stack"
                   width={575}
                   height={430}
                   style={{ maxWidth: "100%", height: "auto" }}
