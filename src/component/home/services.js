@@ -139,6 +139,7 @@ const Services = () => {
                     component="img"
                     src={service.icon}
                     alt={service.label}
+                    title={service.label}
                     sx={{ width: "100%", height: "100%" }}
                   />
                 ) : (
@@ -182,6 +183,7 @@ const Services = () => {
           <Avatar
             src="/logo.svg"
             alt="Center Icon"
+            title="Center Icon"
             variant="circular"
             sx={{ width: "100%", height: "100%" }}
           />

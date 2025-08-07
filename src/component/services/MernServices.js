@@ -370,7 +370,7 @@ const MernServices = () => {
                         borderRadius: 5,
                       }}
                     >
-                      <Image src={ele.image} alt="image" fill />
+                      <Image src={ele.image} alt="image" fill title={ele.title} />
                     </Box>
 
                     <Typography

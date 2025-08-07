@@ -111,6 +111,7 @@ const ClientTrust = () => {
                   <Image
                     src="/clientTrust.png"
                     alt="Aboutus UK"
+                    title="Aboutus UK"
                     width={500}
                     height={430}
                   />

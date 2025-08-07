@@ -25,11 +25,11 @@ import BorderAnimatedLinkButton from "../button/botton";
 import CloseIcon from "@mui/icons-material/Close";
 
 const navItems = [
-  { label: "Home", href: "/" },
-  { label: "Services", href: "/services" },
-  { label: "Packages", href: "/packages" },
-  { label: "About Us", href: "/aboutus" },
-  { label: "Contact", href: "/contactus" },
+  { label: "Home", href: "/", title: "go to home" },
+  { label: "Services", href: "/services", title: "go to services" },
+  { label: "Packages", href: "/packages", title: "go to packages" },
+  { label: "About Us", href: "/aboutus", title: "go to aboutus" },
+  { label: "Contact", href: "/contactus", title: "go to contactus" },
 ];
 
 export default function Navbar() {
@@ -118,6 +118,7 @@ export default function Navbar() {
                   <Image
                     src="/VElogo.svg"
                     alt="Logo"
+                    title="vyomedge logo"
                     width={250}
                     height={31}
                     style={{ maxWidth: "100%", height: "auto" }}
@@ -132,6 +133,7 @@ export default function Navbar() {
                   <Link
                     key={index}
                     href={item.href}
+                    aria-label={item.title}
                     style={{ textDecoration: "none" }}
                   >
                     <Button
@@ -205,6 +207,7 @@ export default function Navbar() {
                 <Image
                   src="/VElogo.svg"
                   alt="Logo"
+                  title="vyomedge logos"
                   width={160}
                   height={35}
                   style={{ cursor: "pointer" }}
@@ -215,6 +218,7 @@ export default function Navbar() {
                 <Image
                   src="/hamburgmenu.png"
                   alt="Logo"
+                  title="vyomedge menu"
                   width={25}
                   height={20}
                   style={{ cursor: "pointer", resize: "contain" }}

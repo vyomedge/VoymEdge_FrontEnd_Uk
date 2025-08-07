@@ -126,6 +126,7 @@ const PriceCards = () => {
                     <Image
                       src={pkg.icon}
                       alt={pkg.title}
+                      title={pkg.title}
                       width={30}
                       height={30}
                       style={{ marginRight: 12 }}

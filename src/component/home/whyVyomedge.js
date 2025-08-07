@@ -100,6 +100,7 @@ const WhyVyomedge = () => {
                   alt={item.title}
                   width={40}
                   height={40}
+                  title="why vyomedge "
                 />
                 <Box textAlign="left">
                   <Typography

@@ -94,6 +94,7 @@ const WeWork = () => {
                     <Image
                       src={item.icon}
                       alt={item.title}
+                      title={item.title}
                       width={50}
                       height={50}
                     />

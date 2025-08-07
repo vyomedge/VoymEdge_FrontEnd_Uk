@@ -3,6 +3,7 @@ import React from "react";
 import CustomButton1 from "../button/customButton1";
 import CustomButton2 from "../button/customButton2";
 import Link from "next/link";
+import BorderAnimatedLinkButton from "../button/botton";
 
 const FreeCall = () => {
   return (
@@ -71,6 +72,7 @@ const FreeCall = () => {
                 mt: 1,
                 fontSize: "15px",
                 fontWeight: "500",
+                textTransform:"lowercase"
               }}
             >
               {`Book a Free Call`}

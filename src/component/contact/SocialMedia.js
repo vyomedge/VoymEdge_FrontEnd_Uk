@@ -73,6 +73,7 @@ const SocialMedia = () => {
                 <Image
                   src="/contact.png"
                   alt="contackus UK"
+                  title="contackus UK"
                   width={400}
                   height={430}
                   style={{ maxWidth: "100%", height: "auto" }}
@@ -113,6 +114,7 @@ const SocialMedia = () => {
                         <Image
                           src={item.src}
                           alt={item.alt}
+                          title={item.alt}
                           width={20}
                           height={20}
                           style={{ objectFit: "fill" }}
@@ -187,6 +189,7 @@ const SocialMedia = () => {
                       <Image
                         src={item.src}
                         alt={item.alt}
+                        title={item.alt}
                         width={30}
                         height={30}
                         style={{ objectFit: "fill" }}

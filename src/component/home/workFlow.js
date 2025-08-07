@@ -89,7 +89,7 @@ export default function WorkFlow() {
               }}
             >
               {/* Icon */}
-              <Image src={step.icon} alt={step.title} width={40} height={40} />
+              <Image src={step.icon} alt={step.title} width={40} height={40} title={step.title} />
 
               {/* Text */}
               <Box ml={2}>
@@ -127,7 +127,7 @@ export default function WorkFlow() {
                     width:"100px",
                   }}
                 >
-                  <Image src="/Arrow.svg" alt="arrow" width={100} height={30} />
+                  <Image src="/Arrow.svg" alt="arrow" title="arrow image" width={100} height={30} />
                 </Box>
               )}
             </Box>

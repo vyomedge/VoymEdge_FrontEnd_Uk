@@ -82,6 +82,7 @@ const BreadcrumbsComponent = ({
                 <Image
                   src="home.svg"
                   alt="Home"
+                  title="Home"
                   width={16}
                   height={16}
                 // style={{ marginRight: 6 }}

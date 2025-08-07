@@ -46,6 +46,7 @@ const AboutusUK = () => {
                 <Image
                   src="/aboutusUK.png"
                   alt="Aboutus UK"
+                  title="Aboutus vyomedge"
                   width={500}
                   height={430}
                   style={{ maxWidth: "100%", height: "auto" }}
