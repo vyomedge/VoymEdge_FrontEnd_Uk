@@ -181,6 +181,7 @@ const EnquiryForm = () => {
             </Box>
         </Box>
     );
+    
 };
 
 export default EnquiryForm;
