@@ -9,11 +9,11 @@ const Services = () => {
     <>
       <>
         <SEO
-          url="https://www.vyomedge.uk/services"
+          url="https://uk.vyomedge.com/services"
           metaTitle="Our Services | MERN, Python, UI/UX & Digital Marketing for UK Clients"
           metaDescription="Explore VyomEdge’s full range of services including MERN Stack, Python solutions, UI/UX, and digital marketing."
           keywords="MERN stack services UK, Python services UK, UI UX design UK, digital marketing services UK, web solutions UK"
-          canonical="https://www.vyomedge.uk/services"
+          canonical="https://uk.vyomedge.com/services"
           ogTitle="Our Services | MERN, Python, UI/UX & Digital Marketing for UK Clients"
           ogDescription="Explore VyomEdge’s full range of services including MERN Stack, Python solutions, UI/UX, and digital marketing."
           ogImage=""

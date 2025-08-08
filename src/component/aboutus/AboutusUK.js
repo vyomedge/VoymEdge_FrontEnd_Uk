@@ -89,10 +89,9 @@ const AboutusUK = () => {
                 <Typography
                   sx={{
                     frontFamily: "Manrope, sans-serif",
-                    fontWeight: 500,
                     fontSize: { xs: "15px", md: "18px" },
                     lineHeight: "160%",
-                    color: "#000",
+                    color: "#444",
                     mb: 3,
                   }}
                   dangerouslySetInnerHTML={{
@@ -105,10 +104,9 @@ const AboutusUK = () => {
                 <Typography
                   sx={{
                     frontFamily: "Manrope, sans-serif",
-                    fontWeight: 500,
                     fontSize: { xs: "15px", md: "18px" },
                     lineHeight: "160%",
-                    color: "#000",
+                    color: "#444",
                     mb: 0,
                   }}
                   dangerouslySetInnerHTML={{

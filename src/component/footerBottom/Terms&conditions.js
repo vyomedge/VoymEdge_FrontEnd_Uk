@@ -17,11 +17,11 @@ import CustomBanner from '@/common-component/banner/CustomBanner';
 import SEO from '@/common-component/SEO/seo';
 
 const StyledPaper = styled(Paper)(({ theme }) => ({
-  padding: theme.spacing(4),
-  marginBottom: theme.spacing(3),
-  boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
-  borderRadius: theme.spacing(2),
-  [theme.breakpoints.down('md')]: {
+  padding: theme.spacing(2),
+  marginBottom: theme.spacing(1),
+  boxShadow: "0 0px 4px rgba(0,0,0,0.2)",
+  borderRadius: theme.spacing(0.5),
+  [theme.breakpoints.down("md")]: {
     padding: theme.spacing(2),
   },
 }));
@@ -31,6 +31,13 @@ const SectionTitle = styled(Typography)(({ theme }) => ({
   marginBottom: theme.spacing(2),
   color: '#001538',
   position: 'relative',
+   background:
+    "linear-gradient(260.31deg, #4CFFE7 0%, #7600C4 41.58%, #D300E5 87.79%)",
+  WebkitBackgroundClip: "text",
+  WebkitTextFillColor: "transparent",
+  backgroundClip: "text",
+  color: "transparent", // fallback for non-webkit browsers},
+  width: "fit-content",
   '&::after': {
     content: '""',
     position: 'absolute',
@@ -114,7 +121,7 @@ const termsData = {
       content: "These Terms are governed by and construed in accordance with the laws of England and Wales. Any disputes shall be subject to the exclusive jurisdiction of the UK courts.",
     },
     {
-      title: "📧 Contact Us",
+      title: "Contact Us",
       content: "If you have any queries regarding these Terms, please contact:",
       contactInfo: {
         company: "VyomEdge ",
@@ -133,11 +140,11 @@ export default function TermsAndConditions() {
     <>
       <>
         <SEO
-          url='https://www.vyomedge.uk/terms-and-conditions'
+          url='https://uk.vyomedge.com/terms-and-conditions'
           metaTitle='Terms & Conditions | VyomEdge Service Terms'
           metaDescription="Review VyomEdge's terms and conditions governing service usage, contracts, and compliance under UK business law."
           keywords='terms and conditions UK, VyomEdge service terms, website T&C UK, digital service agreement UK'
-          canonical='https://www.vyomedge.uk/terms-and-conditions'
+          canonical='https://uk.vyomedge.com/terms-and-conditions'
           ogTitle='Terms & Conditions | VyomEdge Service Terms'
           ogDescription="Review VyomEdge's terms and conditions governing service usage, contracts, and compliance under UK business law."
           ogImage=''
@@ -150,51 +157,20 @@ export default function TermsAndConditions() {
       <CustomBanner
         showLogo={true}
         logoSrc="/logo.png"
-        height="30vh"
+        title={"welcome to Terms And Conditions"}
+          breadcrumbs={[
+          {
+            name: "Home",
+            goesto: "/",
+          },
+          {
+            name: "Terms And Conditions",
+            goesto: "/termsAndConditions",
+          },
+        ]}
       />
       <Container maxWidth="lg" sx={{ py: 4 }}>
-        {/* Header Section */}
-        <StyledPaper elevation={3}>
-          <Box textAlign="center" mb={3}>
-            <Typography
-              variant={isMobile ? "h4" : "h3"}
-              component="h1"
-              gutterBottom
-              sx={{
-                fontWeight: 700,
-               fontFamily: 'sen, sans-serif',
-                background: "#001538",
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                mb: 2
-              }}
-            >
-              {termsData.title}
-            </Typography>
-
-
-            <Typography variant="h6" color="#000000" sx={{ fontStyle: 'italic' }}>
-              Welcome to {termsData.companyName}  — {termsData.description}
-            </Typography>
-          </Box>
-
-          <Divider sx={{ my: 3 }} />
-
-          <Typography variant="body1" >
-            {`  Before you explore, book, or contact us through our website, please take a moment to read our terms.`}
-          </Typography>
-
-          <Typography
-            variant="body1"
-            sx={{ fontWeight: 500 }}
-            dangerouslySetInnerHTML={{
-              __html: `By accessing or using <strong>${termsData.website}</strong>, you agree to the following terms and conditions:`,
-            }}
-          />
-
-          <Typography variant="body1" sx={{ fontWeight: 500 }}></Typography>
-
-        </StyledPaper>
+   
 
         {/* Terms Sections */}
         {termsData.sections.map((section, index) => (

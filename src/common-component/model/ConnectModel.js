@@ -82,7 +82,7 @@ export default function ConnectModal({ open, setOpen }) {
         </IconButton>
         
         {/* Form Content */}
-        <Box sx={{ mt: 4 }}>
+        <Box sx={{ mt: 2}}>
          <EnquiryForm></EnquiryForm>
         </Box>
       </Box>

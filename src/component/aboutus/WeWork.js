@@ -1,6 +1,9 @@
 import { Box, Typography, Grid, Paper, Container } from "@mui/material";
 import React from "react";
 import Image from "next/image";
+import CustomButton2 from "@/common-component/button/customButton2";
+import CustomButton1 from "@/common-component/button/customButton1";
+import Link from "next/link";
 
 const WeWork = () => {
   const cardData = [
@@ -80,6 +83,7 @@ const WeWork = () => {
                     elevation={0}
                     sx={{
                       width: "290px",
+                      height: "80px",
                       display: "flex",
                       alignItems: "center",
                       gap: 2,
@@ -129,28 +133,100 @@ const WeWork = () => {
         </Box>
       </Container>
       <Box
-        sx={{ background: `linear-gradient(180deg, #FFFFFF 0%, #E5FFFB 100%)`,py:5 }}
+        sx={{
+          background: `linear-gradient(180deg, #FFFFFF 0%, #E5FFFB 100%)`,
+        }}
       >
         <Container>
-          <Typography
+          <Box
             sx={{
-              textAlign: "center",
-              fontSize: { xs: "28px", sm: "32px", md: "42px", lg: "48px" },
-              fontFamily: "sen, sans-serif",
-              color:"#222"
+              py: 5,
+              position: "relative",
             }}
           >
-            Let’s Build Something Together
-          </Typography>
-          <Typography
-            sx={{
-              textAlign: "center",
-              fontSize: { xs: "13px", sm: "18px", md: "18px", lg: "18px" },
-            }}
-          >
-            Ready to take your UK business to the next level? Let’s discuss how
-            VyomEdge UK can support your growth.
-          </Typography>
+            <Typography
+              sx={{
+                textAlign: "center",
+                fontSize: { xs: "28px", sm: "32px", md: "42px", lg: "48px" },
+                fontFamily: "sen, sans-serif",
+                color: "#222",
+              }}
+            >
+              Let’s Build Something Together
+            </Typography>
+            <Typography
+              sx={{
+                textAlign: "center",
+                fontSize: { xs: "13px", sm: "18px", md: "18px", lg: "18px" },
+              }}
+            >
+              Ready to take your UK business to the next level? Let’s discuss
+              how VyomEdge UK can support your growth.
+            </Typography>
+            <Box display="flex" gap={2} justifyContent="center" mt={2}>
+              <Link href="tel:+447774709698" passHref legacyBehavior>
+                <a style={{ textDecoration: "none" }}>
+                  <CustomButton1
+                    data-testid="notify-button"
+                    onClick={() => console.log("Booked!")}
+                    sx={{
+                      borderRadius: "5px",
+                      mt: 1,
+                      fontSize: "15px",
+                      fontWeight: "500",
+                      textTransform: "lowercase",
+                    }}
+                  >
+                    {`Book a Free Call`}
+                  </CustomButton1>
+                </a>
+              </Link>
+              <Link href="/packages" passHref legacyBehavior>
+                <a style={{ textDecoration: "none" }}>
+                  <CustomButton2
+                    data-testid="notify-button"
+                    onClick={() => console.log("Booked!")}
+                    sx={{
+                      borderRadius: "5px",
+                      mt: 1,
+                      fontSize: "15px",
+                      fontWeight: "500",
+                    }}
+                  >
+                    {`Get a Quote Now`}
+                  </CustomButton2>
+                </a>
+              </Link>
+            </Box>
+            <Box
+              sx={{
+                position: "absolute",
+                left: "0px",
+                bottom: "20px",
+                background:
+                  "linear-gradient(260.31deg, #4CFFE7 0%, #7600C4 41.58%, #D300E5 87.79%)",
+                height: 50,
+                width: 50,
+                borderRadius: "50%",
+                opacity: 1,
+                filter: "blur(15px)",
+              }}
+            />
+            <Box
+              sx={{
+                position: "absolute",
+                right: "0px",
+                top: "0px",
+                background:
+                  "linear-gradient(260.31deg, #4CFFE7 0%, #7600C4 41.58%, #D300E5 87.79%)",
+                height: 25,
+                width: 25,
+                borderRadius: "50%",
+                opacity: 0.7,
+                filter: "blur(8px)",
+              }}
+            />
+          </Box>
         </Container>
       </Box>
 

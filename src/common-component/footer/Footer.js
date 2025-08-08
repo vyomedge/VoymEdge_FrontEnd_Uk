@@ -52,7 +52,7 @@ export default function Footer() {
         backgroundSize: "cover",
         backgroundPosition: "center",
         color: "white",
-        pt: 4,
+        pt: 10,
         pb: 2,
       }}
     >
@@ -176,7 +176,7 @@ export default function Footer() {
                   </Box>
                 </Typography>
 
-                <Typography
+                {/* <Typography
                   variant="body2"
                   sx={{ fontSize: "15px", color: "#E4E4E4", fontWeight: 400 }}
                 >
@@ -192,7 +192,7 @@ export default function Footer() {
                   >
                     +44 7774709698
                   </a>
-                </Typography>
+                </Typography> */}
                 <Box
                   sx={{
                     display: "flex",

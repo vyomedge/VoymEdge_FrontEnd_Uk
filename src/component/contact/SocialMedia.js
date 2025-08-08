@@ -30,7 +30,7 @@ const socialIcons = [
 ];
 
 const contactIcons = [
-  { src: "/contactIcon1.svg", alt: "Phone", label: "     +44 7774709698" },
+  // { src: "/contactIcon1.svg", alt: "Phone", label: "     +44 7774709698" },
   { src: "/contactIcon2.svg", alt: "Email", label: "info@vyomedge.com" },
   {
     src: "/contactIcon3.svg",
@@ -185,7 +185,7 @@ const SocialMedia = () => {
                 {/* Contact Icons */}
                 <Box sx={{ mt: 5, ml: 1 }}>
                   {contactIcons.map((item, i) => (
-                    <Box display={"flex"} gap={2} key={i} sx={{ my: 2 }}>
+                    <Box display={"flex"} alignItems={"center"} gap={2} key={i} sx={{ my: 2 }}>
                       <Image
                         src={item.src}
                         alt={item.alt}

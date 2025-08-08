@@ -16,11 +16,11 @@ export default function Home () {
        <>  
          <>
           <SEO
-          url='https://www.vyomedge.uk/'
+          url='https://uk.vyomedge.com/'
           metaTitle='Web Development & Digital Marketing Services for UK Businesses | VyomEdge'
           metaDescription='VyomEdge offers tailored MERN Stack, Python development, UI/UX design, and digital marketing for UK enterprises.'
           keywords='MERN stack development UK, Python development UK, UI UX design UK, digital marketing UK, web development agency UK'
-          canonical='https://www.vyomedge.uk/'
+          canonical='https://uk.vyomedge.com/'
           ogTitle='Web Development & Digital Marketing Services for UK Businesses | VyomEdge'
           ogDescription='VyomEdge offers tailored MERN Stack, Python development, UI/UX design, and digital marketing for UK enterprises.'
           ogImage=''

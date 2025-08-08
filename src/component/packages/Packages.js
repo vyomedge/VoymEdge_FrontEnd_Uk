@@ -11,11 +11,11 @@ const Packages = () => {
     <>
       <>
         <SEO
-          url="https://www.vyomedge.uk/packages"
+          url="https://uk.vyomedge.com/packages"
           metaTitle="Affordable Development & Marketing Packages | VyomEdge"
           metaDescription="Choose from our affordable packages for web development, SEO, design & more — tailored to UK businesses."
           keywords="web development packages UK, SEO packages UK, digital marketing plans UK, UI UX pricing UK"
-          canonical="https://www.vyomedge.uk/packages"
+          canonical="https://uk.vyomedge.com/packages"
           ogTitle="Affordable Development & Marketing Packages | VyomEdge"
           ogDescription="Choose from our affordable packages for web development, SEO, design & more — tailored to UK businesses."
           ogImage=""
