@@ -293,14 +293,9 @@ const EnquiryForm = () => {
             {" Let's Talk"}
           </CustomButton2>
         </Box>
-<<<<<<< HEAD
-    );
-    
-=======
       </Box>
     </Container>
   );
->>>>>>> 08688b929b5120621da648dbc175143fa5bb81b9
 };
 
 export default EnquiryForm;
