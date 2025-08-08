@@ -36,6 +36,7 @@ const CustomBanner = ({
           fontFamily: "sen, sans-serif",
           whiteSpace: "wrap",
           // fontWeight: 500,
+          marginTop:2,
           lineHeight: "130%",
           color: "#322C3E",
           fontSize: { xs: "30px", sm: "42px", md: "54px", lg: "56px" },

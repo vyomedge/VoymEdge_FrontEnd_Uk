@@ -12,11 +12,11 @@ const AboutUs = () => {
     <>
       <>
         <SEO
-          url="https://www.vyomedge.uk/about-us"
+          url="https://uk.vyomedge.com/about-us"
           metaTitle="About VyomEdge | Offshore Web & Marketing Partner for the UK"
           metaDescription="Learn about VyomEdge, your trusted partner in MERN, Python, UI/UX & marketing. Built for UK startups & businesses."
           keywords="about VyomEdge, offshore development UK, UK digital agency, UK IT outsourcing, MERN development UK"
-          canonical="https://www.vyomedge.uk/about-us"
+          canonical="https://uk.vyomedge.com/about-us"
           ogTitle="About VyomEdge | Offshore Web & Marketing Partner for the UK"
           ogDescription="Learn about VyomEdge, your trusted partner in MERN, Python, UI/UX & marketing. Built for UK startups & businesses."
           ogImage={``}

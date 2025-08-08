@@ -15,11 +15,11 @@ const ContactUs = () => {
     <>
       <>
         <SEO
-          url="https://www.vyomedge.uk/contact-us"
+          url="https://uk.vyomedge.com/contact-us"
           metaTitle="Contact VyomEdge | Discuss Your Project or Get a Quote"
           metaDescription="Get in touch with VyomEdge to discuss your web development, design or digital marketing needs. UK support team."
           keywords="contact VyomEdge, UK web development contact, offshore IT team UK, digital marketing quote UK"
-          canonical="https://www.vyomedge.uk/contact-us"
+          canonical="https://uk.vyomedge.com/contact-us"
           ogTitle="Contact VyomEdge | Discuss Your Project or Get a Quote"
           ogDescription="Get in touch with VyomEdge to discuss your web development, design or digital marketing needs. UK support team."
           ogImage=""

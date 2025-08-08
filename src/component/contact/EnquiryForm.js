@@ -12,25 +12,27 @@ import {
   Container,
 } from "@mui/material";
 import CustomButton2 from "@/common-component/button/customButton2";
+import MuiPhoneNumber from "mui-phone-number";
 
 const inputstyle = {
   backgroundColor: "#F7F3FF",
-  borderRadius: "8px",
+  borderRadius: "4px",
   transition: "0.3s ease",
   "& fieldset": {
-    boxShadow: "0 0 0 1px rgba(211, 0, 229, 0.2)", // remove the default outlined border
-  },
-  "&:hover fieldset": {
-    border: "none", // remove border on hover
-  },
-  "&.Mui-focused fieldset": {
-    border: "none", // remove border on focus
+    boxShadow: "none !important", // remove the default outlined border
   },
   "&:hover": {
-    boxShadow: "0 0 0 1px rgba(211, 0, 229, 0.5)", // optional subtle hover effect without border
+    boxShadow: "0 0 0 1px rgba(211, 0, 229, 0.5) !important", // optional subtle hover effect without border
   },
+  "&:hover fieldset": {
+    border: "none !important", // remove border on hover
+  },
+  "&.Mui-focused fieldset": {
+    border: "none !important", // remove border on focus
+  },
+
   "&.Mui-focused": {
-    boxShadow: "0 0 0 1px rgba(211, 0, 229, 0.5)", // optional glowing effect on focus
+    boxShadow: "0 0 0 1px rgba(211, 0, 229, 0.5) !important", // optional glowing effect on focus
   },
 };
 
@@ -55,9 +57,10 @@ const EnquiryForm = () => {
     }
     if (!formData.phone) {
       newErrors.phone = "Phone number is required";
-    } else if (!/^\d{10}$/.test(formData.phone)) {
-      newErrors.phone = "Phone must be 10 digits";
     }
+    //  else if (!/^\d{10}$/.test(formData.phone)) {
+    //   newErrors.phone = "Phone must be 10 digits";
+    // }
     if (!formData.service) newErrors.service = "Please select a service";
     if (!formData.message.trim()) newErrors.message = "Message is required";
 
@@ -70,6 +73,11 @@ const EnquiryForm = () => {
       ...prev,
       [field]: event.target.value,
     }));
+    setErrors((prevErrors) => {
+      const updatedErrors = { ...prevErrors };
+      delete updatedErrors[field];
+      return updatedErrors;
+    });
   };
 
   const handleSubmit = () => {
@@ -105,11 +113,16 @@ const EnquiryForm = () => {
             component="h2"
             sx={{
               fontFamily: "sen, sans-serif",
-              fontWeight: 500,
               lineHeight: "130%",
-              color: "#322C3E",
-              fontSize: { xs: "28px", sm: "35px", md: "40px", lg: "48px" },
+              background:
+                "linear-gradient(260.31deg, #4CFFE7 0%, #7600C4 41.58%, #D300E5 87.79%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+              color: "transparent",
+              fontSize: { xs: "28px", sm: "35px", md: "40px", lg: "40px" },
               mb: 1,
+              width: "fit-content",
             }}
           >
             {`  Enquiry Form`}
@@ -118,12 +131,9 @@ const EnquiryForm = () => {
           <Typography
             sx={{
               fontFamily: "Manrope, sans-serif",
-              fontWeight: 500,
-              fontSize: { xs: "18px", md: "18px" },
-              lineHeight: "160%",
-              mt: 1,
-              mb: 2,
+              fontSize: { xs: "15px", md: "15px" },
               color: "#4B4B4B",
+              mb: 1,
             }}
           >
             {` Have a project or just want to say hello? Fill out the form below and
@@ -131,32 +141,33 @@ const EnquiryForm = () => {
           </Typography>
 
           <Grid container spacing={2}>
-            <Box sx={{ width: "100%" }}>
-              <label>Full Name</label>
-              <TextField
-                fullWidth
-                placeholder="Full Name"
-                variant="outlined"
-                value={formData.fullName}
-                onChange={handleChange("fullName")}
-                error={!!errors.fullName}
-                helperText={errors.fullName}
-                InputProps={{
-                  sx: inputstyle,
-                }}
-              />
-            </Box>
-
             <Box
               sx={{
                 display: { md: "flex", sm: "flex", sx: "block" },
                 width: "100%",
-                gap: 4,
+                gap: 2,
               }}
             >
               <Box sx={{ width: "100%" }}>
+                <label>Full Name</label>
+                <TextField
+                  fullWidth
+                  size="small"
+                  placeholder="Full Name"
+                  variant="outlined"
+                  value={formData.fullName}
+                  onChange={handleChange("fullName")}
+                  error={!!errors.fullName}
+                  helperText={errors.fullName}
+                  InputProps={{
+                    sx: inputstyle,
+                  }}
+                />
+              </Box>
+              <Box sx={{ width: "100%" }}>
                 <label>Business Email</label>
                 <TextField
+                  size="small"
                   fullWidth
                   placeholder="Business Email"
                   variant="outlined"
@@ -169,11 +180,20 @@ const EnquiryForm = () => {
                   }}
                 />
               </Box>
+            </Box>
 
-              <Box sx={{ width: "100%" }}>
+            <Box
+              sx={{
+                display: { md: "flex", sm: "flex", sx: "block" },
+                width: "100%",
+                gap: 2,
+              }}
+            >
+              {/* <Box sx={{ width: "100%" }}>
                 <label>Phone</label>
                 <TextField
                   fullWidth
+                  size="small"
                   placeholder="1234567890"
                   variant="outlined"
                   value={formData.phone}
@@ -184,35 +204,69 @@ const EnquiryForm = () => {
                     sx: inputstyle,
                   }}
                 />
+              </Box> */}
+              <Box sx={{ width: "100%" }}>
+                <label>Phone</label>
+                <MuiPhoneNumber
+                  defaultCountry={"gb"}
+                   onlyCountries={['us', 'in', 'ca','gb']}
+                  fullWidth
+                  size="small"
+                  
+                  variant="outlined"
+                  value={formData.phone}
+                  onChange={(value) =>
+                    setFormData((prev) => ({
+                      ...prev,
+                      phone: value,
+                    }))
+                  }
+                  error={!!errors.phone}
+                  helperText={errors.phone}
+                  InputProps={{
+                    sx: inputstyle,
+                  }}
+                />
+              </Box>
+              <Box sx={{ width: "100%" }}>
+                <label>Type Of Project</label>
+                <FormControl fullWidth error={!!errors.service} size="small">
+                  <Select
+                    labelId="service-label"
+                    value={formData.service}
+                    onChange={handleChange("service")}
+                    placeholder="dfaijhanfcfc"
+                    size="small"
+                    displayEmpty
+                    sx={{
+                      ...inputstyle,
+                      "& .MuiSelect-select": {
+                        color: formData.service === "" ? "gray" : "inherit",
+                      },
+                    }}
+                  >
+                    <MenuItem value="" disabled>
+                      Select a project type
+                    </MenuItem>
+                    <MenuItem value="web">Web Development</MenuItem>
+                    <MenuItem value="seo">SEO Optimization</MenuItem>
+                    <MenuItem value="ads">Paid Ads</MenuItem>
+                    <MenuItem value="design">UI/UX Design</MenuItem>
+                  </Select>
+                  {errors.service && (
+                    <FormHelperText>{errors.service}</FormHelperText>
+                  )}
+                </FormControl>
               </Box>
             </Box>
 
-            <Box sx={{ width: "100%" }}>
-              <label>Type Of Project</label>
-              <FormControl fullWidth error={!!errors.service}>
-                <Select
-                  labelId="service-label"
-                  value={formData.service}
-                  onChange={handleChange("service")}
-                  sx={inputstyle}
-                  placeholder="dfaijhanfcfc"
-                >
-                  <MenuItem value="web">Web Development</MenuItem>
-                  <MenuItem value="seo">SEO Optimization</MenuItem>
-                  <MenuItem value="ads">Paid Ads</MenuItem>
-                  <MenuItem value="design">UI/UX Design</MenuItem>
-                </Select>
-                {errors.service && (
-                  <FormHelperText>{errors.service}</FormHelperText>
-                )}
-              </FormControl>
-            </Box>
             <Box sx={{ width: "100%" }}>
               <label>Tell us about your project</label>
               <TextField
                 fullWidth
                 multiline
-                rows={4}
+                size="small"
+                rows={3}
                 placeholder="Your Message"
                 value={formData.message}
                 onChange={handleChange("message")}

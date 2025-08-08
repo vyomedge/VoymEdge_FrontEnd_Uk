@@ -122,7 +122,7 @@ const WeOffer = () => {
                   sx={{
                     position:"relative",
                     textAlign: "left",
-                    borderRadius: 3,
+                    borderRadius: 1.5,
                     overflow: "hidden",
                     cursor: "pointer",
                     transition: "transform 0.3s",

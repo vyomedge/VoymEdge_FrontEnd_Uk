@@ -1,4 +1,35 @@
 @import "tailwindcss";
+
+
+/* GLOBAL SCROLLBAR STYLES */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #888 !important;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+ background: linear-gradient(260.31deg, #4CFFE7 0%, #7600C4 41.58%, #D300E5 87.79%);
+  border-radius: 8px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.css-5h82ro-MuiInputBase-root-MuiInput-root::after{
+  border-bottom: none !important;
+}
+.css-5h82ro-MuiInputBase-root-MuiInput-root::before{
+  border-bottom: none !important;
+}
+
 /* 
 :root {
   --background: #ffffff;

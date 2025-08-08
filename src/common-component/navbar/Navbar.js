@@ -72,7 +72,7 @@ export default function Navbar() {
       const timer = setTimeout(() => {
         setOpen(true);
         sessionStorage.setItem("Formshown", "true");
-      }, 5000);
+      }, 7000);
       return () => clearTimeout(timer);
     }
   }, []);
@@ -127,7 +127,8 @@ export default function Navbar() {
               </Link>
 
               {/* Nav Links */}
-              {navItems.map((item, index) => {
+             <Box>
+               {navItems.map((item, index) => {
                 const isActive = pathname === item.href;
                 return (
                   <Link
@@ -138,7 +139,13 @@ export default function Navbar() {
                   >
                     <Button
                       sx={{
-                        color: isActive ? "#D300E5" : "#443B56",
+                        color: !isActive ? "#222" : {  background:
+                              "linear-gradient(260.31deg, #4CFFE7 0%, #7600C4 41.58%, #D300E5 87.79%)",
+                            WebkitBackgroundClip: "text",
+                            WebkitTextFillColor: "transparent",
+                            backgroundClip: "text",
+                            color: "transparent", // fallback for non-webkit browsers},
+                        },
                         borderRadius: "20px",
                         textTransform: "none",
                         fontWeight: 500,
@@ -147,7 +154,7 @@ export default function Navbar() {
                         // minWidth: "auto",
                         fontSize: "15px",
                         // position: "relative",
-                        top: 10,
+                        top: 15,
                         right: -30,
                         fontFamily: "sen, sans-serif",
                       }}
@@ -157,6 +164,7 @@ export default function Navbar() {
                   </Link>
                 );
               })}
+             </Box>
 
               {/* CTA Button */}
               {/* <CustomButton1
@@ -240,6 +248,7 @@ export default function Navbar() {
                       top: 10,
                       right: 10,
                       zIndex: 9999,
+                      color:"#b024e4"
                     }}
                   >
                     <CloseIcon />

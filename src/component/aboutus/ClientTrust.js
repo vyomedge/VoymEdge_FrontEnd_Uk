@@ -43,6 +43,12 @@ const ClientTrust = () => {
                       md: "40px",
                       lg: "40px",
                     },
+                    textAlign: {
+                      xs: "center",
+                      lg: "start",
+                      md: "start",
+                      sm: "center",
+                    },
                   }}
                 >
                   {` Why UK Clients`}
@@ -57,7 +63,12 @@ const ClientTrust = () => {
                     mb={2}
                     key={index}
                     sx={{
-                      textAlign: { xs: "left", sm: "left", md: "center" },
+                       textAlign: {
+                      xs: "center",
+                      lg: "start",
+                      md: "start",
+                      sm: "center",
+                    },
                       borderRadius: "8px",
                       backgroundColor: "#fff",
                       boxShadow: "0px 0px 2px #ddd",
