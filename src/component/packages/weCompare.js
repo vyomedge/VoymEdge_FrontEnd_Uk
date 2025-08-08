@@ -11,6 +11,7 @@ import {
   TableRow,
   Paper,
   SvgIcon,
+  Container,
 } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 
@@ -21,7 +22,7 @@ const features = [
   { name: 'Paid Ads Mgmt', starter: false, growth: false, scale: true },
   { name: 'Monthly Reports', starter: false, growth: true, scale: true },
   { name: 'Support', starter: '1 Month', growth: '3 Months', scale: 'Ongoing' },
-  { name: 'Price', starter: '£499+', growth: '£1,299+', scale: '£2,499+' },
+  { name: 'Price', starter: '£499+', growth: '£1,499+', scale: '£1,999+' },
 ];
 
 const GradientCheckIcon = () => (
@@ -46,12 +47,13 @@ const CrossIcon = () => (
 
 const ComparisonTable = () => {
   return (
-    <Box sx={{ py: 6, px: { xs: 2, md: 6 }, background: '#fff', width: '100%' }}>
+    <Container>
+    <Box sx={{ py: 6, background: '#fff', width: '100%' }}>
       <Typography
         textAlign="center"
         variant="h2"
         sx={{
-          fontFamily: 'Sen, serif',
+         fontFamily: 'sen, sans-serif',
           fontWeight: 500,
           lineHeight: '130%',
           color: '#322C3E',
@@ -60,20 +62,18 @@ const ComparisonTable = () => {
           whiteSpace: 'nowrap',
         }}
       >
-        How We Compare
+      {`  How We Compare`}
       </Typography>
 
       <Box
         sx={{
-          maxWidth: '1600px',
-          mx: 'auto',
           overflowX: 'auto',
           scrollbarWidth: 'thin',
+          
         }}
       >
         <Grid
           container
-          spacing={3}
           justifyContent="center"
           sx={{
             flexWrap: { xs: 'wrap', md: 'nowrap' },
@@ -81,22 +81,22 @@ const ComparisonTable = () => {
           }}
         >
           {/* Left Column */}
-          <Grid item xs={12} md={5}>
+          <Grid item xs={12} md={6} p={1} width={"25%"}>
             <Paper
               elevation={4}
               sx={{
                 py: 2,
-                px: { xs: 2, md: 8 },
+                px: { xs: 2, md: 3 },
                 borderRadius: 2,
                 backgroundColor: '#fff',
                 height: '100%',
                 textAlign: 'center',
-                boxShadow: '0px 8px 20px rgba(0,0,0,0.1)',
+                boxShadow: '0px 0px 20px rgba(0,0,0,0.1)',
               }}
             >
               <Typography
                 sx={{
-                  fontFamily: 'Manrope, serif',
+                 frontFamily: "Manrope, sans-serif",
                   fontWeight: 700,
                   fontSize: { xs: '18px', md: '24px' },
                   mb: 3,
@@ -110,7 +110,7 @@ const ComparisonTable = () => {
                 <Box
                   key={idx}
                   sx={{
-                    fontFamily: 'Manrope, serif',
+                   frontFamily: "Manrope, sans-serif",
                     fontWeight: 500,
                     fontSize: { xs: '16px', md: '20px' },
                     color: '#443B56',
@@ -125,7 +125,7 @@ const ComparisonTable = () => {
           </Grid>
 
           {/* Right Column */}
-          <Grid item xs={12} md={7} sx={{  px: { xs: 2, md: 8, lg:8 }}}>
+          <Grid item xs={12} md={7} width={"75%"}>
             <TableContainer >
               <Table sx={{ width: '100%', tableLayout: 'auto' }}>
                 <TableHead>
@@ -133,7 +133,7 @@ const ComparisonTable = () => {
                     {['Starter', 'Growth', 'Scale'].map((plan, i) => (
                       <TableCell
                         key={i}
-                        align="center"
+                        align="center"  frontFamily= "Manrope, sans-serif"
                         sx={{
                           fontSize: { xs: '16px', md: '20px' },
                           fontWeight: 600,
@@ -173,6 +173,7 @@ const ComparisonTable = () => {
                             <CrossIcon />
                           ) : (
                             <Typography
+                             frontFamily= "Manrope, sans-serif"
                               sx={{
                                 fontSize: { xs: '16px', md: '18px' },
                                 color: '#443B56',
@@ -193,6 +194,7 @@ const ComparisonTable = () => {
         </Grid>
       </Box>
     </Box>
+    </Container>
   );
 };
 

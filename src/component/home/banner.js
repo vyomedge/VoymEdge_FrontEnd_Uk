@@ -1,91 +1,208 @@
 // components/HeroSection.js
 import CustomButton1 from "@/common-component/button/customButton1";
 import Link from "next/link";
-import { Box, Typography, Stack, Button } from "@mui/material";
+import { Box, Typography, Stack, Button, Container } from "@mui/material";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import ConnectModal from "@/common-component/model/ConnectModel";
+import BorderAnimatedLinkButton from "@/common-component/button/botton";
+
 export default function HeroSection() {
-  const [open, setOpen] = useState(false)
-  const [autoOpened, setAutoOpened] = useState(false);
-  const handleSession = () => {
-    setOpen(true)
+  const [open, setOpen] = useState(false);
+
+  const handleForm = () => {
+    setOpen(true);
   };
 
+  useEffect(() => {
+    const alreadyShown = localStorage.getItem("Formshown");
 
+    if (!alreadyShown) {
+      const timer = setTimeout(() => {
+        setOpen(true);
+        localStorage.setItem("Formshown", "true");
+      }, 5000);
 
+      return () => clearTimeout(timer);
+    }
+  }, []);
   return (
     <Box
       width="100%"
       sx={{
-        background: "linear-gradient(to bottom,rgba(255, 255, 255, 1), rgba(220, 255, 250, 1))",
-        px: { xs: 0, sm: 1, md: 0, lg: 0 },
-        py: { xs: 8, sm: 8, md: 5, lg: 6 },
-
-
+        background:
+          "linear-gradient(to bottom,rgba(255, 255, 255, 1), rgba(220, 255, 250, 1))",
+        px: 0,
+        pt: { xs: 10, sm: 8, md: 8, lg: 8 },
       }}
     >
-      <Box
+      <ConnectModal open={open} setOpen={setOpen} />
+      <Container
         sx={{
           display: "flex",
           flexDirection: { xs: "column", sm: "column", md: "row", lg: "row" },
 
           justifyContent: "space-between",
-          padding: { xs: "10px 0px", sm: "25px 0px", md: "60px 10px" },
+          // padding: { xs: "10px 0px", sm: "25px 0px", md: "60px 10px" },
         }}
         gap={3}
-
       >
         {/* Text Section */}
-        <Box flex={1} display="flex" flexDirection="column" justifyContent="center" position="relative"
+        <Box
+          flex={1}
+          display="flex"
+          flexDirection="column"
+          justifyContent="center"
+          position="relative"
         >
-
-
-          <Box sx={{
-            zIndex: 5, width: { xs: '100%', sm: '100%', md: '100%' },
-            height: { xs: '100%', sm: "100%", md: '100%', lg: '50%' },
-            position: { xs: "initial", sm: "initial", md: "absolute" },
-            top: { xs: "20px", sm: "100px", md: "40px", lg: "60px" },
-            left: { xs: 0, sm: 0, md: 0, }, mt: { xs: "4px", sm: "15px", md: 0, lg: 0 }
-          }}>
+          <Box
+            sx={{
+              zIndex: 5,
+              width: { xs: "100%", sm: "100%", md: "100%" },
+              height: { xs: "100%", sm: "100%", md: "100%", lg: "50%" },
+              position: { xs: "initial", sm: "initial", md: "absolute" },
+              top: { xs: "20px", sm: "100px", md: "40px", lg: "60px" },
+              left: { xs: 0, sm: 0, md: 0 },
+              mt: { xs: "4px", sm: "15px", md: 0, lg: 0 },
+            }}
+          >
             <Typography
               variant="h1"
               component="h1"
               fontWeight="regular"
               sx={{
-
-                // position:"absolute",
-                fontSize: { xs: "36px", sm: "46px", md: "54px" },
-                fontFamily: 'sen, serif',
-                width: "300px",
+                fontSize: { xs: "28px", sm: "32px", md: "42px", lg: "54px" },
+                fontFamily: "sen, sans-serif",
                 textAlign: { xs: "left", sm: "left", md: "left" },
-                ml: 5,
-                mb: 1,
-                whiteSpace: { xs: 'wrap', sm: 'nowrap', md: 'nowrap', lg: 'nowrap' },
+                m: 2,
               }}
-              dangerouslySetInnerHTML={{
-                __html: `
-                          Scalable Digital Solutions <br/> for 
-                          <span style="
-                            background: linear-gradient(135deg, rgba(76, 255, 231, 1), rgba(118, 0, 196, 1), rgba(211, 0, 229, 1));
-                            -webkit-background-clip: text;
-                            -webkit-text-fill-color: transparent;
-                            display: inline-block;
-                          ">
-                            UK Businesses
-                          </span>
-                        `
-              }}>
+            >
+              Scalable Digital Solutions <br /> for{" "}
+              <Box
+                sx={{
+                  display: "inline-block",
+                  position: "relative",
+                  px: 1,
+                }}
+              >
+                {/* Corner Decorations */}
+                {/* Top Left */}
+                <Box
+                  sx={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "10px",
+                    height: "10px",
+                    borderTop: "3px solid rgba(118, 0, 196, 1)",
+                    borderLeft: "3px solid rgba(118, 0, 196, 1)",
+                    animation: "blink 1s infinite",
+                    "@keyframes blink": {
+                      "0%": { opacity: 1 },
+                      "50%": { opacity: 0.5 },
+                      "100%": { opacity: 1 },
+                    },
+                  }}
+                />
+                {/* Top Right */}
+                <Box
+                  sx={{
+                    position: "absolute",
+                    top: 0,
+                    right: 0,
+                    width: "10px",
+                    height: "10px",
+                    borderTop: "3px solid rgba(118, 0, 196, 1)",
+                    borderRight: "3px solid rgba(118, 0, 196, 1)",
+                    animation: "blink 1s infinite",
+                    "@keyframes blink": {
+                      "0%": { opacity: 1 },
+                      "50%": { opacity: 0.5 },
+                      "100%": { opacity: 1 },
+                    },
+                  }}
+                />
+                {/* Bottom Left */}
+                <Box
+                  sx={{
+                    position: "absolute",
+                    bottom: 0,
+                    left: 0,
+                    width: "10px",
+                    height: "10px",
+                    borderBottom: "3px solid rgba(118, 0, 196, 1)",
+                    borderLeft: "3px solid rgba(118, 0, 196, 1)",
+                    animation: "blink 1s infinite",
+                    "@keyframes blink": {
+                      "0%": { opacity: 1 },
+                      "50%": { opacity: 0.5 },
+                      "100%": { opacity: 1 },
+                    },
+                  }}
+                />
+                {/* Bottom Right */}
+                <Box
+                  sx={{
+                    position: "absolute",
+                    bottom: 0,
+                    right: 0,
+                    width: "10px",
+                    height: "10px",
+                    borderBottom: "3px solid rgba(118, 0, 196, 1)",
+                    borderRight: "3px solid rgba(118, 0, 196, 1)",
+                    animation: "blink 1s infinite",
+                    "@keyframes blink": {
+                      "0%": { opacity: 1 },
+                      "50%": { opacity: 0.5 },
+                      "100%": { opacity: 1 },
+                    },
+                  }}
+                />
+
+                {/* Gradient Text */}
+                <Box
+                  component="span"
+                  sx={{
+                    background:
+                      "linear-gradient(135deg, rgba(76, 255, 231, 1), rgba(118, 0, 196, 1), rgba(211, 0, 229, 1))",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    fontFamily: "sen, sans-serif",
+                    position: "relative",
+                    zIndex: 1,
+                    backgroundSize: "200% 200%", // makes room for animation
+                    animation: "gradientMove 3s linear infinite",
+
+                    "@keyframes gradientMove": {
+                      "0%": {
+                        backgroundPosition: "0% 0%",
+                      },
+                      "50%": {
+                        backgroundPosition: "100% 100%",
+                      },
+                      "100%": {
+                        backgroundPosition: "0% 0%",
+                      },
+                    },
+                  }}
+                >
+                  UK Businesses
+                </Box>
+              </Box>
             </Typography>
 
             <Typography
-              variant="h5"
-              component={"h5"}
+              variant="p"
+              component={"p"}
               sx={{
-                color: "#443B56", mb: 2, fontWeight: 500,
-                fontSize: { xs: "14px", sm: "15px", md: "15px" },
-                frontFamily: "Manrope,Sans-serif",
+                color: "#443B56",
+                mb: 2,
+                fontWeight: 500,
+                fontSize: { xs: "15px", sm: "15px", md: "15px" },
+                frontFamily: "Manrope, sans-serif",
                 textAlign: { xs: "left", sm: "left", md: "left" },
-                ml: 5,
+                ml: 2,
+                mr: 2,
               }}
             >
               {`  From cutting-edge web applications to data-driven marketing, VyomEdge UK delivers smart, secure, and scalable technology tailored to British business needs.`}
@@ -96,71 +213,64 @@ export default function HeroSection() {
               sx={{
                 color: "#443B56",
                 textAlign: { xs: "left", md: "left" },
-                fontSize: { xs: "14px", sm: "15px", md: "15px" },
-                frontFamily: "Manrope,Sans-serif",
+                fontSize: { xs: "15px", sm: "15px", md: "15px" },
+                frontFamily: "Manrope, sans-serif",
                 fontWeight: 500,
-                whiteSpace: { xs: 'wrap', md: 'nowrap' },
-                mb: 3,
-                ml: 5,
+                whiteSpace: { xs: "wrap", md: "nowrap" },
+                mb: 0,
+                ml: 2,
+                mr: 2,
               }}
             >
               {`We code. We design. We market. You grow.`}
             </Typography>
             <Stack
               direction={{ xs: "row", sm: "row", md: "row" }}
-              spacing={2}
-              marginTop={{ xs: 0, sm: 0, md: 4, lg: 5 }}
-              marginLeft={5}
-              alignContent={{ xs: "center", sm: "flex-start", md: "flex-start" }}
+              spacing={0}
+              marginTop={{ xs: 0, sm: 0, md: 4, lg: 3 }}
+              marginLeft={2}
+              alignContent={{
+                xs: "center",
+                sm: "flex-start",
+                md: "flex-start",
+              }}
             >
-              <Link href="/contactus" passHref legacyBehavior>
-                <a style={{ textDecoration: 'none' }}>
-                  <CustomButton1
-                    onClick={() => console.log('Booked!')}
-                    sx={{ borderRadius: '5px', mt: 4, fontSize: '15px', fontWeight: "500" }}
-                  >
-                    {`Get a Free Strategy Session`}
-                  </CustomButton1>
-
-                </a>
-              </Link>
-
+              <BorderAnimatedLinkButton
+                handleClick={handleForm}
+                title={`Get a Free Strategy Session`}
+              />
             </Stack>
           </Box>
         </Box>
         <Box
+          ml={3}
+          mr={3}
           sx={{
-            position: "relative",
-            position: "relative",
-            display: "flex",
-            justifyContent: {
-              xs: "center", // mobile
-              sm: "center", // tablet
-              md: "flex-end" // desktop
-            },
-            right: {
-              xs: 0,
-              sm: 0,
-              md: "20px", // apply offset only in desktop
-            },
-            alignItems: "center",
-            width: { xs: "100%", sm: "100%", md: "450px", lg: "550px" },  // responsive width
-            height: { xs: "200px", sm: "200px", md: "300px", lg: "400px" }, // responsive height
-            mx: "auto" // center horizontally
+            flex: 0.5,
+            // borderRadius: 2,
+            zIndex: 1,
           }}
         >
-          <Image
-            src="/bannerimage.png"
-            alt="Banner"
-            fill  // important for full responsiveness
-            style={{ objectFit: "contain" }} // or "cover" based on your need
-            sizes="(max-width: 600px) 100vw, (max-width: 960px) 50vw, 600px"
-          />
+          <Box
+            sx={{
+              width: { xs: 250, sm: 400, md: 450, lg: 500 },
+              height: { xs: 250, sm: 400, md: 450, lg: 500 },
+              position: "relative",
+              margin: "auto",
+            }}
+          >
+            <Image
+              src="/bannerimage.png"
+              alt="vyomedge banner image"
+              fill
+              style={{
+                objectFit: "contain",
+              }}
+              title="vyomedge banner image"
+            />
+          </Box>
         </Box>
-
-      </Box>
+      </Container>
     </Box>
   );
 }
-
-

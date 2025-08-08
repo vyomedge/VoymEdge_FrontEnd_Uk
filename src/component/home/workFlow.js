@@ -1,265 +1,139 @@
-import { Grid, Box, Typography } from '@mui/material'
-import React from 'react'
-import Image from 'next/image'
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import { useTheme, useMediaQuery } from '@mui/material';
+import {
+  Box,
+  Container,
+  Typography,
+  useTheme,
+  useMediaQuery,
+} from "@mui/material";
+import Image from "next/image";
+import React from "react";
 
+const workflowSteps = [
+  {
+    icon: "/workflow1.svg",
+    title: "Discovery Call",
+    desc: "Understand your goals, budget & timeline.",
+  },
+  {
+    icon: "/workflow2.svg",
+    title: "Project Scope & Quote",
+    desc: "Detailed proposal with clear deliverables.",
+  },
+  {
+    icon: "/workflow3.svg",
+    title: "Agile Execution",
+    desc: "Sprint-based deliveries with weekly check-ins.",
+  },
+  {
+    icon: "/workflow4.svg",
+    title: "Launch & Support",
+    desc: "Post-launch bug fixes, optimisation & marketing.",
+  },
+];
 
+export default function WorkFlow() {
+  const theme = useTheme();
+  const isTabletOrMobile = useMediaQuery(theme.breakpoints.down("md"));
 
-
-
-function WorkFlow() {
-    const theme = useTheme();
-    const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-    const isTablet = useMediaQuery(theme.breakpoints.between('sm', 'md'));
-    return (
-        <Grid alignItems="left"   px={{ xs: "30px", sm: "10px", md: "10px" }}
-                py={{ xs: "10px", sm: "10px", md: "20px" }}>
-            <Grid textAlign="left" width="100%"
-                >
-                <Typography variant='h2' component='h2'
-                    px={{ xs: "50px", sm: "50px", md: "130px" }}
-                    py={{ xs: "20px", sm: "20px", md: "10px" }}
-                    sx={{
-                        fontFamily: 'sen, serif',
-                        whiteSpace: "nowrap",
-                        fontWeight: "500", lineHeight: "130%", color: "#322C3E",
-                        fontSize: { xs: "32px", sm: "46px", md: "56px", lg: "56px" }
-                    }}>
-                    {`Our Workflow`}
-                </Typography>
-            </Grid>
-            <Grid
-                container
-                display="flex"
-                justifyItems="center"
-                justifyContent={"center"}
-                gap={{ xs: "10px", sm: "20px", md: "50px" }}
-                padding="5px"
+  return (
+    <>
+      <Typography
+        variant="h2"
+        component="h2"
+        py={{ xs: "20px", sm: "20px", md: "10px" }}
+        sx={{
+          fontFamily: "sen, sans-serif",
+          whiteSpace: "nowrap",
+          lineHeight: "130%",
+          color: "#322C3E",
+          fontSize: { xs: "32px", sm: "46px", md: "45px", lg: "56px" },
+          textAlign: "center",
+          marginTop:5
+        }}
+      >
+        {`Our Workflow`}
+      </Typography>
+      <Box
+        sx={{
+          overflow: "hidden",
+          whiteSpace: "nowrap",
+          width: "100%",
+          py: 5,
+          position: "relative",
+          background: `linear-gradient(180deg, #FFFFFF 0%, #DCFFFA 100%)`,
+        }}
+      >
+       
+        <Box
+          sx={{
+            display: "inline-flex",
+            animation: "scroll-left 25s linear infinite",
+            "&:hover": {
+              animationPlayState: "paused",
+            },
+            "@keyframes scroll-left": {
+              "0%": { transform: "translateX(0%)" },
+              "100%": { transform: "translateX(-50%)" },
+            },
+          }}
+        >
+          {/* Duplicate content to make loop seamless */}
+          {[...workflowSteps, ...workflowSteps].map((step, index) => (
+            <Box
+              key={index}
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                minWidth: "300px",
+                px: 3,
+              }}
             >
-                <Grid padding="5px" >
-                    <Grid display="flex"
-                        textAlign="left"
-                    >
-                        <Grid
-                        >
-                            <Image
-                                src="/workflow1.svg"
-                                alt="Sample"
-                                width={40}
-                                height={40}
-                                alignItems="center" />
-                        </Grid>
-                        <Typography
-                            variant='copytext1' component='copytext1'
-                            width="250px"
-                            px={2} sx={{
-                                fontFamily: 'Manrope, serif',
-                                fontWeight: "500", lineHeight: "160%", color: "#000000",
-                                fontSize: { xs: "18px", sm: "18px", md: "18px", lg: "18px" }
+              {/* Icon */}
+              <Image src={step.icon} alt={step.title} width={40} height={40} title={step.title} />
 
-                            }}>
+              {/* Text */}
+              <Box ml={2}>
+                <Typography
+                  variant="h6"
+                  sx={{
+                    fontWeight: 600,
+                    fontSize: "18px",
+                    fontFamily: "Manrope, sans-serif",
+                    color: "#000",
+                  }}
+                >
+                  {step.title}
+                </Typography>
+                <Typography
+                  sx={{
+                    fontSize: "15px",
+                    fontWeight: 500,
+                    color: "#555",
+                    fontFamily: "Manrope, sans-serif",
+                  }}
+                >
+                  {step.desc}
+                </Typography>
+              </Box>
 
-
-                            {`"Discovery Call" `}
-                        </Typography>
-                        <Box
-                            sx={{
-                                display: 'flex',
-                                alignItems: 'center',
-                                mx: 2,
-                                transform: (isMobile || isTablet) ? 'rotate(90deg)' : 'none',
-                            }}
-                        >
-                            <Box sx={{ height: 2, width: 40, bgcolor: '#000' }} />
-                            <ArrowForwardIcon
-                                sx={{
-                                    fontSize: 20,
-                                    color: '#000',
-                                    ml: '-6px',
-                                }}
-                            />
-                        </Box>
-
-                    </Grid>
-                    <Grid textAlign="left" >
-                        <Typography
-                           variant='copytext1' component='copytext1'
-                            width="250px" px={3} textAlign="left"
-                            sx={{
-                                fontFamily: 'Manrope, serif',
-                                fontWeight: "500", lineHeight: "160%", color: "#000000",
-                                fontSize: { xs: "18px", sm: "18px", md: "18px", lg: "18px" }
-                            }}>
-                            {`Understand your goals, budget & timeline.`}</Typography>
-                    </Grid>
-                </Grid>
-                <Grid padding="5px">
-                    <Grid display="flex"
-                        textAlign="left"
-                    >
-                        <Grid
-                        >
-                            <Image
-                                src="/workflow2.svg"
-                                alt="Sample"
-                                width={50}
-                                height={40}
-                                alignItems="center" />
-                        </Grid>
-                        <Typography
-                           variant='copytext1' component='copytext1'
-                            width="250px"
-                            px={2} sx={{
-                                fontFamily: 'Manrope, serif',
-                                fontWeight: "500", lineHeight: "160%", color: "#000000",
-                                fontSize: { xs: "18px", sm: "18px", md: "18px", lg: "18px" }
-
-                            }}>
-
-                            {`"Project Scope & Quote"`}
-                        </Typography>
-                        <Box
-                            sx={{
-                                display: 'flex',
-                                alignItems: 'center',
-                                mx: 2,
-                                transform: (isMobile || isTablet) ? 'rotate(90deg)' : 'none',
-                            }}
-                        >
-                            <Box sx={{ height: 2, width: 40, bgcolor: '#000' }} />
-                            <ArrowForwardIcon
-                                sx={{
-                                    fontSize: 20,
-                                    color: '#000',
-                                    ml: '-6px',
-                                }}
-                            />
-                        </Box>
-                    </Grid>
-                    <Grid textAlign="left" >
-                        <Typography variant='copytext1' component='copytext1'
-                            width="250px" px={3} textAlign="left"
-                            sx={{
-                                fontFamily: 'Manrope, serif',
-                                fontWeight: "500", lineHeight: "160%", color: "#000000",
-                                fontSize: { xs: "18px", sm: "18px", md: "18px", lg: "18px" }
-                            }}>
-                            {`Detailed proposal with clear deliverables`}</Typography>
-                    </Grid>
-                </Grid>
-                <Grid padding="5px">
-                    <Grid display="flex"
-                        textAlign="left"
-                    >
-                        <Grid
-                        >
-                            <Image
-                                src="/workflow3.svg"
-                                alt="Sample"
-                                width={40}
-                                height={40}
-                                alignItems="center" />
-                        </Grid>
-                        <Typography
-                        variant='copytext1' component='copytext1'
-                            width="250px"
-                            px={2} sx={{
-                                fontFamily: 'Manrope, serif',
-                                fontWeight: "500", lineHeight: "160%", color: "#000000",
-                                fontSize: { xs: "18px", sm: "18px", md: "18px", lg: "18px" }
-
-                            }}>
-
-                            {`Agile Execution`}
-                        </Typography>
-                        <Box
-                            sx={{
-                                display: 'flex',
-                                alignItems: 'center',
-                                mx: 2,
-                                transform: (isMobile || isTablet) ? 'rotate(90deg)' : 'none',
-                            }}
-                        >
-                            <Box sx={{ height: 2, width: 40, bgcolor: '#000' }} />
-                            <ArrowForwardIcon
-                                sx={{
-                                    fontSize: 20,
-                                    color: '#000',
-                                    ml: '-6px',
-                                }}
-                            />
-                        </Box>
-                    </Grid>
-                    <Grid textAlign="left" >
-                        <Typography
-                          variant='copytext1' component='copytext1'
-                            width="250px" px={3} textAlign="left"
-                            sx={{
-                                fontFamily: 'Manrope, serif',
-                                fontWeight: "500", lineHeight: "160%", color: "#000000",
-                                fontSize: { xs: "18px", sm: "18px", md: "18px", lg: "18px" }
-                            }}>
-                    {`Sprint-based deliveries with weekly check-ins`}</Typography>
-                    </Grid>
-                </Grid>
-                <Grid padding="5px">
-                    <Grid display="flex"
-                        textAlign="left"
-                    >
-                        <Grid
-                        >
-                            <Image
-                                src="/workflow4.svg"
-                                alt="Sample"
-                                width={40}
-                                height={40}
-                                alignItems="center" />
-                        </Grid>
-
-                    </Grid>
-
-                    <Grid textAlign="left" >
-                        <Typography  variant='copytext1' component='copytext1'
-                            width="250px" px={3} textAlign="left"
-                            sx={{
-                                fontFamily: 'Manrope, serif',
-                                fontWeight: "500", lineHeight: "160%", color: "#000000",
-                                fontSize: { xs: "18px", sm: "18px", md: "18px", lg: "18px" }
-                            }}
-                           >
-                            {`Post-laur`}</Typography>
-                    </Grid>
-                </Grid>
-            </Grid>
-        </Grid >
-    )
+              {/* Arrow */}
+              {index < workflowSteps.length * 2 - 1 && (
+                <Box
+                  mx={2}
+                  sx={{
+                    // transform: isTabletOrMobile ? "rotate(90deg)" : "none",
+                    display: "flex",
+                    alignItems: "center",
+                    width:"100px",
+                  }}
+                >
+                  <Image src="/Arrow.svg" alt="arrow" title="arrow image" width={100} height={30} />
+                </Box>
+              )}
+            </Box>
+          ))}
+        </Box>
+      </Box>
+    </>
+  );
 }
-
-export default WorkFlow;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

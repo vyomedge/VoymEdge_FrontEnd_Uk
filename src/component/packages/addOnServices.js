@@ -11,7 +11,7 @@ import {
 } from '@mui/material';
 
 const services = [
-  { name: 'Landing Page (1-page funnel)', price: '£199–£299' },
+  { name: 'Landing Page (1-page funnel)', price: '£99–£199' },
   { name: 'Logo + Brand Kit Design', price: '£149' },
   { name: 'SEO Audit Report', price: '£49' },
   { name: 'Website Speed Optimization', price: '£99' },
@@ -25,13 +25,13 @@ const services = [
 
 const AddOnServices = () => {
   return (
-    <Box sx={{ py: 8, px: 6,
-      background: 'linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(220, 255, 250, 1))', textAlign: 'center' }}>
+    <Box sx={{ 
+      background: 'linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(220, 255, 250, 1))', textAlign: 'center',py:3 }}>
       {/* Title */}
       <Typography textAlign="center"
         variant="h2"
         sx={{
-          fontFamily: "Sen, serif",
+         fontFamily: 'sen, sans-serif',
           fontWeight: 500,
           lineHeight: "130%",
           color: "#322C3E",
@@ -54,13 +54,15 @@ const AddOnServices = () => {
          border:"none",
          borderRadius:"15px",
          padding:"20px"
-         }}>
+         }
+         } 
+         p={{md:3,sm:2,xs:1}}>
         <Table>
           <TableHead>
             <TableRow>
               <TableCell
                 sx={{
-                  fontFamily: "Manrope, serif",
+                  frontFamily: "Manrope, sans-serif",
                   fontWeight: 500,
                   fontSize: { xs: "18px", md: "24px" },
                   borderBottom: '2px solid #D273FF',
@@ -74,7 +76,7 @@ const AddOnServices = () => {
               <TableCell
                 align="left"
                 sx={{
-                  fontFamily: "Manrope, serif",
+                frontFamily: "Manrope, sans-serif",
                   fontWeight: 500,
                   fontSize: { xs: "18px", md: "24px" },
                   borderBottom: '2px solid #D273FF',
@@ -100,8 +102,8 @@ const AddOnServices = () => {
               <TableRow key={index}>
                 <TableCell
                   sx={{
-                    fontFamily: "Manrope,san serif",
-                    fontWeight: 600,
+                    frontFamily: "Manrope, sans-serif",
+                    fontWeight: 500,
                     fontSize: { xs: "15px", md: "18px" },
                     lineHeight: "160%",
                     color: "#3C3C3C",
@@ -114,7 +116,7 @@ const AddOnServices = () => {
                 <TableCell
                   align="left"
                   sx={{
-                    fontFamily: "Manrope, serif",
+                   frontFamily: "Manrope, sans-serif",
                     fontWeight: 700,
                     fontSize: { xs: "15px", md: "18px" },
                     lineHeight: "160%",

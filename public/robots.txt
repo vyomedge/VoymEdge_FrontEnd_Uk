@@ -1,0 +1,11 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /private/
+Disallow: /common/*
+
+# Host
+Host: https://uk.vyomedge.com
+
+# Sitemaps
+Sitemap: https://uk.vyomedge.com/sitemap.xml
