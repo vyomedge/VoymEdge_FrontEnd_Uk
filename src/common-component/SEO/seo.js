@@ -21,7 +21,7 @@ const SEO = ({
     return null;
   }
 
-const finalOgImage = 'https://res.cloudinary.com/dtidgvjlt/image/upload/v1753038213/logo_kjfvsf.png';
+const finalOgImage = 'https://uk.vyomedge.com/logo.svg';
   return (
     <Head>
       {/* General Meta */}
