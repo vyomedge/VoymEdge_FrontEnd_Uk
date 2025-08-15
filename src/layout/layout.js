@@ -17,7 +17,7 @@ import CookiesBanner from "@/common-component/model/CookiesBanner";
 export default function Layout({ children }) {
   return (
     <div className={`${sen.className} ${manrope.className}`}>
-      {/* <CookiesBanner/> */}
+      <CookiesBanner/>
       <Navbar></Navbar>
       <main>{children}</main>
       <Footer></Footer>

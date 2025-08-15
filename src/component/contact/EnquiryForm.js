@@ -164,7 +164,7 @@ const EnquiryForm = () => {
                   }}
                 />
               </Box>
-              <Box sx={{ width: "100%" }}>
+              <Box sx={{ width: "100%" ,mt:{xs:1.5,sm:0}}}>
                 <label>Business Email</label>
                 <TextField
                   size="small"
@@ -228,7 +228,7 @@ const EnquiryForm = () => {
                   }}
                 />
               </Box>
-              <Box sx={{ width: "100%" }}>
+              <Box sx={{ width: "100%" ,mt:{xs:1.5,sm:0}}}>
                 <label>Type Of Project</label>
                 <FormControl fullWidth error={!!errors.service} size="small">
                   <Select

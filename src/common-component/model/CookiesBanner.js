@@ -18,7 +18,7 @@ import { Close as CloseIcon, Cookie as CookieIcon } from "@mui/icons-material";
 
 import Cookies from "js-cookie";
 import CustomButton1 from "../button/customButton1";
-
+import CustomButton2 from "../button/customButton2";
 
 const COOKIE_KEY = "cookie_preferences";
 
@@ -34,14 +34,14 @@ export default function CookiesBanner() {
     analytics: false,
     marketing: false,
   });
-  
+
   useEffect(() => {
     const cookiePref = Cookies.get(COOKIE_KEY);
     if (cookiePref) {
       try {
         const parsed = JSON.parse(cookiePref);
         setPreferences({
-          necessary: true, 
+          necessary: true,
           analytics: !!parsed.analytics,
           marketing: !!parsed.marketing,
         });
@@ -54,33 +54,35 @@ export default function CookiesBanner() {
       setShowBanner(true);
     }
   }, []);
-  
+
   useEffect(() => {
     if (!showBanner) setShowPreferences(false);
   }, [showBanner]);
 
   if (!showBanner) return null;
   const savePreferencesToCookie = (prefs) => {
-    Cookies.set(COOKIE_KEY, JSON.stringify(prefs), { expires: 365, sameSite: "Lax" });
+    Cookies.set(COOKIE_KEY, JSON.stringify(prefs), {
+      expires: 365,
+      sameSite: "Lax",
+    });
   };
   const handleAcceptAll = () => {
-    const newPrefs={
+    const newPrefs = {
       necessary: true,
       analytics: true,
       marketing: true,
-    }
-     setPreferences(newPrefs);
+    };
+    setPreferences(newPrefs);
     savePreferencesToCookie(newPrefs);
     setShowBanner(false);
-    
   };
 
   const handleRejectNonEssential = () => {
-    const newPrefs={
+    const newPrefs = {
       necessary: true,
       analytics: false,
       marketing: false,
-    }
+    };
     setPreferences(newPrefs);
     savePreferencesToCookie(newPrefs);
     setShowBanner(false);
@@ -115,28 +117,40 @@ export default function CookiesBanner() {
           right: 0,
           zIndex: 1300,
           p: 2,
-         backgroundColor: "rgba(1, 29, 74, 0.8)",
+          backgroundColor: "rgba(1, 29, 74, 0.8)",
           color: "white",
           fontFamily: "Akatab,Sans-serif",
           borderRadius: "16px 16px 0 0",
         }}
       >
-        <Box sx={{ mx: "auto",  display: { xs: "block", sm: "block", md: "flex"}, justifyContent: "space-between"}}>
+        <Box
+          sx={{
+            mx: "auto",
+            display: { xs: "block", sm: "block", md: "flex" },
+            justifyContent: "space-between",
+          }}
+        >
           <Box
-            sx={{ width: { xs: "100%", sm: "100%", md: "60%"}, display: "flex", alignItems: "flex-start", gap: 1, mb: 0 }}
+            sx={{
+              width: { xs: "100%", sm: "100%", md: "60%" },
+              display: "flex",
+              alignItems: "flex-start",
+              gap: 1,
+              mb: 0,
+            }}
           >
             {/* <CookieIcon sx={{ fontSize: 32, color: '#ffa726', mt: 0.5 }} /> */}
-            <Box sx={{ flex: 1 ,}}>
+            <Box sx={{ flex: 1 }}>
               <Typography
                 variant="h5"
                 component="h5"
                 sx={{ fontWeight: "bold", mb: 1 }}
               >
-                {'We Use Cookies (Not the Wedding Wale Wale)'}
+                {"We Use Cookies"}
               </Typography>
               <Typography
                 variant="p"
-                sx={{  color: "rgba(255,255,255,0.8)", lineHeight: 1, }}
+                sx={{ color: "rgba(255,255,255,0.8)", lineHeight: 1 }}
               >
                 {`This website uses cookies to give you a better, faster, and more personalized experience.  
                 By continuing to browse, you agree to our use of cookies as per our Privacy Policy.`}
@@ -149,48 +163,62 @@ export default function CookiesBanner() {
               alignItems: "center",
               gap: 2,
               flexWrap: "wrap",
-              justifyContent: { xs: "stretch", sm: "flex-end" },
+              justifyContent: { xs: "flex-end", sm: "flex-end" },
               mt: { xs: 2, sm: 0 },
             }}
           >
-            <CustomButton1
-              onClick={handleAcceptAll}
-              sx={{
-                fontWeight: "bold",
-                flex: { xs: 1, sm: "none" },
-              }}
-            >
-              Accept All
-            </CustomButton1>
-            <CustomButton1
-              variant="outlined"
-              onClick={handleManagePreferences}
-              sx={{
-                borderColor: "white",
-                color: "white",
-                "&:hover": {
-                  borderColor: "#ffa726",
-                  backgroundColor: "rgba(255,167,38,0.1)",
-                },
-                flex: { xs: 1, sm: "none" },
-              }}
-            >
-              Manage Preferences
-            </CustomButton1>
-            <CustomButton1
+            <Box sx={{display:"flex",gap:"10px"}}>
+              <CustomButton2
+                onClick={handleAcceptAll}
+                sx={{
+                  padding: "5px 15px",
+                  fontSize: "14px",
+                  fontWeight: "bold",
+                  flex: { xs: 1, sm: "none" },
+                  color: "#fff !important",
+                }}
+              >
+                Accept All
+              </CustomButton2>
+              <CustomButton2
+                variant="outlined"
+                onClick={handleManagePreferences}
+                sx={{
+                  padding: "5px 15px",
+                  // width:"250px",
+                  fontSize: "14px",
+                  borderColor: "white",
+                  whiteSpace: "nowrap",
+                  color: "white",
+                  // flex: { xs: 1, sm: "none" },
+                }}
+              >
+                Manage Preferences
+              </CustomButton2>
+            </Box>
+           <Box sx={{display:"flex",justifyContent:"flex-end"}}>
+           <Button
               variant="text"
               onClick={handleRejectNonEssential}
               sx={{
+                padding: "5px 15px",
+                fontSize: "14px",
+                fontWeight: "bold",
+                marginTop: "15px",
+                textTransform: "capitalize",
+                whiteSpace: "nowrap",
                 color: "rgba(255,255,255,0.7)",
                 "&:hover": {
                   color: "white",
                   backgroundColor: "rgba(255,255,255,0.1)",
                 },
-                flex: { xs: 1, sm: "none" },
+                justifySelf:"flex-end"
+                // flex: { xs: 1, sm: "none" },
               }}
             >
               Reject Non-Essential
-            </CustomButton1>
+            </Button>
+           </Box>
           </Box>
         </Box>
       </Paper>
@@ -219,7 +247,7 @@ export default function CookiesBanner() {
           }}
         >
           <Typography variant="h6" component="div" sx={{ fontWeight: "bold" }}>
-            {'Cookie Preferences'}
+            {"Cookie Preferences"}
           </Typography>
           <IconButton
             aria-label="close"
@@ -241,7 +269,7 @@ export default function CookiesBanner() {
               }}
             >
               <Typography variant="subtitle1" sx={{ fontWeight: "bold" }}>
-                {'Necessary Cookies'}
+                {"Necessary Cookies"}
               </Typography>
               <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
                 <Typography
@@ -253,7 +281,9 @@ export default function CookiesBanner() {
               </Box>
             </Box>
             <Typography variant="body2" color="text.secondary">
-              {"These are essential for the website to function properly (you can't turn these off)."}
+              {
+                "These are essential for the website to function properly (you can't turn these off)."
+              }
             </Typography>
           </Box>
           <Divider sx={{ my: 2 }} />
@@ -268,7 +298,7 @@ export default function CookiesBanner() {
               }}
             >
               <Typography variant="subtitle1" sx={{ fontWeight: "bold" }}>
-                {'Analytics Cookies'}
+                {"Analytics Cookies"}
               </Typography>
               <FormControlLabel
                 control={
