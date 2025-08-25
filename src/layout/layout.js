@@ -6,6 +6,7 @@ const sen = Sen({
   weight: ["400", "500", "700"],
 });
 
+
 const manrope = Manrope({
   subsets: ["latin"],
   weight: ["400", "500", "700"],
