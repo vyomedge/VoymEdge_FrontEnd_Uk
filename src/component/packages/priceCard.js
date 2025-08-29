@@ -70,6 +70,24 @@ const packages = [
     perfect: "Perfect for: Helping established brands grow digitally",
     goal: "Goal: Full-funnel digital growth - traffic, leads & conversions.",
   },
+  {
+    icon: "/hourly.svg",
+    title: "Hourly IT Support",
+    subtitle: "Depends on technology & complexity",
+    price: "£10 – £15",
+    time: " £10 – £15 / Hour",
+    time: "(one-time, or £10 – £15 / Hour)",
+    features: [
+      "On-Demand IT Support (Remote)",
+      " System Troubleshooting & Maintenance",
+      "Software & Hardware Setup",
+      "Cloud / Server / Hosting Support",
+      "Cybersecurity & Backup Assistance",
+      "Quick Response, Pay-as-you-go Model",
+    ],
+    perfect: "Perfect for: Small businesses & startups needing flexible IT support without full-time hiring.",
+    goal: "Goal: Affordable, expert-level IT help when you need it most.",
+  },
 ];
 
 const PriceCards = () => {
