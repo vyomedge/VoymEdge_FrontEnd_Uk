@@ -12,7 +12,7 @@ import {
   Container,
 } from "@mui/material";
 import CustomButton2 from "@/common-component/button/customButton2";
-import MuiPhoneNumber from "mui-phone-number";
+import { MuiTelInput } from "mui-tel-input";
 
 const inputstyle = {
   backgroundColor: "#F7F3FF",
@@ -40,12 +40,17 @@ const EnquiryForm = () => {
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
-    phone: "",
+    phoneNo: "",
     service: "",
     message: "",
+    extraFields: {
+      service: "",
+    },
+    sourcePage: "vyomedge-enquiry",
   });
 
   const [errors, setErrors] = useState({});
+  const [loading, setloading] = useState(false);
 
   const validate = () => {
     const newErrors = {};
@@ -55,8 +60,8 @@ const EnquiryForm = () => {
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       newErrors.email = "Enter a valid email";
     }
-    if (!formData.phone) {
-      newErrors.phone = "Phone number is required";
+    if (!formData.phoneNo) {
+      newErrors.phoneNo = "Phone number is required";
     }
     //  else if (!/^\d{10}$/.test(formData.phone)) {
     //   newErrors.phone = "Phone must be 10 digits";
@@ -80,19 +85,54 @@ const EnquiryForm = () => {
     });
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
+    
+    console.log(formData);
     if (validate()) {
-      console.log("Submitted:", formData);
-      // Optional: Clear form
-      setFormData({
-        fullName: "",
-        email: "",
-        phone: "",
-        service: "",
-        message: "",
-      });
-      setErrors({});
-      alert("Form submitted successfully!");
+      const transformed = {
+        ...formData,
+        extraFields: {
+          ...formData.extraFields,
+          service: formData.service,
+        },
+      };
+      delete transformed.service;
+
+      console.log(transformed);
+      try {
+        setloading(true);
+        const response = await fetch(
+          "https://admin-backend-2-kt9r.onrender.com/api/inquiryform/vyomedge_uk",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(transformed),
+          }
+        );
+
+        if (!response.ok) {
+          throw new Error("Failed to submit enquiry");
+        }
+        setFormData({
+          fullName: "",
+          email: "",
+          phoneNo: "",
+          service: "",
+          message: "",
+        });
+        setErrors({});
+
+        // const data = await response.json();
+        console.log("Data saved successfully:", response);
+        alert("Inquiry submitted successfully!");
+      } catch (error) {
+        console.error("Error saving data:", error);
+        alert("Something went wrong!");
+      } finally {
+        setloading(false);
+      }
     }
   };
 
@@ -164,7 +204,7 @@ const EnquiryForm = () => {
                   }}
                 />
               </Box>
-              <Box sx={{ width: "100%" ,mt:{xs:1.5,sm:0}}}>
+              <Box sx={{ width: "100%", mt: { xs: 1.5, sm: 0 } }}>
                 <label>Business Email</label>
                 <TextField
                   size="small"
@@ -207,28 +247,27 @@ const EnquiryForm = () => {
               </Box> */}
               <Box sx={{ width: "100%" }}>
                 <label>Phone</label>
-                <MuiPhoneNumber
-                  defaultCountry={"gb"}
-                   onlyCountries={['us', 'in', 'ca','gb']}
+                <MuiTelInput
+                  defaultCountry="GB"
+      countries={["IN", "GB"]}
                   fullWidth
                   size="small"
-                  
                   variant="outlined"
-                  value={formData.phone}
+                  value={formData.phoneNo}
                   onChange={(value) =>
                     setFormData((prev) => ({
                       ...prev,
-                      phone: value,
+                      phoneNo: value,
                     }))
                   }
-                  error={!!errors.phone}
-                  helperText={errors.phone}
+                  error={!!errors.phoneNo}
+                  helperText={errors.phoneNo}
                   InputProps={{
                     sx: inputstyle,
                   }}
                 />
               </Box>
-              <Box sx={{ width: "100%" ,mt:{xs:1.5,sm:0}}}>
+              <Box sx={{ width: "100%", mt: { xs: 1.5, sm: 0 } }}>
                 <label>Type Of Project</label>
                 <FormControl fullWidth error={!!errors.service} size="small">
                   <Select
@@ -281,6 +320,7 @@ const EnquiryForm = () => {
 
           {/* Submit Button */}
           <CustomButton2
+            loading={loading}
             data-testid="notify-button"
             onClick={handleSubmit}
             sx={{

@@ -31,11 +31,12 @@ const socialIcons = [
 
 const contactIcons = [
   // { src: "/contactIcon1.svg", alt: "Phone", label: "     +44 7774709698" },
-  { src: "/contactIcon2.svg", alt: "Email", label: "info@vyomedge.com" },
+  { src: "/contactIcon2.svg", alt: "Email", label: "info@vyomedge.com" ,goesto:"mailto:info@vyomedge.com"},
   {
     src: "/contactIcon3.svg",
     alt: "Location",
     label: "50 Bostocks Lane, Risley, Derby, England, DE723SX",
+    goesto:"#"
   },
 ];
 
@@ -185,6 +186,8 @@ const SocialMedia = () => {
                 {/* Contact Icons */}
                 <Box sx={{ mt: 5, ml: 1 }}>
                   {contactIcons.map((item, i) => (
+                    
+                    <Link href={item.goesto} >
                     <Box display={"flex"} alignItems={"center"} gap={2} key={i} sx={{ my: 2 }}>
                       <Image
                         src={item.src}
@@ -205,7 +208,8 @@ const SocialMedia = () => {
                       >
                         {item.label}
                       </Typography>
-                    </Box>
+                      </Box>
+                      </Link>
                   ))}
                 </Box>
               </Box>
