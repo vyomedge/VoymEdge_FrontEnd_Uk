@@ -164,7 +164,7 @@ export default function CookiesBanner() {
               gap: 2,
               flexWrap: "wrap",
               justifyContent: { xs: "flex-end", sm: "flex-end" },
-              mt: { xs: 2, sm: 0 },
+              // mt: { xs: 2, sm: 0 },
             }}
           >
             <Box sx={{display:"flex",gap:"10px"}}>
