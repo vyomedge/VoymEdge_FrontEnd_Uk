@@ -31,11 +31,12 @@ const socialIcons = [
 
 const contactIcons = [
   // { src: "/contactIcon1.svg", alt: "Phone", label: "     +44 7774709698" },
-  { src: "/contactIcon2.svg", alt: "Email", label: "info@vyomedge.com" },
+  { src: "/contactIcon2.svg", alt: "Email", label: "info@vyomedge.com" ,goesto:"mailto:info@vyomedge.com"},
   {
     src: "/contactIcon3.svg",
     alt: "Location",
     label: "50 Bostocks Lane, Risley, Derby, England, DE723SX",
+    goesto:"#"
   },
 ];
 
