@@ -86,8 +86,8 @@ const WeOffer = () => {
           {` What We Offer`}
         </Typography>
         <Typography
-          variant="copytext2"
-          component="copytext2"
+          variant="p"
+          component="p"
           textAlign="center"
           sx={{
             frontFamily: "Manrope, sans-serif",
@@ -168,8 +168,8 @@ const WeOffer = () => {
                   > */}
                   <Box sx={{ mt: 2 }}>
                     <Typography
-                      variant="subheading"
-                      component="subheading"
+                      variant="h3"
+                      component="h3"
                       sx={{
                         frontFamily: "Manrope, sans-serif",
                         fontWeight: 500,

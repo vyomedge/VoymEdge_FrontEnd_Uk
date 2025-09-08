@@ -26,8 +26,8 @@ const Partner = () => {
           {`Your Strategic Partner`}
         </Typography>
         <Typography
-          variant="copytext1"
-          component="copytext1"
+          variant="p"
+          component="p"
           sx={{
             frontFamily: "Manrope, sans-serif",
             fontWeight: "500",
@@ -42,8 +42,8 @@ const Partner = () => {
         </Typography>
         <br />
         <Typography
-          variant="copytext2"
-          component="div"
+          variant="p"
+          component="p"
           sx={{
             frontFamily: "Manrope, sans-serif",
             fontWeight: 500,

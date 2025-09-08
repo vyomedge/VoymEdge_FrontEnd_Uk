@@ -54,7 +54,7 @@ const SocialMedia = () => {
             container
             spacing={{ xs: 2, md: 7, lg: 10 }}
             paddingBottom={5}
-            //   columns={{ xs: 4, sm: 8, md: 4 }}
+          //   columns={{ xs: 4, sm: 8, md: 4 }}
           >
             <Grid size={{ xs: 12, sm: 12, md: 5, lg: 4 }}>
               <Box
@@ -148,64 +148,79 @@ const SocialMedia = () => {
                 </Typography>
 
                 <Typography
-                  variant="h2"
-                  component="h2"
+                  variant="p"
+                  component="p"
                   sx={{
                     frontFamily: "Manrope, sans-serif",
                     fontWeight: 500,
-                    fontSize: { xs: "15px", md: "15px" },
+                    fontSize: { xs: "15px", md: "16px" },
                     lineHeight: "160%",
                     mt: 1,
                     color: "#4B4B4B",
                     mx: { xs: "auto", md: 0 },
                     position: "relative",
+                    display: "inline-block",
+                    marginTop: "20px",
+                    "&::after": {
+                      content: '""',
+                      position: "absolute",
+                      bottom: -14,
+                      left: 0,
+                      width: "50%",
+                      height: "2px",
+                      background:
+                        "linear-gradient(to right, rgba(211, 0, 229, 1), rgba(118, 0, 196, 1), rgba(76, 255, 231, 1))",
+                    },
                   }}
                 >
                   {`We’re always ready to discuss new ideas, business challenges, or tech upgrades.
                              Whether you need a full-stack development team or digital growth support, we’re just a
                               message away.`}
-                  <Typography
-                    sx={{
-                      display: "inline-block",
-                      marginTop: "20px",
-                      "&::after": {
-                        content: '""',
-                        position: "absolute",
-                        bottom: -14,
-                        left: 0,
-                        width: "50%",
-                        height: "2px",
-                        background:
-                          "linear-gradient(to right, rgba(211, 0, 229, 1), rgba(118, 0, 196, 1), rgba(76, 255, 231, 1))",
-                      },
-                    }}
-                  ></Typography>
-                </Typography>
 
-                {/* Contact Icons */}
+                </Typography>
+             
                 <Box sx={{ mt: 5, ml: 1 }}>
                   {contactIcons.map((item, i) => (
-                    <Box display={"flex"} alignItems={"center"} gap={2} key={i} sx={{ my: 2 }}>
-                      <Image
-                        src={item.src}
-                        alt={item.alt}
-                        title={item.alt}
-                        width={30}
-                        height={30}
-                        style={{ objectFit: "fill" }}
-                      />
-                      <Typography
-                        variant="body2"
-                        sx={{
-                          fontWeight: 500,
-                          color: "inherit", // to support color change on hover
-                          textTransform: "none",
-                          textAlign: "start",
-                        }}
+                      
+                    <Box display={"flex"} alignItems={"center"} gap={2} key={i} sx={{ my: 2, }} textAlign={"left"}>
+                    <Link
+                        key={i}
+                        href={item.label}
+
+                        rel="noopener noreferrer"
+                        passHref
                       >
-                        {item.label}
-                      </Typography>
+                        <Image
+                          src={item.src}
+                          alt={item.alt}
+                          title={item.alt}
+                          width={30}
+                          height={30}
+                          style={{ objectFit: "fill" }}
+                        />
+                        </Link>
+                        <Link
+                        key={i}
+                        href={item.label}
+
+                        rel="noopener noreferrer"
+                        passHref
+                      >
+                        <Typography
+                          variant="p"
+                          component="p"
+                          sx={{
+                            fontWeight: 500,
+                            color: "inherit",
+                            textTransform: "none",
+                            textAlign: "start",
+                          }}
+                        >
+                          {item.label}
+                        </Typography>
+                     </Link>
                     </Box>
+                     
                   ))}
                 </Box>
               </Box>

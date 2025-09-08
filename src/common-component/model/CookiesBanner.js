@@ -149,7 +149,7 @@ export default function CookiesBanner() {
                 {"We Use Cookies"}
               </Typography>
               <Typography
-                variant="p"
+                variant="p" component="p"
                 sx={{ color: "rgba(255,255,255,0.8)", lineHeight: 1 }}
               >
                 {`This website uses cookies to give you a better, faster, and more personalized experience.  

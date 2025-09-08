@@ -309,11 +309,12 @@ const MernServices = () => {
     <>
       <Box
         sx={{ background: `linear-gradient(180deg, #FFFFFF 0%, #E5FFFB 100%)` }}
-        pb={4}
+        pb={2}
       >
         <Container>
           <Typography
             variant="h2"
+            component="h2"
             sx={{
               fontFamily: "sen, sans-serif",
               lineHeight: "130%",
@@ -324,8 +325,8 @@ const MernServices = () => {
                 md: "40px", // laptop
                 lg: "48px", // desktop
               },
-              mb: 2,
-              mt: 3,
+              mb: 1,
+              mt: { xs: 1, lg: 2 },
               whiteSpace: "nowrap",
               textAlign: "center",
             }}
@@ -351,7 +352,7 @@ const MernServices = () => {
                 >
                   <Box
                     sx={{
-                      boxShadow: "1px 1px 10px #ddd",
+                      boxShadow: "1px 1px 15px #ddd",
                       p: 5,
                       borderRadius: 2,
                       backgroundColor: "#fff",
@@ -374,13 +375,13 @@ const MernServices = () => {
                     </Box>
 
                     <Typography
-                      variant="subheading"
-                      component="subheading"
+                      variant="h3"
+                      component="h3"
                       sx={{
                         frontFamily: "Manrope, sans-serif",
                         fontWeight: 500,
                         fontSize: "20px",
-                        mb: 2,
+                        mb: 1,
                         mt: 2,
                         background:
                           "linear-gradient(135deg, rgba(211, 0, 229, 1) , rgba(118, 0, 196, 1),rgba(76, 255, 231, 1))",
@@ -391,16 +392,23 @@ const MernServices = () => {
                     >
                       {ele.title}
                     </Typography>
-                    <Typography color="#443B56">{ele.description}</Typography>
-                    <Typography color="#443B56">{ele?.list?.title}</Typography>
-                    <List>
+                    <Typography variant="p" component="p" color="#443B56">{ele.description}</Typography>
+                    <Typography variant="p" component="p" color="#443B56">{ele?.list?.title}</Typography>
+                    <List sx={{ listStyleType: "disc", pl: 3 }}>
                       {ele?.list?.points.map((val, index) => (
-                        <ListItem sx={{ p: 0 ,color:"#443B56"}} key={index}>
-                          *&ensp; {val}
+                        <ListItem
+                          key={index}
+                          sx={{
+                            display: "list-item",
+                            p: 0,
+                            color: "#443B56",
+                          }}
+                        >
+                          {val}
                         </ListItem>
                       ))}
                     </List>
-                    <Typography color="#443B56">{ele?.footer}</Typography>
+                    <Typography variant="p" component="p" color="#443B56">{ele?.footer}</Typography>
                   </Box>
                 </Grid>
               ))}
@@ -412,6 +420,7 @@ const MernServices = () => {
         <Box>
           <Typography
             variant="h2"
+            component="h2"
             sx={{
               fontFamily: "sen, sans-serif",
               lineHeight: "130%",
@@ -428,9 +437,11 @@ const MernServices = () => {
               textAlign: "center",
             }}
           >
-            {` Ready to Elevate Your Digital Infrastructure?`}
+            {`Ready to Elevate Your Digital Infrastructure?`}
           </Typography>
           <Typography
+            variant="h4"
+            component="h4"
             sx={{
               fontFamily: "sen, sans-serif",
               lineHeight: "130%",

@@ -3,7 +3,7 @@ import React from "react";
 import Image from "next/image";
 import CustomButton2 from "@/common-component/button/customButton2";
 import CustomButton1 from "@/common-component/button/customButton1";
-import Link from "next/link";
+
 
 const WeWork = () => {
   const cardData = [
@@ -57,7 +57,7 @@ const WeWork = () => {
           textAlign="center"
           sx={{
             px: { xs: 2, sm: 6, md: 8, lg: 14 },
-            py: { xs: 2, sm: 8, md: 5, lg: 4 },
+            py: { xs: 2},
             flexDirection: "column", // If you want vertical stacking
             textAlign: "center", // Ensures text is centered as well
           }}
@@ -152,7 +152,7 @@ const WeWork = () => {
                 color: "#222",
               }}
             >
-              Let’s Build Something Together
+              {`Let’s Build Something Together`}
             </Typography>
             <Typography
               sx={{
@@ -160,43 +160,32 @@ const WeWork = () => {
                 fontSize: { xs: "13px", sm: "18px", md: "18px", lg: "18px" },
               }}
             >
-              Ready to take your UK business to the next level? Let’s discuss
-              how VyomEdge UK can support your growth.
+              {`Ready to take your UK business to the next level? Let’s discuss
+              how VyomEdge UK can support your growth.`}
             </Typography>
             <Box display="flex" gap={2} justifyContent="center" mt={2}>
-              <Link href="tel:+447774709698" passHref legacyBehavior>
-                <a style={{ textDecoration: "none" }}>
-                  <CustomButton1
-                    data-testid="notify-button"
-                    onClick={() => console.log("Booked!")}
-                    sx={{
-                      borderRadius: "5px",
-                      mt: 1,
-                      fontSize: "15px",
-                      fontWeight: "500",
-                      textTransform: "lowercase",
-                    }}
-                  >
-                    {`Book a Free Call`}
-                  </CustomButton1>
-                </a>
-              </Link>
-              <Link href="/packages" passHref legacyBehavior>
-                <a style={{ textDecoration: "none" }}>
-                  <CustomButton2
-                    data-testid="notify-button"
-                    onClick={() => console.log("Booked!")}
-                    sx={{
-                      borderRadius: "5px",
-                      mt: 1,
-                      fontSize: "15px",
-                      fontWeight: "500",
-                    }}
-                  >
-                    {`Get a Quote Now`}
-                  </CustomButton2>
-                </a>
-              </Link>
+              <CustomButton1
+                data-testid="notify-button"
+                onClick={() => (window.location.href = "tel:+447774709698")}
+                sx={{ borderRadius: "5px", mt: 1, fontSize: "15px", fontWeight: "500" }}
+              >
+                {`Book a free Call`}
+              </CustomButton1>
+
+
+              <CustomButton2
+                data-testid="notify-button"
+                onClick={() => (window.location.href = "/packages")}
+                sx={{
+                  borderRadius: "5px",
+                  mt: 1,
+                  fontSize: "15px",
+                  fontWeight: "500",
+                }}
+              >
+                {`Get a Quote Now`}
+              </CustomButton2>
+
             </Box>
             <Box
               sx={{

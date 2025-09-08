@@ -97,6 +97,7 @@ const PriceCards = () => {
         <Typography
           textAlign="center"
           variant="h2"
+          component="h2"
           sx={{
             fontFamily: "sen, sans-serif",
             lineHeight: "130%",
@@ -126,7 +127,7 @@ const PriceCards = () => {
               <Card
                 elevation={3}
                 sx={{
-                  borderRadius: "16px",
+                  borderRadius: "6px",
                   p: 2,
                   height: "100%",
                   backgroundColor: "#fff",
@@ -151,6 +152,8 @@ const PriceCards = () => {
                     />
                     <Box>
                       <Typography
+                        variant="p"
+                        component="p"
                         fontWeight={600}
                         frontFamily="Manrope, sans-serif"
                         fontSize="18px"
@@ -159,6 +162,8 @@ const PriceCards = () => {
                         {pkg.title}
                       </Typography>
                       <Typography
+                        variant="p"
+                        component="p"
                         frontFamily="Manrope, sans-serif"
                         fontSize="14px"
                         color="#2D2A34"
@@ -170,14 +175,18 @@ const PriceCards = () => {
 
                   {/* Price */}
                   <Typography
-                    variant="h4"
+                    variant="h5"
+                    component="h5"
                     fontWeight={700}
                     color="#2D2A34"
                     mt={1}
                   >
                     {pkg.price}
                   </Typography>
-                  <Typography fontSize="13px" color="#666" mb={2}>
+                  <Typography
+                    variant="p"
+                    component="p"
+                    fontSize="13px" color="#666" mb={2}>
                     {pkg.time}
                   </Typography>
 
@@ -198,8 +207,8 @@ const PriceCards = () => {
                           }}
                         >
                           <svg
-                            width="20"
-                            height="20"
+                            width="15"
+                            height="15"
                             viewBox="0 0 24 24"
                             fill="none"
                           >
@@ -223,9 +232,12 @@ const PriceCards = () => {
                           </svg>
                         </Box>
                         <Typography
+                          variant="p"
+                          component="p"
                           frontFamily="Manrope, sans-serif"
                           fontSize="14px"
                           color="#2D2A34"
+                          paddingLeft={1}
                         >
                           {feature}
                         </Typography>
@@ -234,6 +246,8 @@ const PriceCards = () => {
                   </Stack>
 
                   <Typography
+                    variant="p"
+                    component="p"
                     frontFamily="Manrope, sans-serif"
                     fontSize="14px"
                     color="#2D2A34"
@@ -242,17 +256,23 @@ const PriceCards = () => {
                   </Typography>
 
                   {/* Goal Chip */}
-                  <Chip
-                    label={pkg.goal}
+                  <Typography
+                    variant="p"
+                    component="p"
                     sx={{
                       frontFamily: "Manrope, sans-serif",
                       fontSize: "12px",
                       background: "#4CFFE733",
+                      width: "fit-Content",
                       color: "#000",
                       mt: 1,
-                      borderRadius: "8px",
-                    }}
-                  />
+                      borderRadius: "5px",
+                      padding: "5px"
+
+                    }}>
+                    {pkg.goal}</Typography>
+
+
                 </CardContent>
               </Card>
             </Grid>
