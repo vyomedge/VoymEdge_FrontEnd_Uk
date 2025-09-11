@@ -28,46 +28,46 @@ const faqData = [
           }}
         >
           <li>
-            <span
+            <p
               style={{
                 fontWeight: 600,
               }}
             >
               {` Custom MERN Stack Development`}
-            </span>{" "}
+            </p>{" "}
             {`(MongoDB, Express.js, React.js, Node.js)`}
           </li>
           <li>
-            <span
+            <p
               style={{
                 fontWeight: 600,
               }}
             >
               {`  Python & Django Development`}
-            </span>
+            </p>
           </li>
           <li>
-            <span
+            <p
               style={{
                 fontWeight: 600,
               }}
             >
               {`  UI/UX Design & Prototyping`}
-            </span>
+            </p>
           </li>
           <li>
-            <span
+            <p
               style={{
                 fontWeight: 600,
               }}
             >
               {` Digital Marketing & SEO`}
-            </span>{" "}
+            </p>{" "}
             {`tailored for UK markets`}
           </li>
         </ul>
 
-        <Typography variant="body2" sx={{ mt: 1, color: "text.secondary" }}>
+        <Typography variant="p" component="p" sx={{ mt: 1, color: "text.secondary" }}>
           {` Each service is delivered by an experienced offshore team, ensuring scalable, secure, and cost-efficient results.`}
         </Typography>
       </div>
@@ -137,8 +137,8 @@ export default function FAQ() {
             }
             sx={{
               borderBottom: "1px solid #ccc",
-              px:0,
-              py:2,
+              px: 0,
+              py: 2,
               minHeight: "55px", // keep it same when expanded
               "&.Mui-expanded": {
                 minHeight: "55px",
@@ -150,12 +150,12 @@ export default function FAQ() {
                 },
               },
             }}
-            // remove row-reverse
+          // remove row-reverse
           >
             <Box sx={{ width: "100%" }}>
               <Typography
-                variant="copytext1"
-                component="copytext1"
+                variant="p"
+                component="p"
                 sx={{
                   color: "#322C3E",
                   fontWeight: expanded === index ? 700 : 500,
@@ -178,8 +178,8 @@ export default function FAQ() {
           >
             {typeof item.answer === "string" ? (
               <Typography
-                variant="copytext2"
-                component="copytext2"
+                variant="p"
+                component="p"
                 sx={{
                   frontFamily: "Manrope, sans-serif",
                   fontWeight: 400,

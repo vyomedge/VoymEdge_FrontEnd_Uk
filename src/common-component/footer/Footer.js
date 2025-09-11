@@ -161,9 +161,8 @@ export default function Footer() {
                  variant="p"
                   component="p"
                   sx={{ fontSize: "15px", color: "#E4E4E4", fontWeight: 400 }}
-                >
-                  <Box
-                    component="a"
+               
+                  
                     href="mailto:info@vyomedge.com"
                     style={{ color: "white", textDecoration: "none" }}
                     onMouseEnter={(e) =>
@@ -174,7 +173,7 @@ export default function Footer() {
                     }
                   >
                   {`info@vyomedge.com`}
-                  </Box>
+               
                 </Typography>
 
                 {/* <Typography

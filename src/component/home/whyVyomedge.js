@@ -1,6 +1,8 @@
 import { Box, Typography, Grid, Paper, Container } from "@mui/material";
 import React from "react";
 import Image from "next/image";
+import BorderAnimatedLinkButton from "@/common-component/button/botton";
+import Link from "next/link";
 
 const WhyVyomedge = () => {
   const cardData = [
@@ -98,12 +100,14 @@ const WhyVyomedge = () => {
                 <Image
                   src={item.icon}
                   alt={item.title}
-                  width={40}
-                  height={40}
+                  width={50}
+                  height={50}
                   title="why vyomedge "
                 />
                 <Box textAlign="left">
                   <Typography
+                  component="p"
+                  variant="p"
                     sx={{
                       fontWeight: 600,
                       fontSize: "14px",
@@ -131,6 +135,7 @@ const WhyVyomedge = () => {
             </Grid>
           ))}
         </Grid>
+       
       </Box>
     </Container>
     // {/* </Box> */}
