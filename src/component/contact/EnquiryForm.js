@@ -54,7 +54,14 @@ const EnquiryForm = () => {
 
   const validate = () => {
     const newErrors = {};
-    if (!formData.fullName.trim()) newErrors.fullName = "Full name is required";
+    if (!formData.fullName.trim()) {
+      newErrors.fullName = "Full name is required";
+    } else {
+      const fullNameRegex = /^[A-Za-z\u00C0-\u024F]+(?:[ '\-][A-Za-z\u00C0-\u024F]+)*$/;
+      if (!fullNameRegex.test(formData.fullName)) {
+        newErrors.fullName = "Enter a valid full name ";
+      }
+    }
     if (!formData.email) {
       newErrors.email = "Email is required";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
@@ -63,9 +70,9 @@ const EnquiryForm = () => {
     if (!formData.phoneNo) {
       newErrors.phoneNo = "Phone number is required";
     }
-    //  else if (!/^\d{10}$/.test(formData.phone)) {
-    //   newErrors.phone = "Phone must be 10 digits";
-    // }
+    else if (!/^\+(?:[0-9] ?){6,14}[0-9]$/.test(formData.phoneNo)) {
+      newErrors.phoneNo = "Phone must be 10 digits";
+    }
     if (!formData.service) newErrors.service = "Please select a service";
     if (!formData.message.trim()) newErrors.message = "Message is required";
 
@@ -86,7 +93,7 @@ const EnquiryForm = () => {
   };
 
   const handleSubmit = async () => {
-    
+
     console.log(formData);
     if (validate()) {
       const transformed = {
@@ -169,6 +176,8 @@ const EnquiryForm = () => {
           </Typography>
 
           <Typography
+            variant="p"
+            component="p"
             sx={{
               fontFamily: "Manrope, sans-serif",
               fontSize: { xs: "15px", md: "15px" },
@@ -180,16 +189,16 @@ const EnquiryForm = () => {
           our team will get back within 24 hours.`}
           </Typography>
 
-          <Grid container spacing={2}>
+          <Grid container spacing={{ xs: 0, sm: 1 }}>
             <Box
               sx={{
                 display: { md: "flex", sm: "flex", sx: "block" },
                 width: "100%",
-                gap: 2,
+                gap: { xs: 0, sm: 2 },
               }}
             >
               <Box sx={{ width: "100%" }}>
-                <label>Full Name</label>
+                <label>{`Full Name`}</label>
                 <TextField
                   fullWidth
                   size="small"
@@ -205,7 +214,7 @@ const EnquiryForm = () => {
                 />
               </Box>
               <Box sx={{ width: "100%", mt: { xs: 1.5, sm: 0 } }}>
-                <label>Business Email</label>
+                <label>{`Business Email`}</label>
                 <TextField
                   size="small"
                   fullWidth
@@ -245,11 +254,11 @@ const EnquiryForm = () => {
                   }}
                 />
               </Box> */}
-              <Box sx={{ width: "100%" }}>
-                <label>Phone</label>
+              <Box sx={{ width: "100%", mt: { xs: 1, sm: 0 }, mb: 1 }}>
+                <label>{`Phone`}</label>
                 <MuiTelInput
                   defaultCountry="GB"
-      countries={["IN", "GB"]}
+                  countries={["IN", "GB"]}
                   fullWidth
                   size="small"
                   variant="outlined"
@@ -267,8 +276,8 @@ const EnquiryForm = () => {
                   }}
                 />
               </Box>
-              <Box sx={{ width: "100%", mt: { xs: 1.5, sm: 0 } }}>
-                <label>Type Of Project</label>
+              <Box sx={{ width: "100%", mt: { xs: 1, sm: 0 }, mb: 1 }}>
+                <label>{`Type of Project`}</label>
                 <FormControl fullWidth error={!!errors.service} size="small">
                   <Select
                     labelId="service-label"
@@ -285,12 +294,12 @@ const EnquiryForm = () => {
                     }}
                   >
                     <MenuItem value="" disabled>
-                      Select a project type
+                      {`  Select a project type`}
                     </MenuItem>
-                    <MenuItem value="web">Web Development</MenuItem>
-                    <MenuItem value="seo">SEO Optimization</MenuItem>
-                    <MenuItem value="ads">Paid Ads</MenuItem>
-                    <MenuItem value="design">UI/UX Design</MenuItem>
+                    <MenuItem value="web">{`Web Development`}</MenuItem>
+                    <MenuItem value="seo">{`SEO Optimization`}</MenuItem>
+                    <MenuItem value="ads">{`Paid Ads`}</MenuItem>
+                    <MenuItem value="design">{`UI/UX Design`}</MenuItem>
                   </Select>
                   {errors.service && (
                     <FormHelperText>{errors.service}</FormHelperText>
@@ -300,7 +309,7 @@ const EnquiryForm = () => {
             </Box>
 
             <Box sx={{ width: "100%" }}>
-              <label>Tell us about your project</label>
+              <label>{`Tell us about your project`}</label>
               <TextField
                 fullWidth
                 multiline
@@ -325,7 +334,7 @@ const EnquiryForm = () => {
             onClick={handleSubmit}
             sx={{
               borderRadius: "5px",
-              mt: 4,
+              mt: 2,
               fontSize: "15px",
               fontWeight: "500",
             }}

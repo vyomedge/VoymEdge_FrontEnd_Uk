@@ -87,8 +87,8 @@ export default function Footer() {
                 }}
               >
                 <Typography
-                  variant="copytext1"
-                  component="copytext1"
+                  variant="p"
+                  component="p"
                   sx={{
                     fontSize: { xs: "16px", sm: "16px", md: "18px" },
                     fontWeight: 500,
@@ -113,8 +113,8 @@ export default function Footer() {
                 style={{ textDecoration: "none" }}
               >
                 <Typography
-                  variant="copytext1"
-                  component="copytext1"
+                  variant="p"
+                  component="p"
                   sx={{
                     fontSize: { xs: "12px", sm: "13px", md: "15px" },
                     fontWeight: 500,
@@ -158,11 +158,11 @@ export default function Footer() {
                 }}
               >
                 <Typography
-                  variant="body2"
+                 variant="p"
+                  component="p"
                   sx={{ fontSize: "15px", color: "#E4E4E4", fontWeight: 400 }}
-                >
-                  <Box
-                    component="a"
+               
+                  
                     href="mailto:info@vyomedge.com"
                     style={{ color: "white", textDecoration: "none" }}
                     onMouseEnter={(e) =>
@@ -172,8 +172,8 @@ export default function Footer() {
                       (e.target.style.textDecoration = "none")
                     }
                   >
-                    info@vyomedge.com
-                  </Box>
+                  {`info@vyomedge.com`}
+               
                 </Typography>
 
                 {/* <Typography
@@ -236,8 +236,8 @@ export default function Footer() {
             {/* Left - Copyright */}
             <Grid item xs={12} sm={4} md={6}>
               <Typography
-                variant="copytext1"
-                component="copytext1"
+                variant="p"
+                component="p"
                 sx={{
                   fontSize: "13px",
                   textAlign: { xs: "left", sm: "left", md: "left", lg: "left" },
@@ -250,8 +250,8 @@ export default function Footer() {
             {/* Center - Policies */}
             <Grid item xs={12} sm={8} md={6}>
               <Typography
-                variant="copytext1"
-                component="copytext1"
+                variant="p"
+                component="p"
                 sx={{ fontSize: "13px", textAlign: "right", color: "white" }}
               >
                 <Link

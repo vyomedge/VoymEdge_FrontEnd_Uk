@@ -30,10 +30,11 @@ const AddOnServices = () => {
       {/* Title */}
       <Typography textAlign="center"
         variant="h2"
+        component={"h2"}
         sx={{
          fontFamily: 'sen, sans-serif',
           fontWeight: 500,
-          lineHeight: "130%",
+          lineHeight: "120%",
           color: "#322C3E",
           fontSize: { xs: "32px", sm: "40px", md: "42px", lg: '48px' },
           mb: 2,
@@ -53,7 +54,7 @@ const AddOnServices = () => {
          boxShadow:2,
          border:"none",
          borderRadius:"15px",
-         padding:"20px"
+         padding:"10px"
          }
          } 
          p={{md:3,sm:2,xs:1}}>
@@ -68,10 +69,10 @@ const AddOnServices = () => {
                   borderBottom: '2px solid #D273FF',
                   lineHeight: "160%",
                   color: "#000",
-                  mb: 2,
+                  mb: 1,
                 }}
               >
-                {`   Service`}
+                {`Service`}
               </TableCell>
               <TableCell
                 align="left"
@@ -82,12 +83,14 @@ const AddOnServices = () => {
                   borderBottom: '2px solid #D273FF',
                   lineHeight: "160%",
                   color: "#000",
-                  mb: 2,
+                  mb: 1,
                 }}
 
               >
-                {`  Price `}
-                <Box component="span" sx={{
+                {`Price `}
+                <Box component="p"
+                variant="p"
+                 sx={{
                   background: 'linear-gradient(to right, rgba(211, 0, 229, 1),rgba(118, 0, 196, 1),rgba(76, 255, 231, 1))', // blue gradient
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
@@ -105,7 +108,7 @@ const AddOnServices = () => {
                     frontFamily: "Manrope, sans-serif",
                     fontWeight: 500,
                     fontSize: { xs: "15px", md: "18px" },
-                    lineHeight: "160%",
+                    lineHeight: "100%",
                     color: "#3C3C3C",
                     borderBottom: 'none',
 
@@ -119,7 +122,7 @@ const AddOnServices = () => {
                    frontFamily: "Manrope, sans-serif",
                     fontWeight: 700,
                     fontSize: { xs: "15px", md: "18px" },
-                    lineHeight: "160%",
+                    lineHeight: "80%",
                     color: "#3C3C3C",
                     borderBottom: 'none',
 

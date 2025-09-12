@@ -42,6 +42,8 @@ const BreadcrumbsComponent = ({
           if (isLast) {
             return (
               <Typography
+              component={"p"}
+              variant='p'
                 key={index}
                 color="black"
                 sx={{
@@ -61,6 +63,7 @@ const BreadcrumbsComponent = ({
 
           return (
             <Typography
+            variant='p'
               component={Link}
               key={index}
               underline="hover"

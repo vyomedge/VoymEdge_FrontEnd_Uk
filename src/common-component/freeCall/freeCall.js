@@ -48,8 +48,8 @@ const FreeCall = () => {
           </Typography>
 
           <Typography
-            variant="copytext2"
-            component="div"
+             variant="p"
+            component="p"
             sx={{
               fontFamily: "Manrope, sans-serif",
               fontWeight: 500,
@@ -61,7 +61,8 @@ const FreeCall = () => {
           >
             Speak to our{" "}
             <Box
-              component="span"
+               variant="p"
+            component="p"
               sx={{
                 position: "relative",
                 display: "inline-block",
@@ -73,11 +74,12 @@ const FreeCall = () => {
                 backgroundPosition: "0 100%",
               }}
             >
-              UK consultant
+             {` UK consultant`}
             </Box>{" "}
             or{" "}
             <Box
-              component="span"
+               variant="p"
+            component="p"
               sx={{
                 position: "relative",
                 display: "inline-block",
@@ -89,12 +91,12 @@ const FreeCall = () => {
                 backgroundPosition: "0 100%",
               }}
             >
-              request a free proposal.
+             {` request a free proposal.`}
             </Box>
           </Typography>
           <Box display="flex" gap={2} justifyContent="center">
-            <Link href="tel:+447774709698" passHref legacyBehavior>
-              <a style={{ textDecoration: "none" }}>
+            <Link href="tel:+447774709698" passHref legacyBehavior style={{ textDecoration: "none" }}>
+             
                 <CustomButton1
                   data-testid="notify-button"
                   onClick={() => console.log("Booked!")}
@@ -108,10 +110,10 @@ const FreeCall = () => {
                 >
                   {`Book a Free Call`}
                 </CustomButton1>
-              </a>
+             
             </Link>
-            <Link href="/packages" passHref legacyBehavior>
-              <a style={{ textDecoration: "none" }}>
+            <Link href="/packages" passHref legacyBehavior style={{ textDecoration: "none" }}>
+           
                 <CustomButton2
                   data-testid="notify-button"
                   onClick={() => console.log("Booked!")}
@@ -124,7 +126,7 @@ const FreeCall = () => {
                 >
                   {`Get a Quote Now`}
                 </CustomButton2>
-              </a>
+            
             </Link>
           </Box>
 

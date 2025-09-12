@@ -150,7 +150,8 @@ const Services = () => {
               </Avatar>
 
               <Typography
-                variant="caption"
+                variant="p"
+                component="p"
                 sx={{
                   mt: 0.5,
                   fontSize: { xs: "0.6rem", sm: "0.75rem" },

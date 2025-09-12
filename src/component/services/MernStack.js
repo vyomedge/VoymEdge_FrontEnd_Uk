@@ -47,7 +47,7 @@ const MernStack = () => {
           <Grid
             container
             spacing={{ xs: 2, md: 5, lg: 5 }}
-            paddingBottom={5}
+            paddingBottom={{xs:2, md:5}}
             //   columns={{ xs: 4, sm: 8, md: 4 }}
           >
             <Grid size={{ xs: 12, sm: 12, md: 6, lg: 6 }}>
@@ -56,7 +56,7 @@ const MernStack = () => {
                   width: "100%",
                   maxWidth: 500,
                   mx: "auto",
-                  borderRadius: 2,
+                  borderRadius: 3,
                   overflow: "hidden",
                   display: "flex",
                   justifyContent: "center",
@@ -69,7 +69,7 @@ const MernStack = () => {
                   alt="MERN Stack"
                   title="MERN Stack"
                   width={575}
-                  height={430}
+                  height={500}
                   style={{ maxWidth: "100%", height: "auto" }}
                 />
               </Box>
@@ -78,28 +78,31 @@ const MernStack = () => {
               <Box>
                 <Typography
                   variant="h2"
+                  component="h2"
                   sx={{
                     fontFamily: "sen, sans-serif",
-                    lineHeight: "130%",
+                    lineHeight: "120%",
                     color: "#322C3E",
                     fontSize: {
                       xs: "32px",
                       sm: "40px",
                       md: "42px",
-                      lg: "48px",
+                      lg: "46px",
                     },
-                    mb: 2,
+                    mb: 1,
                   }}
                 >
                   {`Bespoke Technology & Digital Solutions for UK Businesses`}
                 </Typography>
                 <Typography
+                 variant="p"
+                  component="p"
                   sx={{
                     frontFamily: "Manrope, sans-serif",
                     fontSize: { xs: "15px", md: "18px" },
-                    lineHeight: "160%",
+                    lineHeight: "150%",
                     color: "#443B56",
-                    mb: 3,
+                    mb: 2,
                   }}
                 >
                   {`At VyomEdge, we partner with UK startups, SMEs, and enterprises to deliver robust, scalable, and future-ready digital solutions. Whether you're seeking cutting-edge software development, intuitive user experience, enterprise-grade cloud transformation, or intelligent marketing – we've got you covered.`}

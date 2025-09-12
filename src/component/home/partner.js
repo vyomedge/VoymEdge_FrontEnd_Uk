@@ -15,7 +15,7 @@ const Partner = () => {
           sx={{
             fontFamily: "sen, sans-serif",
             //   whiteSpace:"nowrap",
-            lineHeight: "130%",
+            lineHeight: "110%",
             color: "#322C3E",
             fontSize: { xs: "28px", sm: "32px", md: "42px", lg: "56px" },
             marginBottom:1,
@@ -26,8 +26,8 @@ const Partner = () => {
           {`Your Strategic Partner`}
         </Typography>
         <Typography
-          variant="copytext1"
-          component="copytext1"
+          variant="p"
+          component="p"
           sx={{
             frontFamily: "Manrope, sans-serif",
             fontWeight: "500",
@@ -42,15 +42,15 @@ const Partner = () => {
         </Typography>
         <br />
         <Typography
-          variant="copytext2"
-          component="div"
+          variant="p"
+          component="p"
           sx={{
             frontFamily: "Manrope, sans-serif",
             fontWeight: 500,
-            lineHeight: "160%",
+            lineHeight: "140%",
             color: "#443B56",
             fontSize: { xs: "15px", sm: "15px", md: "15px", lg: "15px" },
-            py: "15px",
+            // py: "20px",
           }}
           dangerouslySetInnerHTML={{
             __html: `Whether you're building a <span style="color:#7600C4">SaaS platform</span> in Manchester, 

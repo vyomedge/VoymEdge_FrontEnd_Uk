@@ -16,7 +16,7 @@ const ClientTrust = () => {
       <Box
         sx={{
           flexGrow: 1,
-          paddingTop: 4,
+          paddingTop: 1,
           background: `linear-gradient(180deg, #FFFFFF 0%, #E5FFFB 100%)`,
         }}
       >
@@ -24,7 +24,7 @@ const ClientTrust = () => {
           <Grid
             container
             spacing={{ xs: 2, md: 7, lg: 7 }}
-            paddingBottom={5}
+            paddingBottom={3}
             //   columns={{ xs: 4, sm: 8, md: 4 }}
           >
             <Grid size={{ xs: 12, sm: 12, md: 6, lg: 6 }}>
@@ -60,7 +60,7 @@ const ClientTrust = () => {
                   <Box
                     px={{ xs: 2, sm: 2, md: 2, lg: 2 }}
                     py={{ xs: 2, sm: 2, md: 2, lg: 2 }}
-                    mb={2}
+                    mb={1.5}
                     key={index}
                     sx={{
                        textAlign: {
@@ -69,11 +69,11 @@ const ClientTrust = () => {
                       md: "start",
                       sm: "center",
                     },
-                      borderRadius: "8px",
+                      borderRadius: "6px",
                       backgroundColor: "#fff",
                       boxShadow: "0px 0px 2px #ddd",
-                      Width: "300px",
-                      // maxWidth: "100%",
+                     
+                       maxWidth: "100%",
                     }}
                   >
                     <Typography
@@ -97,13 +97,8 @@ const ClientTrust = () => {
                     fontWeight: 500,
                     lineHeight: "160%",
                     color: "#443B56",
-                    fontSize: {
-                      xs: "18px",
-                      sm: "18px",
-                      md: "18px",
-                      lg: "18px",
-                    },
-                    mb: 4,
+                    fontSize: "16px",
+                    mb:{xs:2, md: 4}
                   }}
                   dangerouslySetInnerHTML={{
                     __html: `

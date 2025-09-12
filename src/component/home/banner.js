@@ -186,7 +186,7 @@ export default function HeroSection() {
                     },
                   }}
                 >
-                  UK Businesses
+                {`UK Businesses`}
                 </Box>
               </Box>
             </Typography>

@@ -6,7 +6,7 @@ const OurMission = () => {
     <Container>
       <Grid
         textAlign="center"
-        py={{ xs: "5px", sm: "5px", md: "30px", lg: "30px" }}
+        py={{ xs: "5px", sm: "5px", md: "10px", lg: "10px" }}
       >
         <Box
           sx={{
@@ -25,7 +25,7 @@ const OurMission = () => {
               textAlign: "center",
               position: "relative",
               display: "inline-block",
-              marginBottom:5,
+              marginBottom:3,
               "&::after": {
                 content: '""',
                 position: "absolute",
@@ -42,12 +42,11 @@ const OurMission = () => {
           </Typography>
           <br />
           <Typography
-            variant="copytext1"
-            component="copytext1"
-            mb={4}
+            variant="p"
+            component="p"
+            mb={{xs:2, md:5}}
             sx={{
               frontFamily: "Manrope, sans-serif",
-              width: "100px",
               fontWeight: "500",
               lineHeight: "160%",
               color: "#443B56",

@@ -14,6 +14,7 @@ import Image from "next/image";
 import { IconButton } from "@mui/material";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import Link from "next/link";
+import CustomButton2 from "@/common-component/button/customButton2";
 
 const WeOffer = () => {
   const cardData = [
@@ -86,8 +87,8 @@ const WeOffer = () => {
           {` What We Offer`}
         </Typography>
         <Typography
-          variant="copytext2"
-          component="copytext2"
+          variant="p"
+          component="p"
           textAlign="center"
           sx={{
             frontFamily: "Manrope, sans-serif",
@@ -168,8 +169,8 @@ const WeOffer = () => {
                   > */}
                   <Box sx={{ mt: 2 }}>
                     <Typography
-                      variant="subheading"
-                      component="subheading"
+                      variant="h3"
+                      component="h3"
                       sx={{
                         frontFamily: "Manrope, sans-serif",
                         fontWeight: 500,
@@ -271,6 +272,21 @@ const WeOffer = () => {
               </Grid>
             ))}
           </Grid>
+          <Link href="/services"> 
+             <CustomButton2
+                  data-testid="notify-button"
+                
+                  sx={{
+                    borderRadius: "5px",
+                    mt: 1,
+                    fontSize: "15px",
+                    fontWeight: "500",
+                    mt:"25px"
+                  }}
+                >
+                  {`View all services`}
+                </CustomButton2>
+          </Link>
         </Container>
       </Box>
     </Box>

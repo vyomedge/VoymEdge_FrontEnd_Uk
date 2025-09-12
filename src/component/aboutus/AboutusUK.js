@@ -26,7 +26,7 @@ const AboutusUK = () => {
           <Grid
             container
             spacing={{ xs: 2, md: 7, lg: 7 }}
-            paddingBottom={5}
+            paddingBottom={{xs:2, md:5}}
             //   columns={{ xs: 4, sm: 8, md: 4 }}
           >
             <Grid size={{ xs: 12, sm: 12, md: 5, lg: 4 }}>
@@ -35,7 +35,7 @@ const AboutusUK = () => {
                   width: "100%",
                   maxWidth: 500,
                   mx: "auto",
-                  borderRadius: 2,
+                  borderRadius: 3,
                   overflow: "hidden",
                   display: "flex",
                   justifyContent: "center",
@@ -48,7 +48,7 @@ const AboutusUK = () => {
                   alt="Aboutus UK"
                   title="Aboutus vyomedge"
                   width={500}
-                  height={430}
+                  height={450}
                   style={{ maxWidth: "100%", height: "auto" }}
                 />
               </Box>
@@ -67,7 +67,7 @@ const AboutusUK = () => {
                       md: "40px", // laptop
                       lg: "48px", // desktop
                     },
-                    mb: 2,
+                    mb: 1,
                     whiteSpace: "nowrap",
                   }}
                 >
@@ -80,7 +80,7 @@ const AboutusUK = () => {
                     fontSize: { xs: "18px", md: "24px" },
                     lineHeight: "160%",
                     color: "#000",
-                    mb: 2,
+                    mb: 1,
                   }}
                 >
                   {`Your Offshore Tech & Marketing Partner, Built for the UK Market`}
@@ -92,7 +92,7 @@ const AboutusUK = () => {
                     fontSize: { xs: "15px", md: "18px" },
                     lineHeight: "160%",
                     color: "#444",
-                    mb: 3,
+                    mb: 2,
                   }}
                   dangerouslySetInnerHTML={{
                     __html: `  <span style="color:#7600C4">VyomEdge UK</span>
