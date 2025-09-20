@@ -14,6 +14,7 @@ import {
   Container,
 } from '@mui/material';
 import Image from 'next/image';
+import ClearIcon from '@mui/icons-material/Clear';
 
 const features = [
   { name: 'Website Design', starter: true, growth: true, scale: true },
@@ -167,18 +168,14 @@ const ComparisonTable = () => {
                             >
                               {row[key] === true ? (
                                 <Image
-                                  src="/Tick.svg"
-                                  alt="Tick Icon"
-                                  width={24}
-                                  height={24}
+                                  src="/tick.svg"
+                                  alt="tick Icon"
+                                  width={20}
+                                  height={20}
                                 />
                               ) : row[key] === false ? (
-                                <Image
-                                  src="/cross.svg"
-                                  alt="cross Icon"
-                                  width={24}
-                                  height={24}
-                                />
+                            
+                                <ClearIcon />
                               ) : (
                                 <Typography
                                   frontFamily="Manrope, sans-serif"

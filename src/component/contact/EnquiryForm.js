@@ -57,7 +57,8 @@ const EnquiryForm = () => {
     if (!formData.fullName.trim()) {
       newErrors.fullName = "Full name is required";
     } else {
-      const fullNameRegex = /^[A-Za-z\u00C0-\u024F]+(?:[ '\-][A-Za-z\u00C0-\u024F]+)*$/;
+      const fullNameRegex =
+        /^[A-Za-z\u00C0-\u024F]+(?:[ '\-][A-Za-z\u00C0-\u024F]+)*$/;
       if (!fullNameRegex.test(formData.fullName)) {
         newErrors.fullName = "Enter a valid full name ";
       }
@@ -69,8 +70,7 @@ const EnquiryForm = () => {
     }
     if (!formData.phoneNo) {
       newErrors.phoneNo = "Phone number is required";
-    }
-    else if (!/^\+(?:[0-9] ?){6,14}[0-9]$/.test(formData.phoneNo)) {
+    } else if (!/^\+(?:[0-9] ?){6,14}[0-9]$/.test(formData.phoneNo)) {
       newErrors.phoneNo = "Phone must be 10 digits";
     }
     if (!formData.service) newErrors.service = "Please select a service";
@@ -93,7 +93,6 @@ const EnquiryForm = () => {
   };
 
   const handleSubmit = async () => {
-
     console.log(formData);
     if (validate()) {
       const transformed = {
@@ -118,9 +117,9 @@ const EnquiryForm = () => {
             body: JSON.stringify(transformed),
           }
         );
-
+        const data = await response.json();
         if (!response.ok) {
-          throw new Error("Failed to submit enquiry");
+          throw new Error(data.message || "Failed to submit enquiry");
         }
         setFormData({
           fullName: "",
@@ -135,8 +134,8 @@ const EnquiryForm = () => {
         console.log("Data saved successfully:", response);
         alert("Inquiry submitted successfully!");
       } catch (error) {
-        console.error("Error saving data:", error);
-        alert("Something went wrong!");
+        console.log("Error saving data:", error);
+        alert(error?.message);
       } finally {
         setloading(false);
       }

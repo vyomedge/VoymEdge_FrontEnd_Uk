@@ -62,7 +62,7 @@ const FreeCall = () => {
             Speak to our{" "}
             <Box
                variant="p"
-            component="p"
+            component="span"
               sx={{
                 position: "relative",
                 display: "inline-block",
@@ -79,7 +79,7 @@ const FreeCall = () => {
             or{" "}
             <Box
                variant="p"
-            component="p"
+            component="span"
               sx={{
                 position: "relative",
                 display: "inline-block",
@@ -105,7 +105,7 @@ const FreeCall = () => {
                     mt: 1,
                     fontSize: "15px",
                     fontWeight: "500",
-                    textTransform: "lowercase",
+                    textTransform: "capitalize",
                   }}
                 >
                   {`Book a Free Call`}
